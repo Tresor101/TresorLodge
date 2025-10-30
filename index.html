@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>TresorLodge - Hôtel de Luxe à Lubumbashi | Expérience Authentique</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="TresorLodge, hôtel de luxe 5 étoiles à Lubumbashi. Chambres élégantes, restaurant gastronomique, service d'excellence. Réservez votre séjour d'exception au cœur du Congo.">
+    <meta name="description" content="TresorLodge, hôtel de luxe 3 étoiles à Lubumbashi. Chambres élégantes, restaurant gastronomique, service d'excellence. Réservez votre séjour d'exception au cœur du Congo.">
     <meta name="keywords" content="hôtel luxe Lubumbashi, TresorLodge, hébergement Congo, restaurant gastronomique, service premium, Golf Malela">
     <meta name="author" content="TresorLodge">
     <link rel="canonical" href="https://tresorlodge.com">
@@ -22,26 +22,19 @@
     <link rel="icon" href="images/about2.png" type="image/x-icon">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Libraries -->
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Modern Custom CSS -->
-    <link rel="stylesheet" href="css/modern-design.css">
+    <!-- Simplified CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <!-- Loading Screen -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loader">
-            <div class="loader-text">TresorLodge</div>
+            <div class="loader-logo">
+                <img src="images/about2.png" alt="TresorLodge Logo" class="loading-logo-img">
+            </div>
         </div>
     </div>
 
@@ -50,14 +43,13 @@
         <div class="container">
             <div class="navbar-content">
                 <a href="index.html" class="navbar-brand-modern">
-                    Tresor<span class="accent">Lodge</span>
+                    <img src="images/about2.png" alt="TresorLodge Logo" class="logo-img">
                 </a>
                 
                 <div class="nav-modern d-none d-lg-flex">
                     <a href="index.html" class="nav-link active">Accueil</a>
                     <a href="rooms.html" class="nav-link">Chambres</a>
                     <a href="restaurant.html" class="nav-link">Restaurant</a>
-                    <a href="News.html" class="nav-link">Actualités</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </div>
                 
@@ -65,7 +57,7 @@
                     <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
                         <i class="icon-phone mr-2"></i>Appeler
                     </a>
-                    <a href="#rooms" class="btn-cta btn-primary-modern">
+                    <a href="rooms.html" class="btn-cta btn-primary-modern">
                         Réserver
                     </a>
                 </div>
@@ -85,11 +77,10 @@
                 <a href="index.html" class="mobile-nav-link">Accueil</a>
                 <a href="rooms.html" class="mobile-nav-link">Chambres</a>
                 <a href="restaurant.html" class="mobile-nav-link">Restaurant</a>
-                <a href="News.html" class="mobile-nav-link">Actualités</a>
                 <a href="contact.html" class="mobile-nav-link">Contact</a>
                 <div class="mobile-cta">
                     <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
-                    <a href="#rooms" class="btn-cta btn-primary-modern">Réserver</a>
+                    <a href="rooms.html" class="btn-cta btn-primary-modern">Réserver</a>
                 </div>
             </div>
         </div>
@@ -105,12 +96,12 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 data-aos="fade-up" data-aos-delay="300">L'Excellence Congolaise</h1>
+                <h1 data-aos="fade-up" data-aos-delay="300" style="color: white;">L'Excellence Congolaise</h1>
                 <p class="subtitle" data-aos="fade-up" data-aos-delay="600">
                     Découvrez l'hospitalité authentique dans le plus prestigieux hôtel de Lubumbashi
                 </p>
                 <div class="hero-cta" data-aos="fade-up" data-aos-delay="900">
-                    <a href="#rooms" class="btn-cta btn-primary-modern btn-large">
+                    <a href="rooms.html" class="btn-cta btn-primary-modern btn-large">
                         <i class="icon-calendar mr-2"></i>Réserver Maintenant
                     </a>
                     <a href="#about" class="btn-cta btn-outline-modern btn-large">
@@ -174,198 +165,6 @@
         </div>
     </section>
 
-    <!-- Modern Rooms Section -->
-    <section class="rooms-modern" id="rooms">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Nos Suites</span>
-                <h2>Chambres d'Exception</h2>
-                <p class="section-description">
-                    Trois catégories de chambres conçues pour offrir confort absolu et élégance raffinée
-                </p>
-            </div>
-            
-            <div class="row rooms-grid">
-                <!-- Chambre Standard -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="room-card-modern">
-                        <div class="room-media">
-                            <video class="room-video" poster="images/about1.jpeg" muted loop preload="metadata" playsinline>
-                                <source src="images/rooms1.mp4" type="video/mp4">
-                                <img src="images/about1.jpeg" alt="Chambre Standard TresorLodge">
-                            </video>
-                            <div class="room-overlay">
-                                <div class="room-overlay-content">
-                                    <h4>Confort Moderne</h4>
-                                    <p>Parfait pour les voyageurs d'affaires</p>
-                                    <a href="room60USD.html" class="btn-overlay">Découvrir</a>
-                                </div>
-                            </div>
-                            <div class="room-badge">Popular</div>
-                            <div class="video-indicator">
-                                <i class="icon-play"></i>
-                            </div>
-                        </div>
-                        <div class="room-info-modern">
-                            <div class="room-header">
-                                <h3>Chambre Standard</h3>
-                                <div class="room-rating">
-                                    <span class="stars">★★★★☆</span>
-                                </div>
-                            </div>
-                            <p class="room-description">
-                                Élégance et fonctionnalité se rencontrent dans nos chambres standards équipées de toutes les commodités modernes.
-                            </p>
-                            
-                            <div class="room-features">
-                                <span class="feature-badge">
-                                    <i class="icon-wifi"></i>WiFi Gratuit
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-room-service"></i>Room Service
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-safe"></i>Coffre-fort
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-bed"></i>Lit Confortable
-                                </span>
-                            </div>
-                            
-                            <div class="price-section">
-                                <div class="price-info">
-                                    <span class="price">60$</span>
-                                    <span class="price-unit">/ nuit</span>
-                                </div>
-                                <a href="room60USD.html" class="btn-cta btn-primary-modern">Réserver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chambre Supérieure -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="room-card-modern featured">
-                        <div class="room-media">
-                            <video class="room-video" poster="images/about2.jpeg" muted loop preload="metadata" playsinline>
-                                <source src="images/rooms2.mp4" type="video/mp4">
-                                <img src="images/about2.jpeg" alt="Chambre Supérieure TresorLodge">
-                            </video>
-                            <div class="room-overlay">
-                                <div class="room-overlay-content">
-                                    <h4>Luxe & Espace</h4>
-                                    <p>L'équilibre parfait entre luxe et intimité</p>
-                                    <a href="room80USD.html" class="btn-overlay">Découvrir</a>
-                                </div>
-                            </div>
-                            <div class="room-badge featured-badge">Recommandé</div>
-                            <div class="video-indicator featured">
-                                <i class="icon-play"></i>
-                            </div>
-                        </div>
-                        <div class="room-info-modern">
-                            <div class="room-header">
-                                <h3>Chambre Supérieure</h3>
-                                <div class="room-rating">
-                                    <span class="stars">★★★★★</span>
-                                </div>
-                            </div>
-                            <p class="room-description">
-                                Plus spacieuses avec vue panoramique, nos chambres supérieures offrent une expérience haut de gamme.
-                            </p>
-                            
-                            <div class="room-features">
-                                <span class="feature-badge">
-                                    <i class="icon-eye"></i>Vue Panoramique
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-wifi"></i>WiFi Gratuit
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-room-service"></i>Room Service
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-glass"></i>Minibar
-                                </span>
-                            </div>
-                            
-                            <div class="price-section">
-                                <div class="price-info">
-                                    <span class="price">80$</span>
-                                    <span class="price-unit">/ nuit</span>
-                                </div>
-                                <a href="room80USD.html" class="btn-cta btn-primary-modern">Réserver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Suite de Luxe -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="room-card-modern">
-                        <div class="room-media">
-                            <video class="room-video" poster="images/cover.jpeg" muted loop preload="metadata" playsinline>
-                                <source src="images/rooms3.mp4" type="video/mp4">
-                                <img src="images/cover.jpeg" alt="Suite de Luxe TresorLodge">
-                            </video>
-                            <div class="room-overlay">
-                                <div class="room-overlay-content">
-                                    <h4>Excellence Absolue</h4>
-                                    <p>L'incarnation du luxe congolais</p>
-                                    <a href="room100USD.html" class="btn-overlay">Découvrir</a>
-                                </div>
-                            </div>
-                            <div class="room-badge luxury-badge">Luxe</div>
-                            <div class="video-indicator premium">
-                                <i class="icon-play"></i>
-                            </div>
-                        </div>
-                        <div class="room-info-modern">
-                            <div class="room-header">
-                                <h3>Suite de Luxe</h3>
-                                <div class="room-rating">
-                                    <span class="stars">★★★★★</span>
-                                </div>
-                            </div>
-                            <p class="room-description">
-                                L'expérience ultime avec service personnalisé, salon séparé et finitions haut de gamme.
-                            </p>
-                            
-                            <div class="room-features">
-                                <span class="feature-badge">
-                                    <i class="icon-wifi"></i>WiFi Gratuit
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-room-service"></i>Room Service
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-home"></i>Balcon Privé
-                                </span>
-                                <span class="feature-badge">
-                                    <i class="icon-snowflake"></i>Climatisation
-                                </span>
-                            </div>
-                            
-                            <div class="price-section">
-                                <div class="price-info">
-                                    <span class="price">100$</span>
-                                    <span class="price-unit">/ nuit</span>
-                                </div>
-                                <a href="room100USD.html" class="btn-cta btn-primary-modern">Réserver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-                <a href="rooms.html" class="btn-cta btn-outline-modern btn-large">
-                    Voir Toutes les Chambres
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Services Section -->
     <section class="services-modern" id="services">
         <div class="container">
@@ -411,14 +210,14 @@
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-card">
                         <div class="service-icon">
-                            <span class="flaticon-swimmer"></span>
+                            <span class="flaticon-cocktail"></span>
                         </div>
-                        <h4>Piscine & Détente</h4>
-                        <p>Espace de relaxation avec piscine et solarium pour votre bien-être</p>
+                        <h4>Bar & Lounge</h4>
+                        <p>Bar élégant avec une sélection de cocktails signature et ambiance raffinée</p>
                         <div class="service-features">
-                            <span>• Piscine extérieure</span>
-                            <span>• Espace solarium</span>
-                            <span>• Zone de détente</span>
+                            <span>• Cocktails d'auteur</span>
+                            <span>• Vins fins</span>
+                            <span>• Ambiance lounge</span>
                         </div>
                     </div>
                 </div>
@@ -516,14 +315,7 @@
         <i class="icon-chevron-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    
-    <!-- Modern JavaScript -->
-    <script src="js/modern-interactions.js"></script>
+    <!-- Simplified JavaScript -->
+    <script src="scripts.js"></script>
 </body>
 </html>
