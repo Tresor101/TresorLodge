@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suite de Luxe 100$ - TresorLodge | Chambre Premium avec Balcon Privé</title>
     
     <!-- SEO Meta Tags -->
@@ -13,29 +13,116 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Suite de Luxe - TresorLodge">
     <meta property="og:description" content="Suite premium avec balcon privé et climatisation">
-    <meta property="og:image" content="images/cover.jpeg">
+    <meta property="og:image" content="../../images/cover.jpeg">
     <meta property="og:url" content="https://tresorlodge.com/room100USD.html">
     
     <!-- Favicon -->
     <link rel="icon" href="../../images/about2.png" type="image/x-icon">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="../shared/css/styles.css"><!-- Modern Custom CSS -->
-        
-    <!-- Room Page Specific Styles -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
     <style>
+        :root {
+            --primary: #2C3E50;
+            --secondary: #E74C3C;
+            --accent: #F39C12;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --white: #FFFFFF;
+            --cream: #FDF6E3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary) !important;
+        }
+
+        .navbar-brand .accent {
+            color: var(--secondary);
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+        .btn-book {
+            background: var(--secondary);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-book:hover {
+            background: #C0392B;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Room Hero Section */
         .room-hero {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(220, 38, 38, 0.6)), url('images/cover.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             height: 70vh;
             display: flex;
             align-items: center;
-            color: var(--text-light);
+            color: white;
             position: relative;
+            margin-top: 76px; /* Account for fixed navbar */
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .room-hero::before {
@@ -45,40 +132,582 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(26, 26, 26, 0.7), rgba(220, 38, 38, 0.4));
+            background: linear-gradient(45deg, 
+                rgba(44, 62, 80, 0.7), 
+                rgba(231, 76, 60, 0.6), 
+                rgba(243, 156, 18, 0.5),
+                rgba(46, 204, 113, 0.6)
+            );
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+            z-index: -1;
+        }
+
+        .room-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            max-width: 100%;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 0.9rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .feature-item i {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .hero-price-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 3;
+        }
+
+        .price-main {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0 0.2rem;
+        }
+
+        .period {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .rating {
+            margin-bottom: 1.5rem;
+        }
+
+        .stars {
+            font-size: 1.5rem;
+            color: #f39c12;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.8);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Cards */
+        .card-custom {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: auto;
+            border: none;
+            margin-bottom: 2rem;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
         }
         
         .room-main {
-            margin-top: -6rem;
+            background: var(--cream);
+            padding: 4rem 0;
             position: relative;
-            z-index: 3;
-            padding: 2rem 0 4rem;
+            z-index: 1;
         }
         
-        .room-content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .room-media-section {
+        .room-card {
             background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
             margin-bottom: 2rem;
+            width: 100%;
         }
-        
+
         .room-video-container {
             position: relative;
-            border-radius: 15px;
-            overflow: hidden;
             height: 400px;
-            background: #f3f4f6;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .room-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .room-content {
+            padding: 2rem;
+        }
+
+        .room-features {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .room-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--cream);
+            border-radius: 10px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .room-features li::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .price-highlight {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .price-highlight h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .booking-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+        }
+
+        /* Responsive fixes */
+        @media (max-width: 992px) {
+            .hero-price-card {
+                margin-top: 2rem;
+                padding: 1.5rem;
+                position: relative;
+                width: 100%;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .room-hero {
+                height: auto;
+                min-height: 70vh;
+                padding: 2rem 0;
+            }
+
+            .hero-features {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 0.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-features {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .feature-item {
+                font-size: 0.8rem;
+                padding: 0.5rem 0.7rem;
+                justify-content: center;
+            }
+
+            .hero-price-card {
+                margin-top: 2rem;
+                padding: 1.5rem;
+                width: 100%;
+                max-width: 350px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .amount {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta .btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+            
+            .room-features {
+                grid-template-columns: 1fr;
+            }
+
+            .room-main {
+                padding: 2rem 0;
+            }
+
+            .room-hero {
+                height: auto;
+                min-height: 60vh;
+                margin-top: 60px;
+                padding: 2rem 0;
+            }
+
+            .hero-video {
+                height: 120%; /* Ensure video covers the section even with padding */
+            }
+
+            /* Stack columns vertically on tablets */
+            .room-hero .row {
+                flex-direction: column;
+            }
+
+            .room-hero .col-lg-8,
+            .room-hero .col-lg-4 {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-features {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+                justify-items: center;
+            }
+
+            .feature-item {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.5rem;
+                justify-content: center;
+                width: 100%;
+                max-width: 140px;
+            }
+
+            .feature-item i {
+                font-size: 0.9rem;
+            }
+
+            .hero-price-card {
+                margin-top: 1.5rem;
+                padding: 1.25rem;
+                width: 100%;
+                max-width: 280px;
+                margin-left: auto;
+                margin-right: auto;
+                position: static;
+                transform: none;
+            }
+
+            .price-main {
+                margin-bottom: 0.75rem;
+            }
+
+            .amount {
+                font-size: 2rem;
+            }
+
+            .currency {
+                font-size: 1.2rem;
+            }
+
+            .period {
+                font-size: 1rem;
+            }
+
+            .hero-cta .btn {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem;
+                width: 100%;
+            }
+
+            .room-hero {
+                min-height: 100vh;
+                padding: 1.5rem 0;
+                display: flex;
+                align-items: stretch;
+            }
+
+            .room-hero .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .room-hero .row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: calc(100vh - 3rem);
+            }
+
+            .hero-video {
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -2;
+            }
+
+            /* Center content on mobile */
+            .room-hero .col-lg-8 {
+                text-align: center;
+                margin-bottom: 1.5rem;
+                order: 1;
+            }
+
+            .room-hero .col-lg-4 {
+                order: 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .breadcrumb {
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+
+            /* Ensure no overlap */
+            .room-main {
+                margin-top: 0;
+                position: relative;
+                z-index: 10;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 480px) {
+            .hero-features {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                max-width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .feature-item {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.6rem;
+                max-width: 180px;
+                margin: 0 auto;
+            }
+
+            .hero-price-card {
+                max-width: 250px;
+                padding: 1rem;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .amount {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Fallback for browsers that don't support video */
+        @supports not (object-fit: cover) {
+            .room-hero {
+                background: linear-gradient(45deg, 
+                    rgba(44, 62, 80, 0.9), 
+                    rgba(231, 76, 60, 0.8)
+                );
+            }
+            
+            .hero-video {
+                display: none;
+            }
+        }
+
+        /* Fix for Bootstrap grid */
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .col-lg-4, .col-lg-8 {
+            padding-left: 15px;
+            padding-right: 15px;
         }
         
         .room-video-container video {
@@ -291,79 +920,126 @@
     <link rel="stylesheet" href="css/rooms.css">
 </head>
 <body>
-    <!-- Modern Navigation -->
-    <nav class="navbar-modern" id="mainNav">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <div class="navbar-content">
-                <a href="../home/index.html" class="navbar-brand-modern">
-                    Tresor<span class="accent">Lodge</span>
-                </a>
-                
-                <div class="nav-modern d-none d-lg-flex">
-                    <a href="../home/index.html" class="nav-link">Accueil</a>
-                    <a href="../rooms/rooms.html" class="nav-link">Chambres</a>
-                    <a href="../restaurant/restaurant.html" class="nav-link">Restaurant</a>
-                    <a href="../contact/contact.html" class="nav-link">Contact</a>
-                </div>
-                
-                <div class="cta-buttons d-none d-lg-flex">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
-                        <i class="icon-phone mr-2"></i>Appeler
-                    </a>
-                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">
-                        Réserver
-                    </a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-content">
-                <a href="../home/index.html" class="mobile-nav-link">Accueil</a>
-                <a href="../rooms/rooms.html" class="mobile-nav-link">Chambres</a>
-                <a href="../restaurant/restaurant.html" class="mobile-nav-link">Restaurant</a>
-                <a href="../contact/contact.html" class="mobile-nav-link">Contact</a>
-                <div class="mobile-cta">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
-                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">Réserver</a>
-                </div>
+            <a class="navbar-brand" href="../../index.html">
+                Tresor<span class="accent">Lodge</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">Chambres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../restaurant.html">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-book" href="../../contact.html">Réserver</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <!-- Room Hero Section -->
     <section class="room-hero">
+        <!-- Background Video -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="videos/rooms1.mp4" type="video/mp4">
+        </video>
+        
         <div class="container">
-            <div class="hero-content">
-                <nav class="breadcrumb">
-                    <a href="../home/index.html">Accueil</a>
-                    <span>/</span>
-                    <a href="../rooms/rooms.html">Chambres</a>
-                    <span>/</span>
-                    <span>Suite de Luxe</span>
-                </nav>
-                <h1 class="hero-title">Suite de Luxe</h1>
-                <p class="hero-subtitle">L'expérience ultime avec service personnalisé et finitions haut de gamme</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">100$</span>
-                        <span class="stat-label">Par Nuit</span>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="breadcrumb">
+                        <a href="../../index.html">Accueil</a>
+                        <span>/</span>
+                        <a href="rooms.html">Chambres</a>
+                        <span>/</span>
+                        <span>Suite de Luxe</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">★★★</span>
-                        <span class="stat-label">Luxe Premium</span>
+                    <h1 class="hero-title">Suite de Luxe</h1>
+                    <p class="hero-subtitle">Expérience premium avec balcon privé et services haut de gamme dans le cœur de Lubumbashi</p>
+                    
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-wifi"></i>
+                            <span>WiFi Gratuit</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-coffee"></i>
+                            <span>Petit-déjeuner Gratuit</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-wine-bottle"></i>
+                            <span>Minibar</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-concierge-bell"></i>
+                            <span>Room Service</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-home"></i>
+                            <span>Balcon Privé</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-snowflake"></i>
+                            <span>Climatisation</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tv"></i>
+                            <span>TV Satellite</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-car"></i>
+                            <span>Parking Gratuit</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-swimming-pool"></i>
+                            <span>Accès Piscine</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Service de Blanchisserie</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Coffre-fort</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Vue Panoramique</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">24h</span>
-                        <span class="stat-label">Service</span>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="hero-price-card">
+                        <div class="price-main">
+                            <span class="currency">$</span>
+                            <span class="amount">100</span>
+                            <span class="period">/ nuit</span>
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★</span>
+                            <span class="rating-text">Suite Premium</span>
+                        </div>
+                        <div class="hero-cta">
+                            <a href="../../contact.html" class="btn btn-book btn-lg">Réserver Maintenant</a>
+                            <a href="tel:+243816144449" class="btn btn-outline-light">📞 Appeler</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -373,767 +1049,98 @@
     <!-- Room Main Content -->
     <section class="room-main">
         <div class="container">
-            <div class="room-content-grid">
-                <!-- Left Column - Media and Description -->
-                <div class="room-content-left">
-                    <!-- Room Media -->
-                    <div class="room-media-section">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Découvrez Votre Suite</h3>
-                        <div class="room-video-container">
-                            <video autoplay muted loop playsinline>
-                                <source src="../../images/rooms1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-
-                    <!-- Room Description -->
-                    <div class="room-description">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Description de la Suite</h3>
-                        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-                            Découvrez l'expérience ultime de luxe dans notre Suite de Luxe au TresorLodge. Cette chambre premium offre 
-                            un service personnalisé exceptionnel, un salon séparé élégant et des finitions haut de gamme soigneusement 
-                            sélectionnées. Unique en son genre, cette suite dispose d'un balcon privé avec vue panoramique et d'un 
-                            système de climatisation pour votre confort optimal.
-                        </p>
-                        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-                            Détendez-vous dans votre sanctuaire privé après une journée d'exploration de Lubumbashi. Le mobilier 
-                            somptueux et la décoration apaisante créent une atmosphère de sérénité absolue. Profitez de votre balcon 
-                            privé avec vue sur nos jardins luxuriants, et savourez le service en chambre 24h/24 qui répond à tous 
-                            vos besoins avec discrétion et professionnalisme.
-                        </p>
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Description Card -->
+                    <div class="card-custom">
+                        <h3>Description de la Suite</h3>
+                        <p>Détendez-vous dans votre sanctuaire privé après une journée d'exploration de Lubumbashi. Le mobilier somptueux et la décoration apaisante créent une atmosphère de sérénité absolue. Profitez de votre balcon privé avec vue sur nos jardins luxuriants, et savourez le service en chambre 24h/24 qui répond à tous vos besoins avec discrétion et professionnalisme.</p>
                         
-                        <!-- Amenities -->
-                        <h4 style="margin: 2rem 0 1rem; color: var(--text-dark);">Équipements Inclus</h4>
-                        <div class="amenities-grid">
-                            <div class="amenity-item luxury">
-                                <div class="amenity-icon">🏠</div>
-                                <span>Balcon Privé</span>
-                            </div>
-                            <div class="amenity-item luxury">
-                                <div class="amenity-icon">❄️</div>
-                                <span>Climatisation</span>
-                            </div>
-                            <div class="amenity-item premium">
-                                <div class="amenity-icon">📶</div>
-                                <span>WiFi Gratuit</span>
-                            </div>
-                            <div class="amenity-item premium">
-                                <div class="amenity-icon">☕</div>
-                                <span>Petit-déjeuner</span>
-                            </div>
-                            <div class="amenity-item">
-                                <div class="amenity-icon">🍷</div>
-                                <span>Minibar</span>
-                            </div>
-                            <div class="amenity-item">
-                                <div class="amenity-icon">🛎️</div>
-                                <span>Room Service 24h</span>
-                            </div>
-                            <div class="amenity-item">
-                                <div class="amenity-icon">🚗</div>
-                                <span>Parking Gratuit</span>
-                            </div>
-                            <div class="amenity-item">
-                                <div class="amenity-icon">🏊</div>
-                                <span>Accès Piscine</span>
-                            </div>
-                        </div>
+                        <h4 class="mt-4">Caractéristiques Spéciales</h4>
+                        <ul>
+                            <li>Balcon privé avec vue panoramique</li>
+                            <li>Salon séparé avec canapé élégant</li>
+                            <li>Salle de bain spacieuse avec baignoire</li>
+                            <li>Finitions haut de gamme</li>
+                            <li>Service personnalisé 24h/24</li>
+                        </ul>
+
+                        <h4 class="mt-4">Équipements Inclus</h4>
+                        <ul class="room-features">
+                            <li>WiFi Gratuit</li>
+                            <li>Petit-déjeuner Gratuit</li>
+                            <li>Minibar</li>
+                            <li>Room Service</li>
+                            <li>Balcon Privé</li>
+                            <li>Climatisation</li>
+                            <li>TV Satellite</li>
+                            <li>Parking Gratuit</li>
+                            <li>Accès Piscine</li>
+                            <li>Service de Blanchisserie</li>
+                            <li>Coffre-fort</li>
+                            <li>Vue Panoramique</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Right Column - Booking and Info -->
-                <div class="room-content-right">
-                    <!-- Price Section -->
-                    <div class="room-price-section">
-                        <h3 style="margin-bottom: 0.5rem;">Suite de Luxe</h3>
-                        <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">100$</div>
-                        <p style="opacity: 0.9; margin-bottom: 1.5rem;">par nuit</p>
-                        <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
-                            <span style="font-size: 1.5rem;">★★★</span>
-                        </div>
-                        <p style="font-size: 0.9rem; opacity: 0.8;">Taxes et service inclus</p>
+                <div class="col-lg-4">
+                    <!-- Price Highlight -->
+                    <div class="price-highlight">
+                        <h3>$100</h3>
+                        <p>par nuit</p>
+                        <p class="mb-0">★★★ Suite Premium</p>
                     </div>
 
-                    <!-- Booking Card -->
-                    <div class="booking-card">
-                        <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Réserver Maintenant</h4>
-                        <div class="booking-form">
-                            <div class="form-group">
-                                <label style="font-weight: 600; color: var(--text-dark);">Arrivée</label>
-                                <input type="date" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label style="font-weight: 600; color: var(--text-dark);">Départ</label>
-                                <input type="date" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label style="font-weight: 600; color: var(--text-dark);">Nombre d'invités</label>
-                                <select class="form-input">
-                                    <option value="1">1 Adulte</option>
-                                    <option value="2">2 Adultes</option>
-                                    <option value="3">3 Adultes</option>
-                                    <option value="4">4 Adultes</option>
-                                </select>
-                            </div>
-                            <a href="../contact/contact.html" class="btn-cta btn-primary-modern" style="text-align: center; text-decoration: none;">
-                                Réserver Cette Suite
-                            </a>
-                            <a href="tel:+243816144449" class="btn-cta btn-outline-modern" style="text-align: center; text-decoration: none;">
-                                📞 Appeler Directement
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Room Info Card -->
-                    <div class="room-info-card">
-                        <h4 style="margin-bottom: 1rem; color: var(--text-dark);">Expérience Premium</h4>
-                        <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
-                            Notre Suite de Luxe représente le summum de l'hospitalité congolaise moderne. Service personnalisé, 
-                            finitions haut de gamme et équipements exclusifs pour une expérience inoubliable.
-                        </p>
-                        <div style="padding: 1rem; background: var(--background-accent); border-radius: 10px; border-left: 4px solid var(--secondary-color);">
-                            <h5 style="color: var(--text-dark); margin-bottom: 0.5rem;">Inclus dans votre séjour :</h5>
-                            <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-light);">
-                                <li>Petit-déjeuner continental gratuit</li>
-                                <li>Accès WiFi haut débit</li>
-                                <li>Service en chambre 24h/24</li>
-                                <li>Accès piscine et espaces communs</li>
-                                <li>Parking sécurisé gratuit</li>
-                            </ul>
-                        </div>
+                    <!-- Contact Info -->
+                    <div class="card-custom">
+                        <h5>Besoin d'aide?</h5>
+                        <p>Notre équipe est disponible 24h/24 pour vous aider avec votre réservation.</p>
+                        <p><strong>Téléphone:</strong> +243 816 144 449</p>
+                        <p><strong>Email:</strong> info@tresorlodge.com</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-    <footer class="footer-modern">
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
         <div class="container">
-            <div class="footer-content">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer-section">
-                            <h3>TresorLodge</h3>
-                            <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
-                            <div class="social-links">
-                                <a href="#" class="social-link"><i class="icon-facebook"></i></a>
-                                <a href="#" class="social-link"><i class="icon-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="icon-tiktok"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer-section">
-                            <h4>Contact</h4>
-                            <div class="contact-info">
-                                <div class="contact-item">
-                                    <i class="icon-map-marker"></i>
-                                    <span>586 Avenue du Plateau, Golf Malela, Lubumbashi</span>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="icon-phone"></i>
-                                    <a href="tel:+243816144449" class="contact-link">+243 816 144 449</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="icon-envelope"></i>
-                                    <a href="mailto:tresorlodgerdc@gmail.com" class="contact-link">tresorlodgerdc@gmail.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-3">Tresor<span style="color: var(--secondary);">Lodge</span></h3>
+                    <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h4 class="mb-3">Contact</h4>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>586 Avenue du Plateau, Golf Malela, Lubumbashi</p>
+                    <p><i class="fas fa-phone me-2"></i><a href="tel:+243816144449" class="text-white">+243 816 144 449</a></p>
+                    <p><i class="fas fa-envelope me-2"></i><a href="mailto:tresorlodgerdc@gmail.com" class="text-white">tresorlodgerdc@gmail.com</a></p>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <div class="row align-items-center">
-                    <div class="col-12 text-center">
-                        <p>&copy; <span id="currentYear"></span> TresorLodge. Tous droits réservés.</p>
-                    </div>
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 TresorLodge. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-        <i class="icon-chevron-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script src="../shared/js/scripts.js"></script>
-      <script src="js/rooms.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set current year
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.getElementById('currentYear');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Suite de Luxe 100$ - TresorLodge | Chambre Premium avec Balcon Privé</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Découvrez notre Suite de Luxe à 100$ par nuit au TresorLodge Lubumbashi. Balcon privé, climatisation, service personnalisé et finitions haut de gamme dans notre chambre premium 3★.">
-    <meta name="keywords" content="suite luxe Lubumbashi, chambre premium TresorLodge, balcon privé, climatisation, 100 dollars">
-    <meta name="author" content="TresorLodge">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Suite de Luxe - TresorLodge">
-    <meta property="og:description" content="Suite premium avec balcon privé et climatisation">
-    <meta property="og:image" content="images/cover.jpeg">
-    <meta property="og:url" content="https://tresorlodge.com/room100USD.html">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="../../images/about2.png" type="image/x-icon">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../shared/css/styles.css"><!-- Modern Custom CSS -->
-        
-    <!-- Room Page Specific Styles -->
-    <style>
-        .room-hero {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(220, 38, 38, 0.6)), url('images/cover.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            color: var(--text-light);
-            position: relative;
-        }
-        
-        .room-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(26, 26, 26, 0.7), rgba(220, 38, 38, 0.4));
-        }
-        
-        .room-main {
-            margin-top: -6rem;
-            position: relative;
-            z-index: 3;
-            padding: 2rem 0 4rem;
-        }
-        
-        .room-content-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .room-media-section {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
-            margin-bottom: 2rem;
-        }
-        
-        .room-video-container {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            height: 400px;
-            background: #f3f4f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .room-video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .video-play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(26, 26, 26, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .video-play-overlay:hover {
-            background: rgba(26, 26, 26, 0.7);
-        }
-        
-        .play-button {
-            width: 80px;
-            height: 80px;
-            background: var(--secondary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .play-button:hover {
-            transform: scale(1.1);
-            background: var(--quaternary-color);
-        }
-        
-        .room-info-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
-            margin-bottom: 2rem;
-        }
-        
-        .room-description {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
-        }
-        
-        .room-price-section {
-            background: linear-gradient(135deg, var(--secondary-color), var(--quaternary-color));
-            color: white;
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--background-soft);
-            border-radius: 12px;
-            transition: var(--transition);
-            border: 1px solid var(--border-light);
-        }
-        
-        .amenity-item:hover {
-            background: var(--background-accent);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .amenity-item.premium {
-            background: linear-gradient(135deg, #fee2e2, #ffffff);
-            border-color: var(--secondary-color);
-        }
-        
-        .amenity-item.luxury {
-            background: linear-gradient(135deg, #fef3c7, #ffffff);
-            border-color: #d97706;
-        }
-        
-        .amenity-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--secondary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-        }
-        
-        .luxury .amenity-icon {
-            background: #d97706;
-        }
-        
-        .booking-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
-            position: sticky;
-            top: 2rem;
-        }
-        
-        .booking-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .form-input {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
-        }
-        
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .breadcrumb a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .breadcrumb a:hover {
-            color: white;
-        }
-        
-        .breadcrumb span {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        @media (max-width: 1024px) {
-            .room-content-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .room-hero {
-                height: 50vh;
-            }
-            
-            .amenities-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .room-hero {
-                height: 40vh;
-            }
-            
-            .room-media-section,
-            .room-info-card,
-            .room-description,
-            .booking-card {
-                padding: 1.5rem;
-            }
-            
-            .room-main {
-                margin-top: -4rem;
-                padding: 1rem 0 2rem;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="css/rooms.css">
-</head>
-<body>
-    <!-- Modern Navigation -->
-    <nav class="navbar-modern" id="mainNav">
-        <div class="container">
-            <div class="navbar-content">
-                <a href="../home/index.html" class="navbar-brand-modern">
-                    Tresor<span class="accent">Lodge</span>
-                </a>
-                
-                <div class="nav-modern d-none d-lg-flex">
-                    <a href="../home/index.html" class="nav-link">Accueil</a>
-                    <a href="../rooms/rooms.html" class="nav-link">Chambres</a>
-                    <a href="../restaurant/restaurant.html" class="nav-link">Restaurant</a>
-                    <a href="../contact/contact.html" class="nav-link">Contact</a>
-                </div>
-                
-                <div class="cta-buttons d-none d-lg-flex">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
-                        <i class="icon-phone mr-2"></i>Appeler
-                    </a>
-                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">
-                        Réserver
-                    </a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-content">
-                <a href="../home/index.html" class="mobile-nav-link">Accueil</a>
-                <a href="../rooms/rooms.html" class="mobile-nav-link">Chambres</a>
-                <a href="../restaurant/restaurant.html" class="mobile-nav-link">Restaurant</a>
-                <a href="../contact/contact.html" class="mobile-nav-link">Contact</a>
-                <div class="mobile-cta">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
-                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">Réserver</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Room Hero Section -->
-    <section class="room-hero">
-        <div class="container">
-            <div class="hero-content">
-                <nav class="breadcrumb">
-                    <a href="../home/index.html">Accueil</a>
-                    <span>/</span>
-                    <a href="../rooms/rooms.html">Chambres</a>
-                    <span>/</span>
-                    <span>Suite de Luxe</span>
-                </nav>
-                <h1 class="hero-title">Suite de Luxe</h1>
-                <p class="hero-subtitle">L'expérience ultime avec service personnalisé et finitions haut de gamme</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">100$</span>
-                        <span class="stat-label">Par Nuit</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">★★★</span>
-                        <span class="stat-label">Luxe Premium</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">24h</span>
-                        <span class="stat-label">Service</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Room Main Content -->
-    <section class="room-main">
-        <div class="container">
-            <div class="room-content-grid">
-                <!-- Left Column - Media and Description -->
-                <div class="room-content-left">
-                    <!-- Room Media -->
-                    <div class="room-media-section">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Découvrez Votre Suite</h3>
-                        <div class="room-video-container">
-                            <video autoplay muted loop playsinline>
-                                <source src="../../images/rooms1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-
-                    <!-- Room Description -->
-                    <div class="room-description">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Description de la Suite</h3>
-                        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-                            Découvrez l'expérience ultime de luxe dans notre Suite de Luxe au TresorLodge. Cette chambre premium offre 
-                            un service personnalisé exceptionnel, un salon séparé élégant et des finitions haut de gamme soigneusement 
-                            sélectionnées. Unique en son genre, cette suite dispose d'un balcon privé avec vue panoramique et d'un 
-                            système de climatisation pour votre confort optimal.
-                        </p>
-                        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-                            Détendez-vous dans votre sanctuaire privé après une journée d'exploration de Lubumbashi. Le mobilier 
-                            somptueux et la décoration apaisante créent une atmosphère de sérénité absolue. Profitez de votre balcon 
-                            privé avec vue sur nos jardins luxuriants, et savourez le service en chambre 24h/24 qui répond à tous 
-                            vos besoins avec discrétion et professionnalisme.
-                        </p>
-                        
-                        <!-- Amenities -->
-                        <h4 style="margin: 2rem 0 1rem; color: var(--text-dark);">Équipements Inclus</h4>
-                        <div class="amenities-grid">
-                            <div class="amenity-item luxury">
-                                <div class="amenity-icon">🏠</div>
-                                <span>Balcon Privé</span>
-                            </div>
-                            <div class="amenity-item luxury">
-                                <div class="amenity-icon">❄️</div>
-                                <span>Climatisation</span>
-                            </div>
-                            <div class="amenity-item premium">
-                                <div class="amenity-icon">📶</div>
-                                <span>WiFi Gratuit</span>
-                            </div>
-                            <div class="amenity-item premium">
-                                <div class="amenity-icon">☕</div>
-                                <span>Petit-déjeuner</span>
-                            </div>
-                            <div class="amenity-item">
-                                <div class="amenity-icon">🍷</div>
-                                <span>Minibar</span>
-                            </div>
-                            <div class="amenity-item">
-                                <div class="amenity-icon">🛎️</div>
-                                <span>Room Service 24h</span>
-                            </div>
-                            <div class="amenity-item">
-                                <div class="amenity-icon">🚗</div>
-                                <span>Parking Gratuit</span>
-                            </div>
-                            <div class="amenity-item">
-                                <div class="amenity-icon">🏊</div>
-                                <span>Accès Piscine</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column - Booking and Info -->
-                <div class="room-content-right">
-                    <!-- Price Section -->
-                    <div class="room-price-section">
-                        <h3 style="margin-bottom: 0.5rem;">Suite de Luxe</h3>
-                        <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">100$</div>
-                        <p style="opacity: 0.9; margin-bottom: 1.5rem;">par nuit</p>
-                        <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
-                            <span style="font-size: 1.5rem;">★★★</span>
-                        </div>
-                        <p style="font-size: 0.9rem; opacity: 0.8;">Taxes et service inclus</p>
-                    </div>
-
-                    <!-- Booking Card -->
-                    <div class="booking-card">
-                        <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Réserver Maintenant</h4>
-                        <div class="booking-form">
-                            <div class="form-group">
-                                <label style="font-weight: 600; color: var(--text-dark);">Arrivée</label>
-                                <input type="date" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label style="font-weight: 600; color: var(--text-dark);">Départ</label>
-                                <input type="date" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label style="font-weight: 600; color: var(--text-dark);">Nombre d'invités</label>
-                                <select class="form-input">
-                                    <option value="1">1 Adulte</option>
-                                    <option value="2">2 Adultes</option>
-                                    <option value="3">3 Adultes</option>
-                                    <option value="4">4 Adultes</option>
-                                </select>
-                            </div>
-                            <a href="../contact/contact.html" class="btn-cta btn-primary-modern" style="text-align: center; text-decoration: none;">
-                                Réserver Cette Suite
-                            </a>
-                            <a href="tel:+243816144449" class="btn-cta btn-outline-modern" style="text-align: center; text-decoration: none;">
-                                📞 Appeler Directement
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Room Info Card -->
-                    <div class="room-info-card">
-                        <h4 style="margin-bottom: 1rem; color: var(--text-dark);">Expérience Premium</h4>
-                        <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
-                            Notre Suite de Luxe représente le summum de l'hospitalité congolaise moderne. Service personnalisé, 
-                            finitions haut de gamme et équipements exclusifs pour une expérience inoubliable.
-                        </p>
-                        <div style="padding: 1rem; background: var(--background-accent); border-radius: 10px; border-left: 4px solid var(--secondary-color);">
-                            <h5 style="color: var(--text-dark); margin-bottom: 0.5rem;">Inclus dans votre séjour :</h5>
-                            <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-light);">
-                                <li>Petit-déjeuner continental gratuit</li>
-                                <li>Accès WiFi haut débit</li>
-                                <li>Service en chambre 24h/24</li>
-                                <li>Accès piscine et espaces communs</li>
-                                <li>Parking sécurisé gratuit</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="footer-modern">
-        <div class="container">
-            <div class="footer-content">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer-section">
-                            <h3>TresorLodge</h3>
-                            <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
-                            <div class="social-links">
-                                <a href="#" class="social-link"><i class="icon-facebook"></i></a>
-                                <a href="#" class="social-link"><i class="icon-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="icon-tiktok"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer-section">
-                            <h4>Contact</h4>
-                            <div class="contact-info">
-                                <div class="contact-item">
-                                    <i class="icon-map-marker"></i>
-                                    <span>586 Avenue du Plateau, Golf Malela, Lubumbashi</span>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="icon-phone"></i>
-                                    <a href="tel:+243816144449" class="contact-link">+243 816 144 449</a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="icon-envelope"></i>
-                                    <a href="mailto:tresorlodgerdc@gmail.com" class="contact-link">tresorlodgerdc@gmail.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="row align-items-center">
-                    <div class="col-12 text-center">
-                        <p>&copy; <span id="currentYear"></span> TresorLodge. Tous droits réservés.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-        <i class="icon-chevron-up"></i>
-    </button>
-
-    <!-- JavaScript -->
-    <script src="../shared/js/scripts.js"></script>
-      <script src="js/rooms.js"></script>
-</body>
-</html>
-
 

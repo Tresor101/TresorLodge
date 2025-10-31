@@ -1,6 +1,5 @@
 // Restaurant Section JavaScript
-// Import shared functionality
-import '../shared/js/scripts.js';
+// Shared functionality is already loaded via scripts.js
 
 // Restaurant-specific functionality
 class RestaurantManager {

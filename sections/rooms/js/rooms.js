@@ -1,6 +1,5 @@
 // Rooms Section JavaScript
-// Import shared functionality
-import '../shared/js/scripts.js';
+// Shared functionality is already loaded via scripts.js
 
 // Room-specific functionality
 class RoomManager {
