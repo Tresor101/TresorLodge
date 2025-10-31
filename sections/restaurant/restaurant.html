@@ -17,13 +17,14 @@
     <meta property="og:url" content="https://tresorlodge.com/restaurant.html">
     
     <!-- Favicon -->
-    <link rel="icon" href="images/about2.png" type="image/x-icon">
+    <link rel="icon" href="../../images/about2.png" type="image/x-icon">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Simplified CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../shared/css/styles.css">
+    <link rel="stylesheet" href="css/restaurant.css">
 </head>
 
 <body>
@@ -31,7 +32,7 @@
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loader">
             <div class="loader-logo">
-                <img src="images/about2.png" alt="TresorLodge Logo" class="loading-logo-img">
+                <img src="../../images/about2.png" alt="TresorLodge Logo" class="loading-logo-img">
             </div>
         </div>
     </div>
@@ -40,22 +41,22 @@
     <nav class="navbar-modern" id="mainNav">
         <div class="container">
             <div class="navbar-content">
-                <a href="index.html" class="navbar-brand-modern">
+                <a href="../home/index.html" class="navbar-brand-modern">
                     Tresor<span class="accent">Lodge</span>
                 </a>
                 
                 <div class="nav-modern d-none d-lg-flex">
-                    <a href="index.html" class="nav-link">Accueil</a>
-                    <a href="rooms.html" class="nav-link">Chambres</a>
-                    <a href="restaurant.html" class="nav-link active">Restaurant</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="../home/index.html" class="nav-link">Accueil</a>
+                    <a href="../rooms/rooms.html" class="nav-link">Chambres</a>
+                    <a href="../restaurant/restaurant.html" class="nav-link active">Restaurant</a>
+                    <a href="../contact/contact.html" class="nav-link">Contact</a>
                 </div>
                 
                 <div class="cta-buttons d-none d-lg-flex">
                     <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
                         <i class="icon-phone mr-2"></i>Appeler
                     </a>
-                    <a href="contact.html" class="btn-cta btn-primary-modern">
+                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">
                         Réserver
                     </a>
                 </div>
@@ -72,13 +73,13 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-content">
-                <a href="index.html" class="mobile-nav-link">Accueil</a>
-                <a href="rooms.html" class="mobile-nav-link">Chambres</a>
-                <a href="restaurant.html" class="mobile-nav-link">Restaurant</a>
-                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <a href="../home/index.html" class="mobile-nav-link">Accueil</a>
+                <a href="../rooms/rooms.html" class="mobile-nav-link">Chambres</a>
+                <a href="../restaurant/restaurant.html" class="mobile-nav-link">Restaurant</a>
+                <a href="../contact/contact.html" class="mobile-nav-link">Contact</a>
                 <div class="mobile-cta">
                     <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
-                    <a href="contact.html" class="btn-cta btn-primary-modern">Réserver</a>
+                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">Réserver</a>
                 </div>
             </div>
         </div>
@@ -88,8 +89,8 @@
     <section class="page-header-modern">
         <div class="hero-video">
             <video autoplay muted loop playsinline poster="images/cover.jpeg">
-                <source src="images/restaurant-video.mp4" type="video/mp4">
-                <source src="images/cover.mp4" type="video/mp4">
+                <source src="../../images/restaurant-video.mp4" type="video/mp4">
+                <source src="../../images/cover.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-overlay"></div>
@@ -98,7 +99,7 @@
                 <h1>Notre Restaurant</h1>
                 <p>Savourez l'art culinaire congolais dans un cadre d'exception</p>
                 <nav class="breadcrumb-modern">
-                    <a href="index.html">Accueil</a>
+                    <a href="../home/index.html">Accueil</a>
                     <span class="separator">/</span>
                     <span>Restaurant</span>
                 </nav>
@@ -127,11 +128,11 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="restaurant-gallery">
                         <div class="gallery-main">
-                            <img src="images/about1.jpeg" alt="Restaurant TresorLodge" class="img-fluid rounded">
+                            <img src="../../images/about1.jpeg" alt="Restaurant TresorLodge" class="img-fluid rounded">
                         </div>
                         <div class="gallery-thumbs">
-                            <img src="images/about2.jpeg" alt="Cuisine TresorLodge" class="img-fluid rounded">
-                            <img src="images/cover.jpeg" alt="Ambiance Restaurant" class="img-fluid rounded">
+                            <img src="../../images/about2.jpeg" alt="Cuisine TresorLodge" class="img-fluid rounded">
+                            <img src="../../images/cover.jpeg" alt="Ambiance Restaurant" class="img-fluid rounded">
                         </div>
                     </div>
                 </div>
@@ -174,7 +175,7 @@
                             <a href="tel:+243816144449" class="btn-cta btn-primary-modern">
                                 Réserver une Table
                             </a>
-                            <a href="contact.html" class="btn-cta btn-outline-modern">
+                            <a href="../contact/contact.html" class="btn-cta btn-outline-modern">
                                 Voir les Horaires
                             </a>
                         </div>
@@ -212,7 +213,7 @@
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="menu-item-modern">
                                 <div class="menu-item-image">
-                                    <img src="images/about1.jpeg" alt="Pondu" class="img-fluid">
+                                    <img src="../../images/about1.jpeg" alt="Pondu" class="img-fluid">
                                 </div>
                                 <div class="menu-item-content">
                                     <div class="menu-item-header">
@@ -234,7 +235,7 @@
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                             <div class="menu-item-modern">
                                 <div class="menu-item-image">
-                                    <img src="images/about2.jpeg" alt="Chikwangue" class="img-fluid">
+                                    <img src="../../images/about2.jpeg" alt="Chikwangue" class="img-fluid">
                                 </div>
                                 <div class="menu-item-content">
                                     <div class="menu-item-header">
@@ -256,7 +257,7 @@
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                             <div class="menu-item-modern">
                                 <div class="menu-item-image">
-                                    <img src="images/cover.jpeg" alt="Ntaba" class="img-fluid">
+                                    <img src="../../images/cover.jpeg" alt="Ntaba" class="img-fluid">
                                 </div>
                                 <div class="menu-item-content">
                                     <div class="menu-item-header">
@@ -278,7 +279,7 @@
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
                             <div class="menu-item-modern">
                                 <div class="menu-item-image">
-                                    <img src="images/about1.jpeg" alt="Sambaza" class="img-fluid">
+                                    <img src="../../images/about1.jpeg" alt="Sambaza" class="img-fluid">
                                 </div>
                                 <div class="menu-item-content">
                                     <div class="menu-item-header">
@@ -326,7 +327,7 @@
                 <a href="tel:+243816144449" class="btn-cta btn-primary-modern btn-large">
                     Commander Maintenant
                 </a>
-                <a href="contact.html" class="btn-cta btn-outline-modern btn-large ml-3">
+                <a href="../contact/contact.html" class="btn-cta btn-outline-modern btn-large ml-3">
                     Réserver une Table
                 </a>
             </div>
@@ -387,8 +388,9 @@
         <i class="icon-chevron-up"></i>
     </button>
 
-    <!-- Simplified JavaScript -->
-    <script src="scripts.js"></script>
+    <!-- JavaScript -->
+    <script src="../shared/js/scripts.js"></script>
+    <script src="js/restaurant.js"></script>
 </body>
 </html>
 
@@ -411,13 +413,14 @@
     <meta property="og:url" content="https://tresorlodge.com/restaurant.html">
     
     <!-- Favicon -->
-    <link rel="icon" href="images/about2.png" type="image/x-icon">
+    <link rel="icon" href="../../images/about2.png" type="image/x-icon">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Simplified CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../shared/css/styles.css">
+    <link rel="stylesheet" href="css/restaurant.css">
 </head>
 
 <body>
@@ -425,7 +428,7 @@
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loader">
             <div class="loader-logo">
-                <img src="images/about2.png" alt="TresorLodge Logo" class="loading-logo-img">
+                <img src="../../images/about2.png" alt="TresorLodge Logo" class="loading-logo-img">
             </div>
         </div>
     </div>
@@ -434,22 +437,22 @@
     <nav class="navbar-modern" id="mainNav">
         <div class="container">
             <div class="navbar-content">
-                <a href="index.html" class="navbar-brand-modern">
+                <a href="../home/index.html" class="navbar-brand-modern">
                     Tresor<span class="accent">Lodge</span>
                 </a>
                 
                 <div class="nav-modern d-none d-lg-flex">
-                    <a href="index.html" class="nav-link">Accueil</a>
-                    <a href="rooms.html" class="nav-link">Chambres</a>
-                    <a href="restaurant.html" class="nav-link active">Restaurant</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="../home/index.html" class="nav-link">Accueil</a>
+                    <a href="../rooms/rooms.html" class="nav-link">Chambres</a>
+                    <a href="../restaurant/restaurant.html" class="nav-link active">Restaurant</a>
+                    <a href="../contact/contact.html" class="nav-link">Contact</a>
                 </div>
                 
                 <div class="cta-buttons d-none d-lg-flex">
                     <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
                         <i class="icon-phone mr-2"></i>Appeler
                     </a>
-                    <a href="contact.html" class="btn-cta btn-primary-modern">
+                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">
                         Réserver
                     </a>
                 </div>
@@ -466,13 +469,13 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-content">
-                <a href="index.html" class="mobile-nav-link">Accueil</a>
-                <a href="rooms.html" class="mobile-nav-link">Chambres</a>
-                <a href="restaurant.html" class="mobile-nav-link">Restaurant</a>
-                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <a href="../home/index.html" class="mobile-nav-link">Accueil</a>
+                <a href="../rooms/rooms.html" class="mobile-nav-link">Chambres</a>
+                <a href="../restaurant/restaurant.html" class="mobile-nav-link">Restaurant</a>
+                <a href="../contact/contact.html" class="mobile-nav-link">Contact</a>
                 <div class="mobile-cta">
                     <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
-                    <a href="contact.html" class="btn-cta btn-primary-modern">Réserver</a>
+                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">Réserver</a>
                 </div>
             </div>
         </div>
@@ -482,8 +485,8 @@
     <section class="page-header-modern">
         <div class="hero-video">
             <video autoplay muted loop playsinline poster="images/cover.jpeg">
-                <source src="images/restaurant-video.mp4" type="video/mp4">
-                <source src="images/cover.mp4" type="video/mp4">
+                <source src="../../images/restaurant-video.mp4" type="video/mp4">
+                <source src="../../images/cover.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-overlay"></div>
@@ -492,7 +495,7 @@
                 <h1>Notre Restaurant</h1>
                 <p>Savourez l'art culinaire congolais dans un cadre d'exception</p>
                 <nav class="breadcrumb-modern">
-                    <a href="index.html">Accueil</a>
+                    <a href="../home/index.html">Accueil</a>
                     <span class="separator">/</span>
                     <span>Restaurant</span>
                 </nav>
@@ -521,11 +524,11 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="restaurant-gallery">
                         <div class="gallery-main">
-                            <img src="images/about1.jpeg" alt="Restaurant TresorLodge" class="img-fluid rounded">
+                            <img src="../../images/about1.jpeg" alt="Restaurant TresorLodge" class="img-fluid rounded">
                         </div>
                         <div class="gallery-thumbs">
-                            <img src="images/about2.jpeg" alt="Cuisine TresorLodge" class="img-fluid rounded">
-                            <img src="images/cover.jpeg" alt="Ambiance Restaurant" class="img-fluid rounded">
+                            <img src="../../images/about2.jpeg" alt="Cuisine TresorLodge" class="img-fluid rounded">
+                            <img src="../../images/cover.jpeg" alt="Ambiance Restaurant" class="img-fluid rounded">
                         </div>
                     </div>
                 </div>
@@ -568,7 +571,7 @@
                             <a href="tel:+243816144449" class="btn-cta btn-primary-modern">
                                 Réserver une Table
                             </a>
-                            <a href="contact.html" class="btn-cta btn-outline-modern">
+                            <a href="../contact/contact.html" class="btn-cta btn-outline-modern">
                                 Voir les Horaires
                             </a>
                         </div>
@@ -606,7 +609,7 @@
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="menu-item-modern">
                                 <div class="menu-item-image">
-                                    <img src="images/about1.jpeg" alt="Pondu" class="img-fluid">
+                                    <img src="../../images/about1.jpeg" alt="Pondu" class="img-fluid">
                                 </div>
                                 <div class="menu-item-content">
                                     <div class="menu-item-header">
@@ -628,7 +631,7 @@
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                             <div class="menu-item-modern">
                                 <div class="menu-item-image">
-                                    <img src="images/about2.jpeg" alt="Chikwangue" class="img-fluid">
+                                    <img src="../../images/about2.jpeg" alt="Chikwangue" class="img-fluid">
                                 </div>
                                 <div class="menu-item-content">
                                     <div class="menu-item-header">
@@ -650,7 +653,7 @@
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
                             <div class="menu-item-modern">
                                 <div class="menu-item-image">
-                                    <img src="images/cover.jpeg" alt="Ntaba" class="img-fluid">
+                                    <img src="../../images/cover.jpeg" alt="Ntaba" class="img-fluid">
                                 </div>
                                 <div class="menu-item-content">
                                     <div class="menu-item-header">
@@ -672,7 +675,7 @@
                         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
                             <div class="menu-item-modern">
                                 <div class="menu-item-image">
-                                    <img src="images/about1.jpeg" alt="Sambaza" class="img-fluid">
+                                    <img src="../../images/about1.jpeg" alt="Sambaza" class="img-fluid">
                                 </div>
                                 <div class="menu-item-content">
                                     <div class="menu-item-header">
@@ -720,7 +723,7 @@
                 <a href="tel:+243816144449" class="btn-cta btn-primary-modern btn-large">
                     Commander Maintenant
                 </a>
-                <a href="contact.html" class="btn-cta btn-outline-modern btn-large ml-3">
+                <a href="../contact/contact.html" class="btn-cta btn-outline-modern btn-large ml-3">
                     Réserver une Table
                 </a>
             </div>
@@ -781,8 +784,10 @@
         <i class="icon-chevron-up"></i>
     </button>
 
-    <!-- Simplified JavaScript -->
-    <script src="scripts.js"></script>
+    <!-- JavaScript -->
+    <script src="../shared/js/scripts.js"></script>
+    <script src="js/restaurant.js"></script>
 </body>
 </html>
+
 
