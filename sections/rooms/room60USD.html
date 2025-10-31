@@ -1,0 +1,2721 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Chambre Standard 60$ - TresorLodge | Confort et Élégance</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Découvrez notre chambre standard à 60$ par nuit au TresorLodge. Confort moderne, équipements de qualité et services inclus dans le quartier Golf Malela.">
+    <meta name="keywords" content="chambre standard TresorLodge, hôtel 60 dollars Lubumbashi, Golf Malela, chambre économique Congo">
+    <meta name="author" content="TresorLodge">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chambre Standard 60$ - TresorLodge">
+    <meta property="og:description" content="Chambre standard confortable avec tous les équipements modernes au cœur de Lubumbashi">
+    <meta property="og:image" content="images/about1.jpeg">
+    <meta property="og:url" content="https://tresorlodge.com/room60USD.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/about2.png" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"><!-- Modern Custom CSS -->
+        
+    <!-- Room Page Specific Styles -->
+    <style>
+        .room-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(220, 38, 38, 0.6)), url('images/about1.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            position: relative;
+        }
+        
+        .room-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(26, 26, 26, 0.7), rgba(220, 38, 38, 0.4));
+        }
+        
+        .room-main {
+            margin-top: -6rem;
+            position: relative;
+            z-index: 3;
+            padding: 2rem 0 4rem;
+        }
+        
+        .room-content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .room-media-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+            margin-bottom: 2rem;
+        }
+        
+        .room-video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .room-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .room-description {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .room-content-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .room-price-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .booking-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-input {
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+        
+        .room-info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--background-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .amenity-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .amenity-item.luxury {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 1px solid #f59e0b;
+        }
+        
+        .amenity-item.premium {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            border: 1px solid #6366f1;
+        }
+        
+        .amenity-icon {
+            font-size: 1.5rem;
+            min-width: 2rem;
+            text-align: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: white;
+        }
+        
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 1024px) {
+            .room-content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .room-hero {
+                height: 50vh;
+            }
+            
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .room-hero {
+                height: 40vh;
+            }
+            
+            .room-media-section,
+            .room-info-card,
+            .room-description,
+            .booking-card {
+                padding: 1.5rem;
+            }
+            
+            .room-main {
+                margin-top: -4rem;
+                padding: 1rem 0 2rem;
+            }
+        }
+        
+        .room-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .breadcrumb-modern {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .breadcrumb-modern a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb-modern a:hover {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-separator {
+            color: var(--accent-gold);
+        }
+        
+        .room-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        .room-price-badge {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 1rem;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .room-main {
+            margin-top: -6rem;
+            position: relative;
+            z-index: 3;
+            padding: 2rem 0 4rem;
+        }
+        
+        .room-content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .room-media-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+            margin-bottom: 2rem;
+        }
+        
+        .room-video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .room-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .video-play-overlay:hover {
+            background: rgba(26, 26, 26, 0.7);
+        }
+        
+        .play-button-large {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .play-button-large:hover {
+            transform: scale(1.1);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .room-details-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+            margin-bottom: 2rem;
+        }
+        
+        .room-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+        
+        .room-title h2 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .price-display {
+            text-align: right;
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+        
+        .price-period {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+        
+        .room-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .room-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-item-modern {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .feature-item-modern:hover {
+            background: rgba(220, 38, 38, 0.1);
+            border-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .feature-item-modern h5 {
+            color: var(--text-primary);
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .sidebar-modern {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .sidebar-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .amenity-tag {
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--primary-red);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .amenity-tag:hover {
+            background: var(--primary-red);
+            color: var(--text-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .about-section {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        .about-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        .booking-section {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            text-align: center;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .booking-section h4 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .booking-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+        
+        .booking-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .btn-book {
+            background: white;
+            color: var(--primary-red);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-book:hover {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        
+        .btn-call {
+            background: transparent;
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-call:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 991.98px) {
+            .room-content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .room-hero {
+                height: 50vh;
+                background-attachment: scroll;
+            }
+            
+            .room-main {
+                margin-top: -3rem;
+            }
+            
+            .room-title {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .price-display {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .room-features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .room-hero {
+                height: 40vh;
+            }
+            
+            .room-media-section,
+            .room-details-card,
+            .sidebar-card {
+                padding: 1.5rem;
+            }
+            
+            .breadcrumb-modern {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <nav class="navbar-modern" id="mainNav">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="index.html" class="navbar-brand-modern">
+                    Tresor<span class="accent">Lodge</span>
+                </a>
+                
+                <div class="nav-modern d-none d-lg-flex">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="rooms.html" class="nav-link">Chambres</a>
+                    <a href="restaurant.html" class="nav-link">Restaurant</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="cta-buttons d-none d-lg-flex">
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
+                        <i class="icon-phone mr-2"></i>Appeler
+                    </a>
+                    <a href="contact.html" class="btn-cta btn-primary-modern">
+                        Réserver
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+                <a href="rooms.html" class="mobile-nav-link">Chambres</a>
+                <a href="restaurant.html" class="mobile-nav-link">Restaurant</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <div class="mobile-cta">
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
+                    <a href="contact.html" class="btn-cta btn-primary-modern">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Room Hero Section -->
+    <section class="room-hero">
+        <div class="container">
+            <div class="hero-content">
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a>
+                    <span>/</span>
+                    <a href="rooms.html">Chambres</a>
+                    <span>/</span>
+                    <span>Chambre Standard</span>
+                </nav>
+                <h1 class="hero-title">Chambre Standard</h1>
+                <p class="hero-subtitle">Confort moderne et équipements de qualité pour un séjour agréable</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">60$</span>
+                        <span class="stat-label">Par Nuit</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">★★★</span>
+                        <span class="stat-label">Confort</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Main Content -->
+    <section class="room-main">
+        <div class="container">
+            <div class="room-content-grid">
+                <!-- Left Column - Media and Description -->
+                <div class="room-content-left">
+                    <!-- Room Media -->
+                    <div class="room-media-section">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Découvrez Votre Chambre</h3>
+                        <div class="room-video-container">
+                            <video autoplay muted loop playsinline>
+                                <source src="images/rooms1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Room Description -->
+                    <div class="room-description">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Description de la Chambre</h3>
+                        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
+                            Notre chambre standard offre un excellent rapport qualité-prix dans un cadre moderne et confortable. 
+                            Idéale pour les voyageurs d'affaires et les touristes, cette chambre dispose de tous les équipements 
+                            essentiels pour un séjour réussi au cœur de Lubumbashi.
+                        </p>
+                        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
+                            Profitez d'un espace bien aménagé avec un mobilier moderne, une connexion WiFi gratuite et un service 
+                            attentionné. L'emplacement privilégié du TresorLodge vous permet d'explorer facilement la ville tout 
+                            en bénéficiant d'un havre de paix pour vous reposer.
+                        </p>
+                        
+                        <!-- Amenities -->
+                        <h4 style="margin: 2rem 0 1rem; color: var(--text-dark);">Équipements Inclus</h4>
+                        <div class="amenities-grid">
+                            <div class="amenity-item">
+                                <div class="amenity-icon">📶</div>
+                                <span>WiFi Gratuit</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">☕</div>
+                                <span>Petit-déjeuner</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🛏️</div>
+                                <span>Lit Confortable</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🚿</div>
+                                <span>Salle de Bain Privée</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">📺</div>
+                                <span>Télévision</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🚗</div>
+                                <span>Parking Gratuit</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🏊</div>
+                                <span>Accès Piscine</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🛎️</div>
+                                <span>Service Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Booking and Info -->
+                <div class="room-content-right">
+                    <!-- Price Section -->
+                    <div class="room-price-section">
+                        <h3 style="margin-bottom: 0.5rem;">Chambre Standard</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">60$</div>
+                        <p style="opacity: 0.9; margin-bottom: 1.5rem;">par nuit</p>
+                        <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+                            <span style="font-size: 1.5rem;">★★★</span>
+                        </div>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Taxes et service inclus</p>
+                    </div>
+
+                    <!-- Booking Card -->
+                    <div class="booking-card">
+                        <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Réserver Maintenant</h4>
+                        <div class="booking-form">
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--text-dark);">Arrivée</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--text-dark);">Départ</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--text-dark);">Nombre d'invités</label>
+                                <select class="form-input">
+                                    <option value="1">1 Adulte</option>
+                                    <option value="2">2 Adultes</option>
+                                    <option value="3">3 Adultes</option>
+                                    <option value="4">4 Adultes</option>
+                                </select>
+                            </div>
+                            <a href="contact.html" class="btn-cta btn-primary-modern" style="text-align: center; text-decoration: none;">
+                                Réserver Cette Chambre
+                            </a>
+                            <a href="tel:+243816144449" class="btn-cta btn-outline-modern" style="text-align: center; text-decoration: none;">
+                                📞 Appeler Directement
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Room Info Card -->
+                    <div class="room-info-card">
+                        <h4 style="margin-bottom: 1rem; color: var(--text-dark);">Confort et Qualité</h4>
+                        <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Notre chambre standard allie confort moderne et prix accessible. Idéale pour découvrir Lubumbashi 
+                            dans les meilleures conditions avec tous les services essentiels inclus.
+                        </p>
+                        <div style="padding: 1rem; background: var(--background-accent); border-radius: 10px; border-left: 4px solid var(--secondary-color);">
+                            <h5 style="color: var(--text-dark); margin-bottom: 0.5rem;">Inclus dans votre séjour :</h5>
+                            <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-light);">
+                                <li>Petit-déjeuner continental gratuit</li>
+                                <li>Accès WiFi haut débit</li>
+                                <li>Service de ménage quotidien</li>
+                                <li>Accès piscine et espaces communs</li>
+                                <li>Parking sécurisé gratuit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Tresor<span style="color: var(--secondary-color);">Lodge</span></h3>
+                        <p>Votre destination de luxe au cœur de Lubumbashi, où tradition congolaise et confort moderne se rencontrent.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Accueil</a>
+                        <a href="rooms.html">Chambres</a>
+                        <a href="restaurant.html">Restaurant</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <div class="footer-links">
+                        <a href="#"><i class="icon-wifi"></i> WiFi Gratuit</a>
+                        <a href="#"><i class="icon-car"></i> Parking</a>
+                        <a href="#"><i class="icon-coffee"></i> Restaurant</a>
+                        <a href="#"><i class="icon-pool"></i> Piscine</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="footer-contact">
+                        <p><i class="icon-location"></i> Lubumbashi, RD Congo</p>
+                        <p><i class="icon-phone"></i> +243 816 144 449</p>
+                        <p><i class="icon-envelope"></i> info@tresorlodge.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 TresorLodge. Tous droits réservés. | Hôtel 3★ de luxe</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    mobileMenuBtn.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking on a link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Set minimum date to today for booking form
+        const dateInputs = document.querySelectorAll('input[type="date"]');
+        const today = new Date().toISOString().split('T')[0];
+        dateInputs.forEach(input => {
+            input.setAttribute('min', today);
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
+    <!-- Modern Navigation -->
+    <nav class="navbar-modern" id="mainNav">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="index.html" class="navbar-brand-modern">
+                    Tresor<span class="accent">Lodge</span>
+                </a>
+                
+                <div class="nav-modern d-none d-lg-flex">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="rooms.html" class="nav-link">Chambres</a>
+                    <a href="restaurant.html" class="nav-link">Restaurant</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="cta-buttons d-none d-lg-flex">
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
+                        <i class="icon-phone mr-2"></i>Appeler
+                    </a>
+                    <a href="contact.html" class="btn-cta btn-primary-modern">
+                        Réserver
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+                <a href="rooms.html" class="mobile-nav-link">Chambres</a>
+                <a href="restaurant.html" class="mobile-nav-link">Restaurant</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <div class="mobile-cta">
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
+                    <a href="contact.html" class="btn-cta btn-primary-modern">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Room Hero Section -->
+    <section class="room-hero">
+        <div class="container">
+            <div class="room-hero-content" data-aos="fade-up">
+                <div class="breadcrumb-modern">
+                    <a href="index.html">Accueil</a>
+                    <span class="breadcrumb-separator">•</span>
+                    <a href="rooms.html">Nos Chambres</a>
+                    <span class="breadcrumb-separator">•</span>
+                    <span>Chambre Standard</span>
+                </div>
+                <h1>Chambre Standard</h1>
+                <p class="lead">Confort moderne et élégance au cœur de Lubumbashi</p>
+                <div class="room-price-badge">60$ / Nuit</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Main Content -->
+    <section class="room-main">
+        <div class="container">
+            <div class="room-content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Room Video Section -->
+                    <div class="room-media-section" data-aos="fade-up">
+                        <div class="room-video-container">
+                            <video id="roomVideo" poster="images/about1.jpeg" preload="metadata">
+                                <source src="images/rooms3.mp4" type="video/mp4">
+                                <img src="images/about1.jpeg" alt="Chambre Standard">
+                            </video>
+                            <div class="video-play-overlay" id="videoPlayOverlay">
+                                <div class="play-button-large">
+                                    <i class="icon-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Details -->
+                    <div class="room-details-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="room-title">
+                            <div>
+                                <h2>Chambre Standard</h2>
+                                <p class="room-description">
+                                    Découvrez le parfait équilibre entre confort et fonctionnalité dans nos chambres standard. 
+                                    Conçues avec soin pour offrir une expérience relaxante, chaque chambre dispose d'équipements 
+                                    modernes et d'une décoration élégante qui reflète l'hospitalité congolaise authentique.
+                                </p>
+                            </div>
+                            <div class="price-display">
+                                <div class="price-amount">60$</div>
+                                <div class="price-period">par nuit</div>
+                            </div>
+                        </div>
+
+                        <!-- Room Features -->
+                        <div class="room-features-grid">
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-wifi"></i>
+                                </div>
+                                <h5>WiFi Gratuit</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-safe"></i>
+                                </div>
+                                <h5>Coffre-fort</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-car"></i>
+                                </div>
+                                <h5>Parking Gratuit</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-coffee"></i>
+                                </div>
+                                <h5>Petit Déjeuner</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-swimming"></i>
+                                </div>
+                                <h5>Accès Piscine</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-room-service"></i>
+                                </div>
+                                <h5>Room Service</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar-modern">
+                    <!-- Amenities -->
+                    <div class="sidebar-card" data-aos="fade-left">
+                        <h3>Services Inclus</h3>
+                        <div class="amenities-grid">
+                            <div class="amenity-tag">Accès Piscine</div>
+                            <div class="amenity-tag">Petit Déjeuner</div>
+                            <div class="amenity-tag">Parking Gratuit</div>
+                            <div class="amenity-tag">WiFi Gratuit</div>
+                            <div class="amenity-tag">Ventilation</div>
+                            <div class="amenity-tag">Room Service</div>
+                            <div class="amenity-tag">Coffre-fort</div>
+                            <div class="amenity-tag">Minibar</div>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="sidebar-card" data-aos="fade-left" data-aos-delay="200">
+                        <h3>À Propos</h3>
+                        <div class="about-section">
+                            <p>
+                                Plongez dans le confort et la commodité du TresorLodge. 
+                                Nos chambres accueillantes offrent un havre de détente après une journée d'exploration. 
+                                En plus d'un mobilier luxueux et d'une atmosphère tranquille, 
+                                votre séjour comprend un accès gratuit à notre piscine étincelante, 
+                                un délicieux petit-déjeuner pour alimenter vos aventures, une connexion Wi-Fi gratuite pour rester connecté, 
+                                et un parking pratique sur place pour votre tranquillité d'esprit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Booking Section -->
+                    <div class="sidebar-card booking-section" data-aos="fade-left" data-aos-delay="300">
+                        <h4>Réservez Maintenant</h4>
+                        <p>Profitez de nos tarifs préférentiels et réservez votre séjour d'exception.</p>
+                        <div class="booking-cta">
+                            <a href="contact.html" class="btn-book">
+                                <i class="icon-calendar mr-2"></i>Réserver en Ligne
+                            </a>
+                            <a href="tel:+243816144449" class="btn-call">
+                                <i class="icon-phone mr-2"></i>+243 816 144 449
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-section">
+                            <h3>TresorLodge</h3>
+                            <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="icon-facebook"></i></a>
+                                <a href="#" class="social-link"><i class="icon-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="icon-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-section">
+                            <h4>Localisation</h4>
+                            <div style="border-radius: 15px; overflow: hidden; margin-top: 1rem;">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.836524533088!2d27.44454867505468!3d-11.634996288570848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19723b97ea4cc931%3A0xbf1d28417bd8a0f6!2sTRESOR%20LODGE!5e0!3m2!1sen!2smy!4v1721815181935!5m2!1sen!2smy" 
+                                    width="100%" 
+                                    height="200" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            <div class="contact-info" style="margin-top: 1rem;">
+                                <div class="contact-item">
+                                    <i class="icon-map-marker"></i>
+                                    <span>586 Avenue du Plateau, Golf Malela, Lubumbashi</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="icon-phone"></i>
+                                    <span>+243 816 144 449</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="icon-envelope"></i>
+                                    <span>tresorlodgerdc@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; <span id="currentYear"></span> TresorLodge. Tous droits réservés.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-links-bottom">
+                            <a href="index.html">Retour à l'accueil</a>
+                            <a href="rooms.html">Autres chambres</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="icon-chevron-up"></i>
+    </button>
+
+    <script src="scripts.js"></script><!-- Room Page Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Video Play Functionality
+            const videoPlayOverlay = document.getElementById('videoPlayOverlay');
+            const roomVideo = document.getElementById('roomVideo');
+            
+            if (videoPlayOverlay && roomVideo) {
+                videoPlayOverlay.addEventListener('click', function() {
+                    if (roomVideo.paused) {
+                        roomVideo.play();
+                        this.style.display = 'none';
+                    }
+                });
+                
+                roomVideo.addEventListener('pause', function() {
+                    videoPlayOverlay.style.display = 'flex';
+                });
+                
+                roomVideo.addEventListener('ended', function() {
+                    videoPlayOverlay.style.display = 'flex';
+                    this.currentTime = 0;
+                });
+            }
+            
+            // Smooth scroll to booking section
+            const bookingButtons = document.querySelectorAll('.btn-book');
+            bookingButtons.forEach(button => {
+                if (button.getAttribute('href') === 'contact.html') {
+                    button.addEventListener('click', function(e) {
+                        // Allow normal navigation to contact page
+                    });
+                }
+            });
+            
+            // Feature hover effects
+            const featureItems = document.querySelectorAll('.feature-item-modern');
+            featureItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Amenity tag interactions
+            const amenityTags = document.querySelectorAll('.amenity-tag');
+            amenityTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    // Add click animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Chambre Standard 60$ - TresorLodge | Confort et Élégance</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Découvrez notre chambre standard à 60$ par nuit au TresorLodge. Confort moderne, équipements de qualité et services inclus dans le quartier Golf Malela.">
+    <meta name="keywords" content="chambre standard TresorLodge, hôtel 60 dollars Lubumbashi, Golf Malela, chambre économique Congo">
+    <meta name="author" content="TresorLodge">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chambre Standard 60$ - TresorLodge">
+    <meta property="og:description" content="Chambre standard confortable avec tous les équipements modernes au cœur de Lubumbashi">
+    <meta property="og:image" content="images/about1.jpeg">
+    <meta property="og:url" content="https://tresorlodge.com/room60USD.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/about2.png" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"><!-- Modern Custom CSS -->
+        
+    <!-- Room Page Specific Styles -->
+    <style>
+        .room-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(220, 38, 38, 0.6)), url('images/about1.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            position: relative;
+        }
+        
+        .room-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(26, 26, 26, 0.7), rgba(220, 38, 38, 0.4));
+        }
+        
+        .room-main {
+            margin-top: -6rem;
+            position: relative;
+            z-index: 3;
+            padding: 2rem 0 4rem;
+        }
+        
+        .room-content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .room-media-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+            margin-bottom: 2rem;
+        }
+        
+        .room-video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .room-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .room-description {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .room-content-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .room-price-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .booking-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-input {
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+        
+        .room-info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--background-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .amenity-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .amenity-item.luxury {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 1px solid #f59e0b;
+        }
+        
+        .amenity-item.premium {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            border: 1px solid #6366f1;
+        }
+        
+        .amenity-icon {
+            font-size: 1.5rem;
+            min-width: 2rem;
+            text-align: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: white;
+        }
+        
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 1024px) {
+            .room-content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .room-hero {
+                height: 50vh;
+            }
+            
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .room-hero {
+                height: 40vh;
+            }
+            
+            .room-media-section,
+            .room-info-card,
+            .room-description,
+            .booking-card {
+                padding: 1.5rem;
+            }
+            
+            .room-main {
+                margin-top: -4rem;
+                padding: 1rem 0 2rem;
+            }
+        }
+        
+        .room-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .breadcrumb-modern {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .breadcrumb-modern a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb-modern a:hover {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-separator {
+            color: var(--accent-gold);
+        }
+        
+        .room-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        .room-price-badge {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 1rem;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .room-main {
+            margin-top: -6rem;
+            position: relative;
+            z-index: 3;
+            padding: 2rem 0 4rem;
+        }
+        
+        .room-content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .room-media-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+            margin-bottom: 2rem;
+        }
+        
+        .room-video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .room-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .video-play-overlay:hover {
+            background: rgba(26, 26, 26, 0.7);
+        }
+        
+        .play-button-large {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .play-button-large:hover {
+            transform: scale(1.1);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .room-details-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+            margin-bottom: 2rem;
+        }
+        
+        .room-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+        
+        .room-title h2 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .price-display {
+            text-align: right;
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+        
+        .price-period {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+        
+        .room-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .room-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-item-modern {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .feature-item-modern:hover {
+            background: rgba(220, 38, 38, 0.1);
+            border-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .feature-item-modern h5 {
+            color: var(--text-primary);
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .sidebar-modern {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .sidebar-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .amenity-tag {
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--primary-red);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .amenity-tag:hover {
+            background: var(--primary-red);
+            color: var(--text-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .about-section {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        .about-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        .booking-section {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            text-align: center;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .booking-section h4 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .booking-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+        
+        .booking-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .btn-book {
+            background: white;
+            color: var(--primary-red);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-book:hover {
+            background: var(--accent-gold);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        
+        .btn-call {
+            background: transparent;
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-call:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 991.98px) {
+            .room-content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .room-hero {
+                height: 50vh;
+                background-attachment: scroll;
+            }
+            
+            .room-main {
+                margin-top: -3rem;
+            }
+            
+            .room-title {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .price-display {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .room-features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .room-hero {
+                height: 40vh;
+            }
+            
+            .room-media-section,
+            .room-details-card,
+            .sidebar-card {
+                padding: 1.5rem;
+            }
+            
+            .breadcrumb-modern {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Navigation -->
+    <nav class="navbar-modern" id="mainNav">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="index.html" class="navbar-brand-modern">
+                    Tresor<span class="accent">Lodge</span>
+                </a>
+                
+                <div class="nav-modern d-none d-lg-flex">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="rooms.html" class="nav-link">Chambres</a>
+                    <a href="restaurant.html" class="nav-link">Restaurant</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="cta-buttons d-none d-lg-flex">
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
+                        <i class="icon-phone mr-2"></i>Appeler
+                    </a>
+                    <a href="contact.html" class="btn-cta btn-primary-modern">
+                        Réserver
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+                <a href="rooms.html" class="mobile-nav-link">Chambres</a>
+                <a href="restaurant.html" class="mobile-nav-link">Restaurant</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <div class="mobile-cta">
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
+                    <a href="contact.html" class="btn-cta btn-primary-modern">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Room Hero Section -->
+    <section class="room-hero">
+        <div class="container">
+            <div class="hero-content">
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a>
+                    <span>/</span>
+                    <a href="rooms.html">Chambres</a>
+                    <span>/</span>
+                    <span>Chambre Standard</span>
+                </nav>
+                <h1 class="hero-title">Chambre Standard</h1>
+                <p class="hero-subtitle">Confort moderne et équipements de qualité pour un séjour agréable</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">60$</span>
+                        <span class="stat-label">Par Nuit</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">★★★</span>
+                        <span class="stat-label">Confort</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Main Content -->
+    <section class="room-main">
+        <div class="container">
+            <div class="room-content-grid">
+                <!-- Left Column - Media and Description -->
+                <div class="room-content-left">
+                    <!-- Room Media -->
+                    <div class="room-media-section">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Découvrez Votre Chambre</h3>
+                        <div class="room-video-container">
+                            <video autoplay muted loop playsinline>
+                                <source src="images/rooms1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Room Description -->
+                    <div class="room-description">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Description de la Chambre</h3>
+                        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
+                            Notre chambre standard offre un excellent rapport qualité-prix dans un cadre moderne et confortable. 
+                            Idéale pour les voyageurs d'affaires et les touristes, cette chambre dispose de tous les équipements 
+                            essentiels pour un séjour réussi au cœur de Lubumbashi.
+                        </p>
+                        <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
+                            Profitez d'un espace bien aménagé avec un mobilier moderne, une connexion WiFi gratuite et un service 
+                            attentionné. L'emplacement privilégié du TresorLodge vous permet d'explorer facilement la ville tout 
+                            en bénéficiant d'un havre de paix pour vous reposer.
+                        </p>
+                        
+                        <!-- Amenities -->
+                        <h4 style="margin: 2rem 0 1rem; color: var(--text-dark);">Équipements Inclus</h4>
+                        <div class="amenities-grid">
+                            <div class="amenity-item">
+                                <div class="amenity-icon">📶</div>
+                                <span>WiFi Gratuit</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">☕</div>
+                                <span>Petit-déjeuner</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🛏️</div>
+                                <span>Lit Confortable</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🚿</div>
+                                <span>Salle de Bain Privée</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">📺</div>
+                                <span>Télévision</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🚗</div>
+                                <span>Parking Gratuit</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🏊</div>
+                                <span>Accès Piscine</span>
+                            </div>
+                            <div class="amenity-item">
+                                <div class="amenity-icon">🛎️</div>
+                                <span>Service Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Booking and Info -->
+                <div class="room-content-right">
+                    <!-- Price Section -->
+                    <div class="room-price-section">
+                        <h3 style="margin-bottom: 0.5rem;">Chambre Standard</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">60$</div>
+                        <p style="opacity: 0.9; margin-bottom: 1.5rem;">par nuit</p>
+                        <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+                            <span style="font-size: 1.5rem;">★★★</span>
+                        </div>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Taxes et service inclus</p>
+                    </div>
+
+                    <!-- Booking Card -->
+                    <div class="booking-card">
+                        <h4 style="margin-bottom: 1.5rem; color: var(--text-dark);">Réserver Maintenant</h4>
+                        <div class="booking-form">
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--text-dark);">Arrivée</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--text-dark);">Départ</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--text-dark);">Nombre d'invités</label>
+                                <select class="form-input">
+                                    <option value="1">1 Adulte</option>
+                                    <option value="2">2 Adultes</option>
+                                    <option value="3">3 Adultes</option>
+                                    <option value="4">4 Adultes</option>
+                                </select>
+                            </div>
+                            <a href="contact.html" class="btn-cta btn-primary-modern" style="text-align: center; text-decoration: none;">
+                                Réserver Cette Chambre
+                            </a>
+                            <a href="tel:+243816144449" class="btn-cta btn-outline-modern" style="text-align: center; text-decoration: none;">
+                                📞 Appeler Directement
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Room Info Card -->
+                    <div class="room-info-card">
+                        <h4 style="margin-bottom: 1rem; color: var(--text-dark);">Confort et Qualité</h4>
+                        <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem;">
+                            Notre chambre standard allie confort moderne et prix accessible. Idéale pour découvrir Lubumbashi 
+                            dans les meilleures conditions avec tous les services essentiels inclus.
+                        </p>
+                        <div style="padding: 1rem; background: var(--background-accent); border-radius: 10px; border-left: 4px solid var(--secondary-color);">
+                            <h5 style="color: var(--text-dark); margin-bottom: 0.5rem;">Inclus dans votre séjour :</h5>
+                            <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-light);">
+                                <li>Petit-déjeuner continental gratuit</li>
+                                <li>Accès WiFi haut débit</li>
+                                <li>Service de ménage quotidien</li>
+                                <li>Accès piscine et espaces communs</li>
+                                <li>Parking sécurisé gratuit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Tresor<span style="color: var(--secondary-color);">Lodge</span></h3>
+                        <p>Votre destination de luxe au cœur de Lubumbashi, où tradition congolaise et confort moderne se rencontrent.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Accueil</a>
+                        <a href="rooms.html">Chambres</a>
+                        <a href="restaurant.html">Restaurant</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <div class="footer-links">
+                        <a href="#"><i class="icon-wifi"></i> WiFi Gratuit</a>
+                        <a href="#"><i class="icon-car"></i> Parking</a>
+                        <a href="#"><i class="icon-coffee"></i> Restaurant</a>
+                        <a href="#"><i class="icon-pool"></i> Piscine</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="footer-contact">
+                        <p><i class="icon-location"></i> Lubumbashi, RD Congo</p>
+                        <p><i class="icon-phone"></i> +243 816 144 449</p>
+                        <p><i class="icon-envelope"></i> info@tresorlodge.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 TresorLodge. Tous droits réservés. | Hôtel 3★ de luxe</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    mobileMenuBtn.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking on a link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Set minimum date to today for booking form
+        const dateInputs = document.querySelectorAll('input[type="date"]');
+        const today = new Date().toISOString().split('T')[0];
+        dateInputs.forEach(input => {
+            input.setAttribute('min', today);
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
+    <!-- Modern Navigation -->
+    <nav class="navbar-modern" id="mainNav">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="index.html" class="navbar-brand-modern">
+                    Tresor<span class="accent">Lodge</span>
+                </a>
+                
+                <div class="nav-modern d-none d-lg-flex">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="rooms.html" class="nav-link">Chambres</a>
+                    <a href="restaurant.html" class="nav-link">Restaurant</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="cta-buttons d-none d-lg-flex">
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
+                        <i class="icon-phone mr-2"></i>Appeler
+                    </a>
+                    <a href="contact.html" class="btn-cta btn-primary-modern">
+                        Réserver
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-nav-link">Accueil</a>
+                <a href="rooms.html" class="mobile-nav-link">Chambres</a>
+                <a href="restaurant.html" class="mobile-nav-link">Restaurant</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <div class="mobile-cta">
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
+                    <a href="contact.html" class="btn-cta btn-primary-modern">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Room Hero Section -->
+    <section class="room-hero">
+        <div class="container">
+            <div class="room-hero-content" data-aos="fade-up">
+                <div class="breadcrumb-modern">
+                    <a href="index.html">Accueil</a>
+                    <span class="breadcrumb-separator">•</span>
+                    <a href="rooms.html">Nos Chambres</a>
+                    <span class="breadcrumb-separator">•</span>
+                    <span>Chambre Standard</span>
+                </div>
+                <h1>Chambre Standard</h1>
+                <p class="lead">Confort moderne et élégance au cœur de Lubumbashi</p>
+                <div class="room-price-badge">60$ / Nuit</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Main Content -->
+    <section class="room-main">
+        <div class="container">
+            <div class="room-content-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Room Video Section -->
+                    <div class="room-media-section" data-aos="fade-up">
+                        <div class="room-video-container">
+                            <video id="roomVideo" poster="images/about1.jpeg" preload="metadata">
+                                <source src="images/rooms3.mp4" type="video/mp4">
+                                <img src="images/about1.jpeg" alt="Chambre Standard">
+                            </video>
+                            <div class="video-play-overlay" id="videoPlayOverlay">
+                                <div class="play-button-large">
+                                    <i class="icon-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Details -->
+                    <div class="room-details-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="room-title">
+                            <div>
+                                <h2>Chambre Standard</h2>
+                                <p class="room-description">
+                                    Découvrez le parfait équilibre entre confort et fonctionnalité dans nos chambres standard. 
+                                    Conçues avec soin pour offrir une expérience relaxante, chaque chambre dispose d'équipements 
+                                    modernes et d'une décoration élégante qui reflète l'hospitalité congolaise authentique.
+                                </p>
+                            </div>
+                            <div class="price-display">
+                                <div class="price-amount">60$</div>
+                                <div class="price-period">par nuit</div>
+                            </div>
+                        </div>
+
+                        <!-- Room Features -->
+                        <div class="room-features-grid">
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-wifi"></i>
+                                </div>
+                                <h5>WiFi Gratuit</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-safe"></i>
+                                </div>
+                                <h5>Coffre-fort</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-car"></i>
+                                </div>
+                                <h5>Parking Gratuit</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-coffee"></i>
+                                </div>
+                                <h5>Petit Déjeuner</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-swimming"></i>
+                                </div>
+                                <h5>Accès Piscine</h5>
+                            </div>
+                            
+                            <div class="feature-item-modern">
+                                <div class="feature-icon">
+                                    <i class="icon-room-service"></i>
+                                </div>
+                                <h5>Room Service</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar-modern">
+                    <!-- Amenities -->
+                    <div class="sidebar-card" data-aos="fade-left">
+                        <h3>Services Inclus</h3>
+                        <div class="amenities-grid">
+                            <div class="amenity-tag">Accès Piscine</div>
+                            <div class="amenity-tag">Petit Déjeuner</div>
+                            <div class="amenity-tag">Parking Gratuit</div>
+                            <div class="amenity-tag">WiFi Gratuit</div>
+                            <div class="amenity-tag">Ventilation</div>
+                            <div class="amenity-tag">Room Service</div>
+                            <div class="amenity-tag">Coffre-fort</div>
+                            <div class="amenity-tag">Minibar</div>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="sidebar-card" data-aos="fade-left" data-aos-delay="200">
+                        <h3>À Propos</h3>
+                        <div class="about-section">
+                            <p>
+                                Plongez dans le confort et la commodité du TresorLodge. 
+                                Nos chambres accueillantes offrent un havre de détente après une journée d'exploration. 
+                                En plus d'un mobilier luxueux et d'une atmosphère tranquille, 
+                                votre séjour comprend un accès gratuit à notre piscine étincelante, 
+                                un délicieux petit-déjeuner pour alimenter vos aventures, une connexion Wi-Fi gratuite pour rester connecté, 
+                                et un parking pratique sur place pour votre tranquillité d'esprit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Booking Section -->
+                    <div class="sidebar-card booking-section" data-aos="fade-left" data-aos-delay="300">
+                        <h4>Réservez Maintenant</h4>
+                        <p>Profitez de nos tarifs préférentiels et réservez votre séjour d'exception.</p>
+                        <div class="booking-cta">
+                            <a href="contact.html" class="btn-book">
+                                <i class="icon-calendar mr-2"></i>Réserver en Ligne
+                            </a>
+                            <a href="tel:+243816144449" class="btn-call">
+                                <i class="icon-phone mr-2"></i>+243 816 144 449
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-section">
+                            <h3>TresorLodge</h3>
+                            <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="icon-facebook"></i></a>
+                                <a href="#" class="social-link"><i class="icon-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="icon-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer-section">
+                            <h4>Localisation</h4>
+                            <div style="border-radius: 15px; overflow: hidden; margin-top: 1rem;">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.836524533088!2d27.44454867505468!3d-11.634996288570848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19723b97ea4cc931%3A0xbf1d28417bd8a0f6!2sTRESOR%20LODGE!5e0!3m2!1sen!2smy!4v1721815181935!5m2!1sen!2smy" 
+                                    width="100%" 
+                                    height="200" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            <div class="contact-info" style="margin-top: 1rem;">
+                                <div class="contact-item">
+                                    <i class="icon-map-marker"></i>
+                                    <span>586 Avenue du Plateau, Golf Malela, Lubumbashi</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="icon-phone"></i>
+                                    <span>+243 816 144 449</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="icon-envelope"></i>
+                                    <span>tresorlodgerdc@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; <span id="currentYear"></span> TresorLodge. Tous droits réservés.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-links-bottom">
+                            <a href="index.html">Retour à l'accueil</a>
+                            <a href="rooms.html">Autres chambres</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="icon-chevron-up"></i>
+    </button>
+
+    <script src="scripts.js"></script><!-- Room Page Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Video Play Functionality
+            const videoPlayOverlay = document.getElementById('videoPlayOverlay');
+            const roomVideo = document.getElementById('roomVideo');
+            
+            if (videoPlayOverlay && roomVideo) {
+                videoPlayOverlay.addEventListener('click', function() {
+                    if (roomVideo.paused) {
+                        roomVideo.play();
+                        this.style.display = 'none';
+                    }
+                });
+                
+                roomVideo.addEventListener('pause', function() {
+                    videoPlayOverlay.style.display = 'flex';
+                });
+                
+                roomVideo.addEventListener('ended', function() {
+                    videoPlayOverlay.style.display = 'flex';
+                    this.currentTime = 0;
+                });
+            }
+            
+            // Smooth scroll to booking section
+            const bookingButtons = document.querySelectorAll('.btn-book');
+            bookingButtons.forEach(button => {
+                if (button.getAttribute('href') === 'contact.html') {
+                    button.addEventListener('click', function(e) {
+                        // Allow normal navigation to contact page
+                    });
+                }
+            });
+            
+            // Feature hover effects
+            const featureItems = document.querySelectorAll('.feature-item-modern');
+            featureItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Amenity tag interactions
+            const amenityTags = document.querySelectorAll('.amenity-tag');
+            amenityTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    // Add click animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

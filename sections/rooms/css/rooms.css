@@ -1,0 +1,173 @@
+/* Rooms Section Specific Styles */
+/* Import shared variables */
+@import url('../shared/css/styles.css');
+
+/* Room-specific enhancements */
+.room-hero {
+    background: var(--gradient-dark);
+    padding: var(--space-3xl) 0;
+    text-align: center;
+    color: var(--text-white);
+}
+
+.room-card-modern {
+    background: var(--background-card);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    margin-bottom: var(--space-xl);
+}
+
+.room-card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-luxury);
+}
+
+.room-media {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.room-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.room-card-modern:hover .room-video {
+    transform: scale(1.05);
+}
+
+.video-indicator {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 40px;
+    height: 40px;
+    background: var(--background-overlay);
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.video-indicator:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.video-indicator::after {
+    content: '▶';
+    color: var(--text-white);
+    font-size: var(--text-sm);
+}
+
+.room-info {
+    padding: var(--space-xl);
+}
+
+.room-title {
+    font-size: var(--text-2xl);
+    color: var(--text-dark);
+    margin-bottom: var(--space-md);
+    font-family: 'Playfair Display', serif;
+}
+
+.room-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+}
+
+.room-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-medium);
+}
+
+.feature-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--secondary-color);
+}
+
+.room-price {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: var(--space-md);
+}
+
+.price-period {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.booking-form {
+    background: var(--background-light);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    margin-top: var(--space-xl);
+}
+
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-label {
+    display: block;
+    color: var(--text-medium);
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+}
+
+.form-input {
+    width: 100%;
+    padding: var(--space-md);
+    border: 2px solid var(--border-light);
+    border-radius: var(--border-radius);
+    font-size: var(--text-base);
+    transition: var(--transition-fast);
+    background: var(--background-white);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .room-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .room-media {
+        height: 250px;
+    }
+}
