@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 User-agent: *
 Allow: /
 
@@ -26,4 +27,34 @@ Disallow: /*.log$
 
 # Allow CSS and JS
 Allow: /*.css$
+=======
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tresor101.github.io/TresorLodge/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Specific rules for media files
+User-agent: *
+Allow: /images/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.mp4
+Allow: /*.webm
+
+# Block sensitive files
+Disallow: /*.json$
+Disallow: /config/
+Disallow: /logs/
+Disallow: /*.log$
+
+# Allow CSS and JS
+Allow: /*.css$
+>>>>>>> aea999e6255e3e312abc21240e8055c5205568a6
 Allow: /*.js$
