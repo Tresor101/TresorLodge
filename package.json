@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "tresorlodge-website",
   "version": "2.0.0",
@@ -8,123 +7,59 @@
     "start": "python -m http.server 8000",
     "serve": "npx serve .",
     "test": "echo \"No tests specified\" && exit 0",
-    "validate-html": "npx html-validate *.html",
-    "validate-css": "npx stylelint styles.css",
-    "optimize-images": "echo \"Image optimization would go here\"",
-    "build": "echo \"Static site - no build process needed\"",
-    "deploy": "echo \"Deploy to GitHub Pages\""
+    "build": "echo \"Build process for static site\" && exit 0",
+    "deploy": "gh-pages -d .",
+    "clean": "rm -rf node_modules package-lock.json",
+    "validate": "html-validate *.html",
+    "lint:css": "stylelint **/*.css",
+    "lint:js": "eslint **/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tresor101/TresorLodge.git"
+    "url": "git+https://github.com/tresor101/TresorLodge.git"
   },
   "keywords": [
     "hotel",
     "luxury",
+    "tresorlodge",
     "lubumbashi",
     "congo",
+    "drc",
     "hospitality",
-    "website",
-    "responsive",
-    "html5",
-    "css3",
-    "javascript"
+    "accommodation",
+    "travel",
+    "tourism",
+    "booking"
   ],
   "author": {
     "name": "TresorLodge Team",
-    "email": "tresorlodgerdc@gmail.com",
+    "email": "contact@tresorlodge.com",
     "url": "https://tresor101.github.io/TresorLodge/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Tresor101/TresorLodge/issues"
+    "url": "https://github.com/tresor101/TresorLodge/issues"
   },
   "homepage": "https://tresor101.github.io/TresorLodge/",
   "devDependencies": {
-    "html-validate": "^8.0.0",
-    "stylelint": "^15.0.0",
-    "serve": "^14.0.0"
+    "gh-pages": "^4.0.0",
+    "html-validate": "^7.13.0",
+    "stylelint": "^15.10.3"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead",
-    "not IE 11"
+    "not ie 11"
   ],
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=14.0.0"
   },
   "files": [
     "*.html",
-    "*.css",
-    "*.js",
-    "images/",
-    "README.md",
-    "LICENSE"
+    "css/**/*",
+    "js/**/*",
+    "images/**/*",
+    "fonts/**/*"
   ]
-=======
-{
-  "name": "tresorlodge-website",
-  "version": "2.0.0",
-  "description": "Luxury hotel website for TresorLodge - a premium 3-star hotel in Lubumbashi, Democratic Republic of Congo",
-  "main": "index.html",
-  "scripts": {
-    "start": "python -m http.server 8000",
-    "serve": "npx serve .",
-    "test": "echo \"No tests specified\" && exit 0",
-    "validate-html": "npx html-validate *.html",
-    "validate-css": "npx stylelint styles.css",
-    "optimize-images": "echo \"Image optimization would go here\"",
-    "build": "echo \"Static site - no build process needed\"",
-    "deploy": "echo \"Deploy to GitHub Pages\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tresor101/TresorLodge.git"
-  },
-  "keywords": [
-    "hotel",
-    "luxury",
-    "lubumbashi",
-    "congo",
-    "hospitality",
-    "website",
-    "responsive",
-    "html5",
-    "css3",
-    "javascript"
-  ],
-  "author": {
-    "name": "TresorLodge Team",
-    "email": "tresorlodgerdc@gmail.com",
-    "url": "https://tresor101.github.io/TresorLodge/"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Tresor101/TresorLodge/issues"
-  },
-  "homepage": "https://tresor101.github.io/TresorLodge/",
-  "devDependencies": {
-    "html-validate": "^8.0.0",
-    "stylelint": "^15.0.0",
-    "serve": "^14.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not IE 11"
-  ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "files": [
-    "*.html",
-    "*.css",
-    "*.js",
-    "images/",
-    "README.md",
-    "LICENSE"
-  ]
->>>>>>> aea999e6255e3e312abc21240e8055c5205568a6
 }
