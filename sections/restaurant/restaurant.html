@@ -14,13 +14,13 @@
     <meta property="og:title" content="Restaurant - TresorLodge">
     <meta property="og:description" content="Cuisine gastronomique et hospitalité congolaise à Lubumbashi">
     <meta property="og:image" content="images/cover.jpeg">
-    <meta property="og:url" content="https://tresorlodge.com/restaurant.html">
+    <meta property="og:url" content="https://tresor101.github.io/TresorLodge/sections/restaurant/restaurant.html">
     
     <!-- Favicon -->
     <link rel="icon" href="../../images/about2.png" type="image/x-icon">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +28,1206 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../shared/css/styles.css">
     <link rel="stylesheet" href="css/restaurant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Enhanced Glassmorphism Design */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --premium-gradient: linear-gradient(135deg, #d4af37, #ffd700);
+            --superior-gradient: linear-gradient(135deg, #c0392b, #e74c3c);
+            --standard-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+            --accent-gold: #d4af37;
+            --restaurant-primary: #2c3e50;
+            --restaurant-accent: #e67e22;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        .navbar-modern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .navbar-modern.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand-modern {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand-modern:hover {
+            color: #d4af37;
+        }
+
+        .navbar-brand-modern .accent {
+            color: #d4af37;
+        }
+
+        .nav-modern {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #d4af37;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #d4af37;
+            border-radius: 1px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-cta {
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-outline-modern {
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+            background: transparent;
+        }
+
+        .btn-outline-modern:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .btn-primary-modern {
+            background: #d4af37;
+            color: white;
+            border: 2px solid #d4af37;
+        }
+
+        .btn-primary-modern:hover {
+            background: transparent;
+            color: #d4af37;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 100%;
+            height: 2px;
+            background: #2c3e50;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            padding-top: 80px;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-nav-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: #d4af37;
+            padding-left: 1rem;
+        }
+
+        .mobile-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(44, 62, 80, 0.1);
+        }
+
+        /* Page Header Styles */
+        .page-header-modern {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .hero-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animated Hero Background */
+        .hero-overlay-animated {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(44, 62, 80, 0.8), 
+                rgba(231, 124, 34, 0.7), 
+                rgba(212, 175, 55, 0.6),
+                rgba(46, 204, 113, 0.7)
+            );
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: 1;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Hero Content Styling */
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 0 4rem;
+        }
+
+        .hero-breadcrumb {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-breadcrumb a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-breadcrumb a:hover {
+            color: #fff;
+        }
+
+        .page-header-content h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+        }
+
+        /* Glassmorphism Stats Cards */
+        .hero-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-card-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card-glass:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Hero CTA Button */
+        .btn-hero-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--glass-border);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-hero-glass:hover {
+            background: white;
+            color: #2c3e50;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Header Styling */
+        .section-header-glass {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+
+        .section-badge {
+            background: var(--restaurant-accent, #e67e22);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title-glass {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: #2c3e50;
+        }
+
+        .section-description-glass {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Restaurant About Section */
+        .restaurant-about-modern {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        }
+
+        .restaurant-gallery-glass {
+            position: relative;
+        }
+
+        .gallery-main-glass {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-main-glass img {
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-main-glass:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay-glass {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(44, 62, 80, 0.8), rgba(212, 175, 55, 0.6));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-main-glass:hover .gallery-overlay-glass {
+            opacity: 1;
+        }
+
+        .gallery-content-glass {
+            text-align: center;
+            color: white;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-main-glass:hover .gallery-content-glass {
+            transform: translateY(0);
+        }
+
+        .gallery-content-glass h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-thumbs-glass {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .thumb-item-glass {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumb-item-glass img {
+            transition: transform 0.3s ease;
+        }
+
+        .thumb-item-glass:hover img {
+            transform: scale(1.1);
+        }
+
+        .thumb-overlay-glass {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(212, 175, 55, 0.8);
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumb-item-glass:hover .thumb-overlay-glass {
+            opacity: 1;
+        }
+
+        .thumb-overlay-glass i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Restaurant Content */
+        .restaurant-content-glass {
+            padding: 2rem 0;
+        }
+
+        .restaurant-features-glass {
+            margin-bottom: 3rem;
+        }
+
+        .feature-item-glass {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item-glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon-glass {
+            width: 60px;
+            height: 60px;
+            background: var(--restaurant-accent, #e67e22);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content-glass h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-content-glass p {
+            color: #64748b;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .restaurant-cta-glass {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-restaurant-glass {
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            border: 2px solid;
+        }
+
+        .btn-restaurant-glass.premium {
+            background: var(--restaurant-accent, #e67e22);
+            color: white;
+            border-color: var(--restaurant-accent, #e67e22);
+        }
+
+        .btn-restaurant-glass.premium:hover {
+            background: transparent;
+            color: var(--restaurant-accent, #e67e22);
+        }
+
+        .btn-restaurant-glass.outline {
+            background: transparent;
+            color: #2c3e50;
+            border-color: #2c3e50;
+        }
+
+        .btn-restaurant-glass.outline:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        /* Menu Section */
+        .menu-modern {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-tab {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            color: #64748b;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-tab:hover,
+        .menu-tab.active {
+            background: var(--restaurant-accent, #e67e22);
+            border-color: var(--restaurant-accent, #e67e22);
+            color: white;
+        }
+
+        .menu-category {
+            display: none;
+        }
+
+        .menu-category.active {
+            display: block;
+        }
+
+        .menu-item-modern {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item-modern:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item-modern:hover .menu-item-image img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item-header h4 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--restaurant-accent, #e67e22);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .menu-item-description {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.specialty {
+            background: #d4af37;
+            color: white;
+        }
+
+        .badge.fresh {
+            background: #27ae60;
+            color: white;
+        }
+
+        .badge.traditional {
+            background: #8e44ad;
+            color: white;
+        }
+
+        .badge.popular {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .badge.premium {
+            background: #34495e;
+            color: white;
+        }
+
+        .badge.chef {
+            background: #f39c12;
+            color: white;
+        }
+
+        .badge.local {
+            background: #16a085;
+            color: white;
+        }
+
+        .badge.healthy {
+            background: #2ecc71;
+            color: white;
+        }
+
+        /* Footer Styles */
+        .footer-modern {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+        }
+
+        .footer-section h4 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #d4af37;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            color: #d4af37;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .navbar-brand-modern {
+                font-size: 1.6rem;
+            }
+            
+            .nav-modern {
+                gap: 1.5rem;
+            }
+            
+            .btn-cta {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            
+            .hero-stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1.2rem;
+            }
+            
+            .menu-tabs {
+                gap: 0.5rem;
+            }
+            
+            .menu-tab {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .navbar-modern {
+                padding: 0.8rem 0;
+            }
+            
+            .navbar-brand-modern {
+                font-size: 1.5rem;
+            }
+            
+            .page-header-content {
+                padding: 8rem 0 3rem;
+            }
+            
+            .page-header-content h1 {
+                font-size: clamp(2.5rem, 7vw, 4rem);
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .restaurant-about-modern {
+                padding: 3rem 0;
+            }
+            
+            .gallery-thumbs-glass {
+                margin-top: 1rem;
+            }
+            
+            .restaurant-cta-glass {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-modern {
+                padding: 0.7rem 0;
+            }
+            
+            .navbar-brand-modern {
+                font-size: 1.4rem;
+            }
+            
+            .hero-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 400px;
+            }
+            
+            .section-title-glass {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+            
+            .section-description-glass {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .page-header-content {
+                padding: 6rem 0 2rem;
+            }
+            
+            .feature-item-glass {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .restaurant-cta-glass {
+                flex-direction: column;
+            }
+            
+            .menu-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .menu-tab {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-breadcrumb {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .page-header-content h1 {
+                font-size: clamp(2rem, 10vw, 3rem);
+                margin-bottom: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .stat-card-glass {
+                padding: 1.5rem 1rem;
+            }
+            
+            .stat-icon {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section-header-glass {
+                margin-bottom: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .restaurant-content-glass {
+                padding: 1rem 0;
+            }
+            
+            .feature-item-glass {
+                padding: 1rem;
+            }
+            
+            .menu-item-content {
+                padding: 1rem;
+            }
+            
+            .menu-item-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .btn-restaurant-glass {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .restaurant-cta-glass {
+                gap: 0.5rem;
+            }
+            
+            .menu-item-modern {
+                margin-bottom: 1.5rem;
+            }
+            
+            .gallery-thumbs-glass {
+                gap: 0.5rem;
+            }
+            
+            .btn-restaurant-glass {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animations and Transitions */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .mb-0 { margin-bottom: 0; }
+        .mb-3 { margin-bottom: 1rem; }
+        .mb-4 { margin-bottom: 1.5rem; }
+        .mb-5 { margin-bottom: 3rem; }
+        .mt-4 { margin-top: 1.5rem; }
+        .mt-5 { margin-top: 3rem; }
+        .p-0 { padding: 0; }
+        .pt-5 { padding-top: 3rem; }
+        .pb-5 { padding-bottom: 3rem; }
+        
+        .d-flex { display: flex; }
+        .justify-content-center { justify-content: center; }
+        .justify-content-between { justify-content: space-between; }
+        .align-items-center { align-items: center; }
+        .flex-column { flex-direction: column; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-3 { gap: 1rem; }
+        
+        .position-relative { position: relative; }
+        .position-absolute { position: absolute; }
+        
+        .w-100 { width: 100%; }
+        .h-100 { height: 100%; }
+        
+        .overflow-hidden { overflow: hidden; }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus states for better accessibility */
+        .btn-restaurant-glass:focus,
+        .btn-cta:focus,
+        .menu-tab:focus {
+            outline: 2px solid #3498db;
+            outline-offset: 2px;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .glassmorphism {
+                border: 2px solid #333;
+            }
+            
+            .text-light {
+                color: #000 !important;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .navbar-modern,
+            .back-to-top,
+            .mobile-menu-toggle,
+            .mobile-menu-backdrop {
+                display: none !important;
+            }
+            
+            .glassmorphism {
+                background: #fff !important;
+                border: 1px solid #000 !important;
+            }
+            
+            .text-light {
+                color: #000 !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -57,7 +1257,7 @@
                 
                 <div class="cta-buttons d-none d-lg-flex">
                     <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
-                        <i class="icon-phone mr-2"></i>Appeler
+                        <i class="fas fa-phone"></i>Appeler
                     </a>
                     <a href="../contact/contact.html" class="btn-cta btn-primary-modern">
                         Réserver
@@ -65,7 +1265,7 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
+                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -81,7 +1281,9 @@
                 <a href="../restaurant/restaurant.html" class="mobile-nav-link">Restaurant</a>
                 <a href="../contact/contact.html" class="mobile-nav-link">Contact</a>
                 <div class="mobile-cta">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
+                        <i class="fas fa-phone"></i>Appeler
+                    </a>
                     <a href="../contact/contact.html" class="btn-cta btn-primary-modern">Réserver</a>
                 </div>
             </div>
@@ -91,33 +1293,61 @@
     <!-- Page Header -->
     <section class="page-header-modern">
         <div class="hero-video">
-            <video autoplay muted loop playsinline poster="../../images/cover.jpeg">
+            <video autoplay muted loop playsinline poster="../../images/cover.jpeg" aria-label="TresorLodge restaurant tour video">
                 <source src="../../videos/tours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay-animated"></div>
         <div class="container">
             <div class="page-header-content text-center">
-                <h1>Notre Restaurant</h1>
-                <p>Savourez l'art culinaire congolais dans un cadre d'exception</p>
-                <nav class="breadcrumb-modern">
+                <div class="hero-breadcrumb" data-aos="fade-down">
                     <a href="../../index.html">Accueil</a>
-                    <span class="separator">/</span>
+                    <span class="separator"> / </span>
                     <span>Restaurant</span>
-                </nav>
-                <div class="header-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Produits Frais</span>
+                </div>
+                <h1 data-aos="fade-up" data-aos-delay="200">Gastronomie d'Exception</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                    Savourez l'art culinaire congolais dans un cadre d'exception, où tradition et modernité se rencontrent
+                </p>
+                
+                <!-- Glassmorphism Stats Cards -->
+                <div class="hero-stats-grid" data-aos="fade-up" data-aos-delay="600">
+                    <div class="stat-card-glass">
+                        <div class="stat-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Produits Frais</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">★★★</span>
-                        <span class="stat-label">Cuisine d'Excellence</span>
+                    <div class="stat-card-glass">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">★★★</span>
+                            <span class="stat-label">Cuisine d'Excellence</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">7j/7</span>
-                        <span class="stat-label">Service Continu</span>
+                    <div class="stat-card-glass">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">7j/7</span>
+                            <span class="stat-label">Service Continu</span>
+                        </div>
                     </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="800">
+                    <a href="tel:+243816144449" class="btn-hero-glass">
+                        <i class="fas fa-calendar-alt me-2"></i>
+                        Réserver une Table
+                    </a>
                 </div>
             </div>
         </div>
@@ -126,58 +1356,85 @@
     <!-- Restaurant About Section -->
     <section class="restaurant-about-modern">
         <div class="container">
+            <div class="section-header-glass text-center" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-chef-hat me-2"></i>
+                    Gastronomie Congolaise
+                </div>
+                <h2 class="section-title-glass">L'Excellence Culinaire</h2>
+                <p class="section-description-glass">
+                    Notre restaurant célèbre la richesse de la cuisine congolaise avec une touche moderne et raffinée. 
+                    Chaque plat raconte une histoire, celle de notre patrimoine culinaire revisité par nos chefs passionnés.
+                </p>
+            </div>
+            
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <div class="restaurant-gallery">
-                        <div class="gallery-main">
+                    <div class="restaurant-gallery-glass">
+                        <div class="gallery-main-glass">
                             <img src="../../images/about1.jpeg" alt="Restaurant TresorLodge" class="img-fluid rounded">
+                            <div class="gallery-overlay-glass">
+                                <div class="gallery-content-glass">
+                                    <h4>Ambiance Chaleureuse</h4>
+                                    <p>Un cadre raffiné pour une expérience culinaire inoubliable</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="gallery-thumbs">
-                            <img src="../../images/about2.jpeg" alt="Cuisine TresorLodge" class="img-fluid rounded">
-                            <img src="../../images/cover.jpeg" alt="Ambiance Restaurant" class="img-fluid rounded">
+                        <div class="gallery-thumbs-glass">
+                            <div class="thumb-item-glass">
+                                <img src="../../images/about2.jpeg" alt="Cuisine TresorLodge" class="img-fluid rounded">
+                                <div class="thumb-overlay-glass">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                            </div>
+                            <div class="thumb-item-glass">
+                                <img src="../../images/cover.jpeg" alt="Ambiance Restaurant" class="img-fluid rounded">
+                                <div class="thumb-overlay-glass">
+                                    <i class="fas fa-wine-glass"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <div class="restaurant-content">
-                        <div class="section-header">
-                            <span class="section-subtitle">Gastronomie Congolaise</span>
-                            <h2>L'Excellence Culinaire</h2>
-                            <p class="section-description">
-                                Notre restaurant célèbre la richesse de la cuisine congolaise avec une touche moderne et raffinée. 
-                                Chaque plat raconte une histoire, celle de notre patrimoine culinaire revisité par nos chefs passionnés.
-                            </p>
-                        </div>
-                        
-                        <div class="restaurant-features">
-                            <div class="feature-item">
-                                <i class="icon-chef"></i>
-                                <div class="feature-content">
+                    <div class="restaurant-content-glass">
+                        <div class="restaurant-features-glass">
+                            <div class="feature-item-glass">
+                                <div class="feature-icon-glass">
+                                    <i class="fas fa-chef-hat"></i>
+                                </div>
+                                <div class="feature-content-glass">
                                     <h4>Chefs Expérimentés</h4>
                                     <p>Équipe de chefs formés aux meilleures techniques culinaires</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
-                                <i class="icon-leaf"></i>
-                                <div class="feature-content">
+                            <div class="feature-item-glass">
+                                <div class="feature-icon-glass">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="feature-content-glass">
                                     <h4>Ingrédients Locaux</h4>
                                     <p>Produits frais sélectionnés auprès de producteurs locaux</p>
                                 </div>
                             </div>
-                            <div class="feature-item">
-                                <i class="icon-utensils"></i>
-                                <div class="feature-content">
+                            <div class="feature-item-glass">
+                                <div class="feature-icon-glass">
+                                    <i class="fas fa-concierge-bell"></i>
+                                </div>
+                                <div class="feature-content-glass">
                                     <h4>Service Personnalisé</h4>
                                     <p>Attention particulière à chaque détail de votre expérience</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="restaurant-cta">
-                            <a href="tel:+243816144449" class="btn-cta btn-primary-modern">
+                        <div class="restaurant-cta-glass">
+                            <a href="tel:+243816144449" class="btn-restaurant-glass premium">
+                                <i class="fas fa-phone me-2"></i>
                                 Réserver une Table
                             </a>
-                            <a href="../contact/contact.html" class="btn-cta btn-outline-modern">
+                            <a href="../contact/contact.html" class="btn-restaurant-glass outline">
+                                <i class="fas fa-clock me-2"></i>
                                 Voir les Horaires
                             </a>
                         </div>
@@ -346,9 +1603,9 @@
                             <h3>TresorLodge</h3>
                             <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
                             <div class="social-links">
-                                <a href="#" class="social-link"><i class="icon-facebook"></i></a>
-                                <a href="#" class="social-link"><i class="icon-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="icon-tiktok"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
                             </div>
                         </div>
                     </div>
@@ -358,15 +1615,15 @@
                             <h4>Contact</h4>
                             <div class="contact-info">
                                 <div class="contact-item">
-                                    <i class="icon-map-marker"></i>
+                                    <i class="fas fa-map-marker-alt"></i>
                                     <span>586 Avenue du Plateau, Golf Malela, Lubumbashi</span>
                                 </div>
                                 <div class="contact-item">
-                                    <i class="icon-phone"></i>
+                                    <i class="fas fa-phone"></i>
                                     <a href="tel:+243816144449" class="contact-link">+243 816 144 449</a>
                                 </div>
                                 <div class="contact-item">
-                                    <i class="icon-envelope"></i>
+                                    <i class="fas fa-envelope"></i>
                                     <a href="mailto:tresorlodgerdc@gmail.com" class="contact-link">tresorlodgerdc@gmail.com</a>
                                 </div>
                             </div>
@@ -386,13 +1643,136 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-        <i class="icon-chevron-up"></i>
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">
+        <i class="fas fa-chevron-up"></i>
     </button>
 
     <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../shared/js/scripts.js"></script>
     <script src="js/restaurant.js"></script>
+    
+    <script>
+        // Initialize AOS with error handling
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        }
+
+        // Complete functionality setup
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                // Navbar functionality
+                const navbar = document.getElementById('mainNav');
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const backToTopBtn = document.getElementById('backToTop');
+
+                // Navbar scroll effect and back-to-top visibility
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY;
+                    
+                    // Navbar scroll effect
+                    if (scrollY > 100) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                    
+                    // Back to top button visibility
+                    if (backToTopBtn) {
+                        if (scrollY > 300) {
+                            backToTopBtn.classList.add('show');
+                        } else {
+                            backToTopBtn.classList.remove('show');
+                        }
+                    }
+                });
+
+                // Back to top functionality
+                if (backToTopBtn) {
+                    backToTopBtn.addEventListener('click', () => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+
+                // Mobile menu toggle
+                if (mobileMenuBtn && mobileMenu) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        const isActive = mobileMenu.classList.contains('active');
+                        
+                        if (isActive) {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuBtn.classList.remove('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        } else {
+                            mobileMenu.classList.add('active');
+                            mobileMenuBtn.classList.add('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+
+                    // Close mobile menu when clicking outside
+                    mobileMenu.addEventListener('click', (e) => {
+                        if (e.target === mobileMenu) {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuBtn.classList.remove('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        }
+                    });
+
+                    // Close mobile menu when clicking nav links
+                    const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuBtn.classList.remove('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        });
+                    });
+                }
+
+                // Menu tab functionality
+                const menuTabs = document.querySelectorAll('.menu-tab');
+                const menuCategories = document.querySelectorAll('.menu-category');
+
+                menuTabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const category = tab.getAttribute('data-category');
+                        
+                        // Remove active class from all tabs and categories
+                        menuTabs.forEach(t => t.classList.remove('active'));
+                        menuCategories.forEach(c => c.classList.remove('active'));
+                        
+                        // Add active class to clicked tab and corresponding category
+                        tab.classList.add('active');
+                        const targetCategory = document.getElementById(category);
+                        if (targetCategory) {
+                            targetCategory.classList.add('active');
+                        }
+                    });
+                });
+
+                // Update current year
+                const yearElement = document.getElementById('currentYear');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+            } catch (err) {
+                console.warn('Initialization error:', err);
+            }
+        });
+    </script>
 </body>
 </html>
 
