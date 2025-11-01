@@ -14,7 +14,7 @@
     <meta property="og:title" content="Nos Chambres - TresorLodge">
     <meta property="og:description" content="Chambres de luxe avec service d'excellence à Lubumbashi">
     <meta property="og:image" content="../../images/cover.jpeg">
-    <meta property="og:url" content="https://tresorlodge.com/rooms.html">
+    <meta property="og:url" content="https://tresor101.github.io/TresorLodge/sections/rooms/rooms.html">
     
     <!-- Favicon -->
     <link rel="icon" href="../../images/about2.png" type="image/x-icon">
@@ -788,6 +788,7 @@
                             <video class="room-video-glass" poster="../../images/cover.jpeg" muted loop preload="metadata" playsinline aria-label="Luxury suite video">
                                 <source src="videos/rooms1.mp4" type="video/mp4">
                                 <img src="../../images/cover.jpeg" alt="Suite de Luxe TresorLodge">
+                                Your browser does not support the video tag.
                             </video>
                             <div class="room-overlay-glass">
                                 <div class="room-overlay-content-glass">
@@ -869,6 +870,7 @@
                             <video class="room-video-glass" poster="../../images/about2.jpeg" muted loop preload="metadata" playsinline aria-label="Superior room video">
                                 <source src="videos/rooms2.mp4" type="video/mp4">
                                 <img src="../../images/about2.jpeg" alt="Chambre Supérieure TresorLodge">
+                                Your browser does not support the video tag.
                             </video>
                             <div class="room-overlay-glass">
                                 <div class="room-overlay-content-glass">
@@ -950,6 +952,7 @@
                             <video class="room-video-glass" poster="../../images/about1.jpeg" muted loop preload="metadata" playsinline aria-label="Standard room video">
                                 <source src="videos/rooms3.mp4" type="video/mp4">
                                 <img src="../../images/about1.jpeg" alt="Chambre Standard TresorLodge">
+                                Your browser does not support the video tag.
                             </video>
                             <div class="room-overlay-glass">
                                 <div class="room-overlay-content-glass">
@@ -1083,40 +1086,64 @@
     <script src="js/rooms.js"></script>
     
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
+        // Initialize AOS with error handling
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        }
 
         // Video controls and current year setup
         document.addEventListener('DOMContentLoaded', function() {
-            // Video play functionality
-            document.querySelectorAll('.room-video-glass').forEach(video => {
-                const playBtn = video.parentElement.querySelector('.video-play-btn');
-                
-                if (playBtn) {
-                    playBtn.addEventListener('click', () => {
-                        if (video.paused) {
-                            video.play();
-                            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                        } else {
-                            video.pause();
-                            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            try {
+                // Video play functionality
+                document.querySelectorAll('.room-video-glass').forEach(video => {
+                    const playBtn = video.parentElement.querySelector('.video-play-btn');
+                    
+                    if (playBtn) {
+                        playBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            try {
+                                if (video.paused) {
+                                    video.play().catch(err => console.warn('Video play failed:', err));
+                                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                                } else {
+                                    video.pause();
+                                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                                }
+                            } catch (err) {
+                                console.warn('Video control error:', err);
+                            }
+                        });
+                    }
+
+                    // Auto-play on hover with error handling
+                    video.addEventListener('mouseenter', () => {
+                        try {
+                            video.play().catch(err => console.warn('Auto-play failed:', err));
+                        } catch (err) {
+                            console.warn('Video hover play error:', err);
                         }
                     });
+                    
+                    video.addEventListener('mouseleave', () => {
+                        try {
+                            video.pause();
+                        } catch (err) {
+                            console.warn('Video pause error:', err);
+                        }
+                    });
+                });
+
+                // Update current year
+                const yearElement = document.getElementById('currentYear');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
                 }
-
-                // Auto-play on hover
-                video.addEventListener('mouseenter', () => video.play());
-                video.addEventListener('mouseleave', () => video.pause());
-            });
-
-            // Update current year
-            const yearElement = document.getElementById('currentYear');
-            if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
+            } catch (err) {
+                console.warn('Initialization error:', err);
             }
         });
     </script>
