@@ -28,6 +28,509 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../shared/css/styles.css">
     <link rel="stylesheet" href="css/rooms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Enhanced Glassmorphism Design */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --premium-gradient: linear-gradient(135deg, #d4af37, #ffd700);
+            --superior-gradient: linear-gradient(135deg, #c0392b, #e74c3c);
+            --standard-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+        }
+
+        /* Animated Hero Background */
+        .hero-overlay-animated {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(44, 62, 80, 0.8), 
+                rgba(231, 76, 60, 0.7), 
+                rgba(243, 156, 18, 0.6),
+                rgba(46, 204, 113, 0.7)
+            );
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: 1;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Hero Content Styling */
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            padding: 8rem 0 4rem;
+        }
+
+        .hero-breadcrumb {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-breadcrumb a {
+            color: var(--accent-gold, #d4af37);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-breadcrumb a:hover {
+            color: #fff;
+        }
+
+        .page-header-content h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Glassmorphism Stats Cards */
+        .hero-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-card-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card-glass:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Hero CTA Button */
+        .btn-hero-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--glass-border);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-hero-glass:hover {
+            background: white;
+            color: #2c3e50;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Header Styling */
+        .section-header-glass {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+
+        .section-badge {
+            background: var(--premium-gradient);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title-glass {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: #2c3e50;
+        }
+
+        .section-description-glass {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Rooms Grid */
+        .rooms-grid-glass {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Room Cards */
+        .room-card-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .room-card-glass:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .room-tier-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 10;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .luxury-tier .room-tier-badge {
+            background: var(--premium-gradient);
+            color: white;
+        }
+
+        .superior-tier .room-tier-badge {
+            background: var(--superior-gradient);
+            color: white;
+        }
+
+        .standard-tier .room-tier-badge {
+            background: var(--standard-gradient);
+            color: white;
+        }
+
+        /* Room Media */
+        .room-media-container {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .room-video-glass {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .room-card-glass:hover .room-video-glass {
+            transform: scale(1.05);
+        }
+
+        .room-overlay-glass {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .room-card-glass:hover .room-overlay-glass {
+            opacity: 1;
+        }
+
+        .room-overlay-content-glass {
+            text-align: center;
+            color: white;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .room-card-glass:hover .room-overlay-content-glass {
+            transform: translateY(0);
+        }
+
+        .room-overlay-content-glass h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .room-overlay-content-glass p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .btn-room-discover {
+            background: white;
+            color: #2c3e50;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-room-discover:hover {
+            background: #d4af37;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .video-play-btn {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* Room Content */
+        .room-content-glass {
+            padding: 2rem;
+        }
+
+        .room-header-glass {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .room-title-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .room-rating-glass {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stars {
+            color: #d4af37;
+            font-size: 1rem;
+        }
+
+        .rating-text {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .room-price-glass {
+            text-align: right;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .price-period {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .room-description-glass {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Room Features */
+        .room-features-glass {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-glass {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-glass:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .feature-glass.premium {
+            border-left: 3px solid #d4af37;
+        }
+
+        .feature-glass.luxury {
+            border-left: 3px solid #e74c3c;
+        }
+
+        .feature-glass.standard {
+            border-left: 3px solid #3498db;
+        }
+
+        .feature-glass i {
+            color: #2c3e50;
+            width: 16px;
+        }
+
+        /* Room CTA */
+        .room-cta-glass {
+            text-align: center;
+        }
+
+        .btn-room-glass {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn-room-glass.premium {
+            background: var(--premium-gradient);
+            color: white;
+        }
+
+        .btn-room-glass.superior {
+            background: var(--superior-gradient);
+            color: white;
+        }
+
+        .btn-room-glass.standard {
+            background: var(--standard-gradient);
+            color: white;
+        }
+
+        .btn-room-glass:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .rooms-grid-glass {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .room-header-glass {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .room-price-glass {
+                text-align: left;
+            }
+
+            .room-features-glass {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -94,224 +597,314 @@
                 <source src="videos/rooms-tour.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay-animated"></div>
         <div class="container">
             <div class="page-header-content text-center">
-                <h1>Nos Chambres</h1>
-                <p>Découvrez nos espaces de séjour conçus pour votre confort absolu dans l'excellence congolaise</p>
-                <nav class="breadcrumb-modern">
+                <div class="hero-breadcrumb" data-aos="fade-down">
                     <a href="../../index.html">Accueil</a>
-                    <span class="separator">/</span>
-                    <span>Chambres</span>
-                </nav>
-                <div class="header-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">Types de Chambres</span>
+                    <span class="separator"> / </span>
+                    <span>Nos Chambres</span>
+                </div>
+                <h1 data-aos="fade-up" data-aos-delay="200">Expérience Luxueuse</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                    Découvrez nos espaces de séjour conçus pour votre confort absolu dans l'excellence congolaise
+                </p>
+                
+                <!-- Glassmorphism Stats Cards -->
+                <div class="hero-stats-grid" data-aos="fade-up" data-aos-delay="600">
+                    <div class="stat-card-glass">
+                        <div class="stat-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Types de Chambres</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">24h</span>
-                        <span class="stat-label">Service Premium</span>
+                    <div class="stat-card-glass">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">Service Premium</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">3★</span>
-                        <span class="stat-label">Expérience Luxe</span>
+                    <div class="stat-card-glass">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">★★★</span>
+                            <span class="stat-label">Expérience Luxe</span>
+                        </div>
                     </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="800">
+                    <a href="../contact/contact.html" class="btn-hero-glass">
+                        <i class="fas fa-calendar-alt me-2"></i>
+                        Réserver Maintenant
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Rooms Section -->
-    <section class="rooms-showcase-modern">
+    <section class="rooms-showcase-glass">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Nos Hébergements</span>
-                <h2>Chambres d'Exception</h2>
-                <p class="section-description">
+            <div class="section-header-glass" data-aos="fade-up">
+                <div class="section-badge">
+                    <i class="fas fa-crown me-2"></i>
+                    Nos Hébergements
+                </div>
+                <h2 class="section-title-glass">Chambres d'Exception</h2>
+                <p class="section-description-glass">
                     Chaque chambre est un sanctuaire de confort et d'élégance, conçu pour offrir une expérience inoubliable à Lubumbashi
                 </p>
             </div>
             
-            <div class="row rooms-grid">
+            <div class="rooms-grid-glass">
                 <!-- Suite de Luxe (Premium) -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="room-card-modern featured">
-                        <div class="room-media">
-                            <video class="room-video" poster="../../images/cover.jpeg" muted loop preload="metadata" playsinline>
+                <div class="room-card-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="room-card-glass luxury-tier">
+                        <div class="room-tier-badge">
+                            <i class="fas fa-gem me-1"></i>
+                            Premium
+                        </div>
+                        <div class="room-media-container">
+                            <video class="room-video-glass" poster="../../images/cover.jpeg" muted loop preload="metadata" playsinline>
                                 <source src="videos/rooms1.mp4" type="video/mp4">
                                 <img src="../../images/cover.jpeg" alt="Suite de Luxe TresorLodge">
                             </video>
-                            <div class="room-overlay">
-                                <div class="room-overlay-content">
+                            <div class="room-overlay-glass">
+                                <div class="room-overlay-content-glass">
                                     <h4>Excellence Absolue</h4>
                                     <p>L'incarnation du luxe congolais</p>
-                                    <a href="room100USD.html" class="btn-overlay">Découvrir</a>
+                                    <a href="room100USD.html" class="btn-room-discover">
+                                        <i class="fas fa-arrow-right me-2"></i>
+                                        Découvrir
+                                    </a>
                                 </div>
                             </div>
-                            <div class="room-badge luxury-badge">Premium</div>
-                            <div class="video-indicator premium">
-                                <i class="icon-play"></i>
+                            <div class="video-play-btn">
+                                <i class="fas fa-play"></i>
                             </div>
                         </div>
-                        <div class="room-info-modern">
-                            <div class="room-header">
-                                <h3>Suite de Luxe</h3>
-                                <div class="room-rating">
-                                    <span class="stars">★★★</span>
+                        <div class="room-content-glass">
+                            <div class="room-header-glass">
+                                <div class="room-title-section">
+                                    <h3>Suite de Luxe</h3>
+                                    <div class="room-rating-glass">
+                                        <span class="stars">★★★</span>
+                                        <span class="rating-text">Premium</span>
+                                    </div>
+                                </div>
+                                <div class="room-price-glass">
+                                    <span class="price-amount">$100</span>
+                                    <span class="price-period">/nuit</span>
                                 </div>
                             </div>
-                            <p class="room-description">
-                                L'expérience ultime avec service personnalisé, salon séparé et finitions haut de gamme. Seule suite avec balcon privé et climatisation.
+                            
+                            <p class="room-description-glass">
+                                L'expérience ultime avec service personnalisé, salon séparé et finitions haut de gamme.
                             </p>
                             
-                            <div class="room-features">
-                                <div class="features-row">
-                                    <span class="feature-badge primary">
-                                        <i class="icon-wifi"></i>WiFi Gratuit
-                                    </span>
-                                    <span class="feature-badge primary">
-                                        <i class="icon-coffee"></i>Petit-déjeuner Gratuit
-                                    </span>
+                            <div class="room-features-glass">
+                                <div class="feature-glass premium">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>WiFi Gratuit</span>
                                 </div>
-                                <div class="features-row">
-                                    <span class="feature-badge standard">
-                                        <i class="icon-glass"></i>Minibar
-                                    </span>
-                                    <span class="feature-badge standard">
-                                        <i class="icon-room-service"></i>Room Service
-                                    </span>
+                                <div class="feature-glass premium">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Petit-déjeuner</span>
                                 </div>
-                                <div class="features-row">
-                                    <span class="feature-badge luxury">
-                                        <i class="icon-home"></i>Balcon Privé
-                                    </span>
-                                    <span class="feature-badge luxury">
-                                        <i class="icon-snowflake"></i>Climatisation
-                                    </span>
+                                <div class="feature-glass premium">
+                                    <i class="fas fa-wine-glass"></i>
+                                    <span>Minibar</span>
                                 </div>
+                                <div class="feature-glass luxury">
+                                    <i class="fas fa-home"></i>
+                                    <span>Balcon Privé</span>
+                                </div>
+                                <div class="feature-glass luxury">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatisation</span>
+                                </div>
+                                <div class="feature-glass luxury">
+                                    <i class="fas fa-concierge-bell"></i>
+                                    <span>Room Service</span>
+                                </div>
+                            </div>
+                            
+                            <div class="room-cta-glass">
+                                <a href="room100USD.html" class="btn-room-glass premium">
+                                    Voir les Détails
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Chambre Supérieure -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="room-card-modern">
-                        <div class="room-media">
-                            <video class="room-video" poster="../../images/about2.jpeg" muted loop preload="metadata" playsinline>
+                <div class="room-card-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="room-card-glass superior-tier">
+                        <div class="room-tier-badge">
+                            <i class="fas fa-award me-1"></i>
+                            Recommandé
+                        </div>
+                        <div class="room-media-container">
+                            <video class="room-video-glass" poster="../../images/about2.jpeg" muted loop preload="metadata" playsinline>
                                 <source src="videos/rooms2.mp4" type="video/mp4">
                                 <img src="../../images/about2.jpeg" alt="Chambre Supérieure TresorLodge">
                             </video>
-                            <div class="room-overlay">
-                                <div class="room-overlay-content">
+                            <div class="room-overlay-glass">
+                                <div class="room-overlay-content-glass">
                                     <h4>Luxe & Espace</h4>
                                     <p>L'équilibre parfait entre luxe et intimité</p>
-                                    <a href="room80USD.html" class="btn-overlay">Découvrir</a>
+                                    <a href="room80USD.html" class="btn-room-discover">
+                                        <i class="fas fa-arrow-right me-2"></i>
+                                        Découvrir
+                                    </a>
                                 </div>
                             </div>
-                            <div class="room-badge featured-badge">Recommandé</div>
-                            <div class="video-indicator featured">
-                                <i class="icon-play"></i>
+                            <div class="video-play-btn">
+                                <i class="fas fa-play"></i>
                             </div>
                         </div>
-                        <div class="room-info-modern">
-                            <div class="room-header">
-                                <h3>Chambre Supérieure</h3>
-                                <div class="room-rating">
-                                    <span class="stars">★★★</span>
+                        <div class="room-content-glass">
+                            <div class="room-header-glass">
+                                <div class="room-title-section">
+                                    <h3>Chambre Supérieure</h3>
+                                    <div class="room-rating-glass">
+                                        <span class="stars">★★★</span>
+                                        <span class="rating-text">Superior</span>
+                                    </div>
+                                </div>
+                                <div class="room-price-glass">
+                                    <span class="price-amount">$80</span>
+                                    <span class="price-period">/nuit</span>
                                 </div>
                             </div>
-                            <p class="room-description">
-                                Plus spacieuses avec vue panoramique, nos chambres supérieures offrent une expérience haut de gamme avec espace bureau dédié.
+                            
+                            <p class="room-description-glass">
+                                Plus spacieuses avec vue panoramique, nos chambres supérieures offrent une expérience haut de gamme.
                             </p>
                             
-                            <div class="room-features">
-                                <div class="features-row">
-                                    <span class="feature-badge primary">
-                                        <i class="icon-wifi"></i>WiFi Gratuit
-                                    </span>
-                                    <span class="feature-badge primary">
-                                        <i class="icon-coffee"></i>Petit-déjeuner Gratuit
-                                    </span>
+                            <div class="room-features-glass">
+                                <div class="feature-glass premium">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>WiFi Gratuit</span>
                                 </div>
-                                <div class="features-row">
-                                    <span class="feature-badge standard">
-                                        <i class="icon-glass"></i>Minibar
-                                    </span>
-                                    <span class="feature-badge standard">
-                                        <i class="icon-room-service"></i>Room Service
-                                    </span>
+                                <div class="feature-glass premium">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Petit-déjeuner</span>
                                 </div>
-                                <div class="features-row">
-                                    <span class="feature-badge">
-                                        <i class="icon-eye"></i>Vue Panoramique
-                                    </span>
-                                    <span class="feature-badge">
-                                        <i class="icon-desk"></i>Espace Bureau
-                                    </span>
+                                <div class="feature-glass premium">
+                                    <i class="fas fa-wine-glass"></i>
+                                    <span>Minibar</span>
                                 </div>
+                                <div class="feature-glass standard">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Vue Panoramique</span>
+                                </div>
+                                <div class="feature-glass standard">
+                                    <i class="fas fa-laptop"></i>
+                                    <span>Espace Bureau</span>
+                                </div>
+                                <div class="feature-glass standard">
+                                    <i class="fas fa-concierge-bell"></i>
+                                    <span>Room Service</span>
+                                </div>
+                            </div>
+                            
+                            <div class="room-cta-glass">
+                                <a href="room80USD.html" class="btn-room-glass superior">
+                                    Voir les Détails
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Chambre Standard -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="room-card-modern">
-                        <div class="room-media">
-                            <video class="room-video" poster="../../images/about1.jpeg" muted loop preload="metadata" playsinline>
+                <div class="room-card-container" data-aos="fade-up" data-aos-delay="300">
+                    <div class="room-card-glass standard-tier">
+                        <div class="room-tier-badge">
+                            <i class="fas fa-heart me-1"></i>
+                            Populaire
+                        </div>
+                        <div class="room-media-container">
+                            <video class="room-video-glass" poster="../../images/about1.jpeg" muted loop preload="metadata" playsinline>
                                 <source src="videos/rooms3.mp4" type="video/mp4">
                                 <img src="../../images/about1.jpeg" alt="Chambre Standard TresorLodge">
                             </video>
-                            <div class="room-overlay">
-                                <div class="room-overlay-content">
+                            <div class="room-overlay-glass">
+                                <div class="room-overlay-content-glass">
                                     <h4>Confort Moderne</h4>
                                     <p>Parfait pour les voyageurs d'affaires</p>
-                                    <a href="room60USD.html" class="btn-overlay">Découvrir</a>
+                                    <a href="room60USD.html" class="btn-room-discover">
+                                        <i class="fas fa-arrow-right me-2"></i>
+                                        Découvrir
+                                    </a>
                                 </div>
                             </div>
-                            <div class="room-badge">Popular</div>
-                            <div class="video-indicator">
-                                <i class="icon-play"></i>
+                            <div class="video-play-btn">
+                                <i class="fas fa-play"></i>
                             </div>
                         </div>
-                        <div class="room-info-modern">
-                            <div class="room-header">
-                                <h3>Chambre Standard</h3>
-                                <div class="room-rating">
-                                    <span class="stars">★★★</span>
+                        <div class="room-content-glass">
+                            <div class="room-header-glass">
+                                <div class="room-title-section">
+                                    <h3>Chambre Standard</h3>
+                                    <div class="room-rating-glass">
+                                        <span class="stars">★★★</span>
+                                        <span class="rating-text">Standard</span>
+                                    </div>
+                                </div>
+                                <div class="room-price-glass">
+                                    <span class="price-amount">$60</span>
+                                    <span class="price-period">/nuit</span>
                                 </div>
                             </div>
-                            <p class="room-description">
-                                Élégance et fonctionnalité se rencontrent dans nos chambres standards. Confort moderne avec tous les équipements essentiels.
+                            
+                            <p class="room-description-glass">
+                                Élégance et fonctionnalité se rencontrent dans nos chambres standards avec tout le confort moderne.
                             </p>
                             
-                            <div class="room-features">
-                                <div class="features-row">
-                                    <span class="feature-badge primary">
-                                        <i class="icon-wifi"></i>WiFi Gratuit
-                                    </span>
-                                    <span class="feature-badge primary">
-                                        <i class="icon-coffee"></i>Petit-déjeuner Gratuit
-                                    </span>
+                            <div class="room-features-glass">
+                                <div class="feature-glass premium">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>WiFi Gratuit</span>
                                 </div>
-                                <div class="features-row">
-                                    <span class="feature-badge standard">
-                                        <i class="icon-glass"></i>Minibar
-                                    </span>
-                                    <span class="feature-badge standard">
-                                        <i class="icon-room-service"></i>Room Service
-                                    </span>
+                                <div class="feature-glass premium">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Petit-déjeuner</span>
                                 </div>
-                                <div class="features-row">
-                                    <span class="feature-badge">
-                                        <i class="icon-bed"></i>Lit Confortable
-                                    </span>
-                                    <span class="feature-badge">
-                                        <i class="icon-tv"></i>TV Satellite
-                                    </span>
+                                <div class="feature-glass standard">
+                                    <i class="fas fa-wine-glass"></i>
+                                    <span>Minibar</span>
                                 </div>
+                                <div class="feature-glass standard">
+                                    <i class="fas fa-tv"></i>
+                                    <span>TV Satellite</span>
+                                </div>
+                                <div class="feature-glass standard">
+                                    <i class="fas fa-bath"></i>
+                                    <span>Salle de Bain</span>
+                                </div>
+                                <div class="feature-glass standard">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Téléphone</span>
+                                </div>
+                            </div>
+                            
+                            <div class="room-cta-glass">
+                                <a href="room60USD.html" class="btn-room-glass standard">
+                                    Voir les Détails
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -374,9 +967,53 @@
         <i class="icon-chevron-up"></i>
     </button>
 
-    <!-- Simplified JavaScript -->
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../shared/js/scripts.js"></script>
     <script src="js/rooms.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Video play functionality
+        document.querySelectorAll('.room-video-glass').forEach(video => {
+            const playBtn = video.parentElement.querySelector('.video-play-btn');
+            
+            if (playBtn) {
+                playBtn.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        video.pause();
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                });
+            }
+
+            // Auto-play on hover
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+            });
+        });
+
+        // Current year update
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.getElementById('currentYear');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 </body>
 </html>
 
