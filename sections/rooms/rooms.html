@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Découvrez nos 3 catégories de chambres luxueuses à TresorLodge Lubumbashi : Standard (60$), Supérieure (80$) et Suite de Luxe (100$). Service 24h, WiFi gratuit, confort exceptionnel au cœur du Congo.">
-    <meta name="keywords" content="chambres luxe Lubumbashi, TresorLodge chambres, hébergement Congo, chambres d'h�tel, Premium Superior Standard">
+    <meta name="keywords" content="chambres luxe Lubumbashi, TresorLodge chambres, hébergement Congo, chambres d'hôtel, Premium Superior Standard">
     <meta name="author" content="TresorLodge">
     
     <!-- Open Graph -->
@@ -20,7 +20,7 @@
     <link rel="icon" href="../../images/about2.png" type="image/x-icon">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,6 +39,18 @@
             --premium-gradient: linear-gradient(135deg, #d4af37, #ffd700);
             --superior-gradient: linear-gradient(135deg, #c0392b, #e74c3c);
             --standard-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+            --accent-gold: #d4af37;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
         }
 
         /* Animated Hero Background */
@@ -79,7 +91,7 @@
         }
 
         .hero-breadcrumb a {
-            color: var(--accent-gold, #d4af37);
+            color: var(--accent-gold);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -170,13 +182,6 @@
             display: inline-flex;
             align-items: center;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-hero-glass:hover {
-            background: white;
-            color: #2c3e50;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
 
         /* Section Header Styling */
@@ -339,12 +344,6 @@
             align-items: center;
         }
 
-        .btn-room-discover:hover {
-            background: #d4af37;
-            color: white;
-            transform: translateY(-2px);
-        }
-
         .video-play-btn {
             position: absolute;
             bottom: 1rem;
@@ -354,17 +353,14 @@
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             border-radius: 50%;
+            border: none;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.2rem;
             transition: all 0.3s ease;
-        }
-
-        .video-play-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
+            cursor: pointer;
         }
 
         /* Room Content */
@@ -445,17 +441,8 @@
             transition: all 0.3s ease;
         }
 
-        .feature-glass:hover {
-            background: rgba(255, 255, 255, 0.7);
-            transform: translateY(-2px);
-        }
-
         .feature-glass.premium {
             border-left: 3px solid #d4af37;
-        }
-
-        .feature-glass.luxury {
-            border-left: 3px solid #e74c3c;
         }
 
         .feature-glass.standard {
@@ -482,21 +469,19 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
+            color: white;
         }
 
         .btn-room-glass.premium {
             background: var(--premium-gradient);
-            color: white;
         }
 
         .btn-room-glass.superior {
             background: var(--superior-gradient);
-            color: white;
         }
 
         .btn-room-glass.standard {
             background: var(--standard-gradient);
-            color: white;
         }
 
         .btn-room-glass:hover {
@@ -506,10 +491,42 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .rooms-grid-glass {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+            }
+            
+            .hero-stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-header-content {
+                padding: 6rem 0 3rem;
+            }
+            
+            .page-header-content h1 {
+                font-size: clamp(2.5rem, 7vw, 4rem);
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .room-media-container {
+                height: 250px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-stats-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+                max-width: 400px;
             }
 
             .rooms-grid-glass {
@@ -528,6 +545,98 @@
 
             .room-features-glass {
                 grid-template-columns: 1fr;
+            }
+            
+            .section-title-glass {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+            
+            .section-description-glass {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .room-content-glass {
+                padding: 1.5rem;
+            }
+            
+            .page-header-content {
+                padding: 4rem 0 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-breadcrumb {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .page-header-content h1 {
+                font-size: clamp(2rem, 10vw, 3rem);
+                margin-bottom: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .stat-card-glass {
+                padding: 1.5rem 1rem;
+            }
+            
+            .stat-icon {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .room-media-container {
+                height: 200px;
+            }
+            
+            .section-header-glass {
+                margin-bottom: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .room-tier-badge {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+            }
+            
+            .video-play-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rooms-grid-glass {
+                gap: 1.5rem;
+            }
+            
+            .room-content-glass {
+                padding: 1rem;
+            }
+            
+            .price-amount {
+                font-size: 2rem;
+            }
+            
+            .btn-room-glass {
+                padding: 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .feature-glass {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -568,7 +677,7 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
+                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -593,8 +702,9 @@
     <!-- Page Header -->
     <section class="page-header-modern">
         <div class="hero-video">
-            <video autoplay muted loop playsinline poster="../../images/cover.jpeg">
+            <video autoplay muted loop playsinline poster="../../images/cover.jpeg" aria-label="TresorLodge rooms tour video">
                 <source src="videos/rooms-tour.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
         <div class="hero-overlay-animated"></div>
@@ -675,7 +785,7 @@
                             Premium
                         </div>
                         <div class="room-media-container">
-                            <video class="room-video-glass" poster="../../images/cover.jpeg" muted loop preload="metadata" playsinline>
+                            <video class="room-video-glass" poster="../../images/cover.jpeg" muted loop preload="metadata" playsinline aria-label="Luxury suite video">
                                 <source src="videos/rooms1.mp4" type="video/mp4">
                                 <img src="../../images/cover.jpeg" alt="Suite de Luxe TresorLodge">
                             </video>
@@ -689,9 +799,9 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="video-play-btn">
+                            <button class="video-play-btn" aria-label="Play luxury suite video">
                                 <i class="fas fa-play"></i>
-                            </div>
+                            </button>
                         </div>
                         <div class="room-content-glass">
                             <div class="room-header-glass">
@@ -725,15 +835,15 @@
                                     <i class="fas fa-wine-glass"></i>
                                     <span>Minibar</span>
                                 </div>
-                                <div class="feature-glass luxury">
+                                <div class="feature-glass premium">
                                     <i class="fas fa-home"></i>
                                     <span>Balcon Privé</span>
                                 </div>
-                                <div class="feature-glass luxury">
+                                <div class="feature-glass premium">
                                     <i class="fas fa-snowflake"></i>
                                     <span>Climatisation</span>
                                 </div>
-                                <div class="feature-glass luxury">
+                                <div class="feature-glass premium">
                                     <i class="fas fa-concierge-bell"></i>
                                     <span>Room Service</span>
                                 </div>
@@ -756,7 +866,7 @@
                             Recommandé
                         </div>
                         <div class="room-media-container">
-                            <video class="room-video-glass" poster="../../images/about2.jpeg" muted loop preload="metadata" playsinline>
+                            <video class="room-video-glass" poster="../../images/about2.jpeg" muted loop preload="metadata" playsinline aria-label="Superior room video">
                                 <source src="videos/rooms2.mp4" type="video/mp4">
                                 <img src="../../images/about2.jpeg" alt="Chambre Supérieure TresorLodge">
                             </video>
@@ -770,9 +880,9 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="video-play-btn">
+                            <button class="video-play-btn" aria-label="Play superior room video">
                                 <i class="fas fa-play"></i>
-                            </div>
+                            </button>
                         </div>
                         <div class="room-content-glass">
                             <div class="room-header-glass">
@@ -837,7 +947,7 @@
                             Populaire
                         </div>
                         <div class="room-media-container">
-                            <video class="room-video-glass" poster="../../images/about1.jpeg" muted loop preload="metadata" playsinline>
+                            <video class="room-video-glass" poster="../../images/about1.jpeg" muted loop preload="metadata" playsinline aria-label="Standard room video">
                                 <source src="videos/rooms3.mp4" type="video/mp4">
                                 <img src="../../images/about1.jpeg" alt="Chambre Standard TresorLodge">
                             </video>
@@ -851,9 +961,9 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="video-play-btn">
+                            <button class="video-play-btn" aria-label="Play standard room video">
                                 <i class="fas fa-play"></i>
-                            </div>
+                            </button>
                         </div>
                         <div class="room-content-glass">
                             <div class="room-header-glass">
@@ -963,7 +1073,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">
         <i class="icon-chevron-up"></i>
     </button>
 
@@ -980,34 +1090,30 @@
             offset: 100
         });
 
-        // Video play functionality
-        document.querySelectorAll('.room-video-glass').forEach(video => {
-            const playBtn = video.parentElement.querySelector('.video-play-btn');
-            
-            if (playBtn) {
-                playBtn.addEventListener('click', () => {
-                    if (video.paused) {
-                        video.play();
-                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                    } else {
-                        video.pause();
-                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
-                    }
-                });
-            }
-
-            // Auto-play on hover
-            video.addEventListener('mouseenter', () => {
-                video.play();
-            });
-
-            video.addEventListener('mouseleave', () => {
-                video.pause();
-            });
-        });
-
-        // Current year update
+        // Video controls and current year setup
         document.addEventListener('DOMContentLoaded', function() {
+            // Video play functionality
+            document.querySelectorAll('.room-video-glass').forEach(video => {
+                const playBtn = video.parentElement.querySelector('.video-play-btn');
+                
+                if (playBtn) {
+                    playBtn.addEventListener('click', () => {
+                        if (video.paused) {
+                            video.play();
+                            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        } else {
+                            video.pause();
+                            playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        }
+                    });
+                }
+
+                // Auto-play on hover
+                video.addEventListener('mouseenter', () => video.play());
+                video.addEventListener('mouseleave', () => video.pause());
+            });
+
+            // Update current year
             const yearElement = document.getElementById('currentYear');
             if (yearElement) {
                 yearElement.textContent = new Date().getFullYear();
