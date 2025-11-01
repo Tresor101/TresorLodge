@@ -53,6 +53,229 @@
             line-height: 1.6;
         }
 
+        /* Navbar Styles */
+        .navbar-modern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .navbar-modern.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand-modern {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand-modern:hover {
+            color: #d4af37;
+        }
+
+        .navbar-brand-modern .accent {
+            color: #d4af37;
+        }
+
+        .nav-modern {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #d4af37;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #d4af37;
+            border-radius: 1px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-cta {
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-outline-modern {
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+            background: transparent;
+        }
+
+        .btn-outline-modern:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .btn-primary-modern {
+            background: #d4af37;
+            color: white;
+            border: 2px solid #d4af37;
+        }
+
+        .btn-primary-modern:hover {
+            background: transparent;
+            color: #d4af37;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 100%;
+            height: 2px;
+            background: #2c3e50;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            padding-top: 80px;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-nav-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: #d4af37;
+            padding-left: 1rem;
+        }
+
+        .mobile-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(44, 62, 80, 0.1);
+        }
+
+        /* Page Header Styles */
+        .page-header-modern {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .hero-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* Animated Hero Background */
         .hero-overlay-animated {
             position: absolute;
@@ -492,6 +715,19 @@
 
         /* Responsive Design */
         @media (max-width: 1200px) {
+            .navbar-brand-modern {
+                font-size: 1.6rem;
+            }
+            
+            .nav-modern {
+                gap: 1.5rem;
+            }
+            
+            .btn-cta {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+            
             .rooms-grid-glass {
                 grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
                 gap: 2rem;
@@ -504,8 +740,16 @@
         }
 
         @media (max-width: 992px) {
+            .navbar-modern {
+                padding: 0.8rem 0;
+            }
+            
+            .navbar-brand-modern {
+                font-size: 1.5rem;
+            }
+            
             .page-header-content {
-                padding: 6rem 0 3rem;
+                padding: 8rem 0 3rem;
             }
             
             .page-header-content h1 {
@@ -523,6 +767,14 @@
         }
 
         @media (max-width: 768px) {
+            .navbar-modern {
+                padding: 0.7rem 0;
+            }
+            
+            .navbar-brand-modern {
+                font-size: 1.4rem;
+            }
+            
             .hero-stats-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -561,7 +813,7 @@
             }
             
             .page-header-content {
-                padding: 4rem 0 2rem;
+                padding: 6rem 0 2rem;
             }
         }
 
@@ -614,6 +866,129 @@
                 height: 40px;
                 font-size: 1rem;
             }
+        }
+
+        /* Footer Styles */
+        .footer-modern {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+        }
+
+        .footer-section h4 {
+            color: #d4af37;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #d4af37;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            color: #d4af37;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #2c3e50;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 480px) {
@@ -669,7 +1044,7 @@
                 
                 <div class="cta-buttons d-none d-lg-flex">
                     <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
-                        <i class="icon-phone mr-2"></i>Appeler
+                        <i class="fas fa-phone"></i>Appeler
                     </a>
                     <a href="../contact/contact.html" class="btn-cta btn-primary-modern">
                         Réserver
@@ -693,7 +1068,9 @@
                 <a href="../restaurant/restaurant.html" class="mobile-nav-link">Restaurant</a>
                 <a href="../contact/contact.html" class="mobile-nav-link">Contact</a>
                 <div class="mobile-cta">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
+                        <i class="fas fa-phone"></i>Appeler
+                    </a>
                     <a href="../contact/contact.html" class="btn-cta btn-primary-modern">Réserver</a>
                 </div>
             </div>
@@ -1036,9 +1413,9 @@
                             <h3>TresorLodge</h3>
                             <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
                             <div class="social-links">
-                                <a href="#" class="social-link"><i class="icon-facebook"></i></a>
-                                <a href="#" class="social-link"><i class="icon-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="icon-tiktok"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1048,15 +1425,15 @@
                             <h4>Contact</h4>
                             <div class="contact-info">
                                 <div class="contact-item">
-                                    <i class="icon-map-marker"></i>
+                                    <i class="fas fa-map-marker-alt"></i>
                                     <span>586 Avenue du Plateau, Golf Malela, Lubumbashi</span>
                                 </div>
                                 <div class="contact-item">
-                                    <i class="icon-phone"></i>
+                                    <i class="fas fa-phone"></i>
                                     <a href="tel:+243816144449" class="contact-link">+243 816 144 449</a>
                                 </div>
                                 <div class="contact-item">
-                                    <i class="icon-envelope"></i>
+                                    <i class="fas fa-envelope"></i>
                                     <a href="mailto:tresorlodgerdc@gmail.com" class="contact-link">tresorlodgerdc@gmail.com</a>
                                 </div>
                             </div>
@@ -1077,7 +1454,7 @@
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Retour en haut de la page">
-        <i class="icon-chevron-up"></i>
+        <i class="fas fa-chevron-up"></i>
     </button>
 
     <!-- Scripts -->
@@ -1098,6 +1475,82 @@
         // Video controls and current year setup
         document.addEventListener('DOMContentLoaded', function() {
             try {
+                // Navbar functionality
+                const navbar = document.getElementById('mainNav');
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const backToTopBtn = document.getElementById('backToTop');
+
+                // Navbar scroll effect and back-to-top visibility
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY;
+                    
+                    // Navbar scroll effect
+                    if (scrollY > 100) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                    
+                    // Back to top button visibility
+                    if (backToTopBtn) {
+                        if (scrollY > 300) {
+                            backToTopBtn.classList.add('show');
+                        } else {
+                            backToTopBtn.classList.remove('show');
+                        }
+                    }
+                });
+
+                // Back to top functionality
+                if (backToTopBtn) {
+                    backToTopBtn.addEventListener('click', () => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+
+                // Mobile menu toggle
+                if (mobileMenuBtn && mobileMenu) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        const isActive = mobileMenu.classList.contains('active');
+                        
+                        if (isActive) {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuBtn.classList.remove('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        } else {
+                            mobileMenu.classList.add('active');
+                            mobileMenuBtn.classList.add('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+
+                    // Close mobile menu when clicking outside
+                    mobileMenu.addEventListener('click', (e) => {
+                        if (e.target === mobileMenu) {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuBtn.classList.remove('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        }
+                    });
+
+                    // Close mobile menu when clicking nav links
+                    const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuBtn.classList.remove('active');
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        });
+                    });
+                }
                 // Video play functionality
                 document.querySelectorAll('.room-video-glass').forEach(video => {
                     const playBtn = video.parentElement.querySelector('.video-play-btn');
