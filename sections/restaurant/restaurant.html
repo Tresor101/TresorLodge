@@ -53,10 +53,15 @@
         /* Navigation - Unified Design */
         .navbar {
             background: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1001 !important;
         }
 
         .navbar.scrolled {
@@ -64,15 +69,15 @@
         }
 
         .navbar-brand {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif !important;
+            font-size: 2rem !important;
+            font-weight: 700 !important;
             color: var(--primary) !important;
-            text-decoration: none;
+            text-decoration: none !important;
         }
 
         .navbar-brand .accent {
-            color: var(--secondary);
+            color: var(--secondary) !important;
         }
 
         .navbar-brand:hover {
@@ -81,9 +86,9 @@
 
         .nav-link {
             color: var(--text-dark) !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: color 0.3s ease;
+            font-weight: 500 !important;
+            margin: 0 0.5rem !important;
+            transition: color 0.3s ease !important;
         }
 
         .nav-link:hover,
@@ -92,37 +97,37 @@
         }
 
         .btn-book {
-            background: var(--secondary);
+            background: var(--secondary) !important;
             color: white !important;
-            padding: 0.7rem 1.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            padding: 0.7rem 1.5rem !important;
+            border: none !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
         }
 
         .btn-book:hover {
-            background: #C0392B;
-            transform: translateY(-2px);
+            background: #C0392B !important;
+            transform: translateY(-2px) !important;
             color: white !important;
         }
 
         /* Mobile navbar toggler */
         .navbar-toggler {
-            border: none;
-            padding: 0.25rem 0.5rem;
+            border: none !important;
+            padding: 0.25rem 0.5rem !important;
         }
 
         .navbar-toggler:focus {
-            box-shadow: none;
+            box-shadow: none !important;
         }
 
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
         }
 
         /* Enhanced Glassmorphism Design */
@@ -1732,9 +1737,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             try {
                 // Navbar functionality
-                const navbar = document.getElementById('mainNav');
-                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-                const mobileMenu = document.getElementById('mobileMenu');
+                const navbar = document.querySelector('.navbar');
                 const backToTopBtn = document.getElementById('backToTop');
 
                 // Navbar scroll effect and back-to-top visibility
@@ -1742,10 +1745,12 @@
                     const scrollY = window.scrollY;
                     
                     // Navbar scroll effect
-                    if (scrollY > 100) {
-                        navbar.classList.add('scrolled');
-                    } else {
-                        navbar.classList.remove('scrolled');
+                    if (navbar) {
+                        if (scrollY > 100) {
+                            navbar.classList.add('scrolled');
+                        } else {
+                            navbar.classList.remove('scrolled');
+                        }
                     }
                     
                     // Back to top button visibility
@@ -1764,46 +1769,6 @@
                         window.scrollTo({
                             top: 0,
                             behavior: 'smooth'
-                        });
-                    });
-                }
-
-                // Mobile menu toggle
-                if (mobileMenuBtn && mobileMenu) {
-                    mobileMenuBtn.addEventListener('click', () => {
-                        const isActive = mobileMenu.classList.contains('active');
-                        
-                        if (isActive) {
-                            mobileMenu.classList.remove('active');
-                            mobileMenuBtn.classList.remove('active');
-                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                            document.body.style.overflow = '';
-                        } else {
-                            mobileMenu.classList.add('active');
-                            mobileMenuBtn.classList.add('active');
-                            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                            document.body.style.overflow = 'hidden';
-                        }
-                    });
-
-                    // Close mobile menu when clicking outside
-                    mobileMenu.addEventListener('click', (e) => {
-                        if (e.target === mobileMenu) {
-                            mobileMenu.classList.remove('active');
-                            mobileMenuBtn.classList.remove('active');
-                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                            document.body.style.overflow = '';
-                        }
-                    });
-
-                    // Close mobile menu when clicking nav links
-                    const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
-                    mobileNavLinks.forEach(link => {
-                        link.addEventListener('click', () => {
-                            mobileMenu.classList.remove('active');
-                            mobileMenuBtn.classList.remove('active');
-                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                            document.body.style.overflow = '';
                         });
                     });
                 }
