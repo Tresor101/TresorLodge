@@ -250,19 +250,19 @@
 
         /* Mobile Menu */
         .mobile-menu-toggle {
-            display: none;
             flex-direction: column;
             gap: 4px;
             background: none;
             border: none;
             cursor: pointer;
             padding: 8px;
+            z-index: 1001;
         }
 
         .mobile-menu-toggle span {
             width: 25px;
             height: 3px;
-            background: var(--text-light);
+            background: #ffffff;
             transition: all 0.3s ease;
             border-radius: 2px;
         }
@@ -288,7 +288,7 @@
             background: rgba(15, 23, 42, 0.98);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            z-index: 999;
+            z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -696,10 +696,6 @@
             
             .cta-buttons {
                 display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: flex;
             }
         }
 
