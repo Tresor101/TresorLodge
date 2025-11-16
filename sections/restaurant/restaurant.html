@@ -742,7 +742,7 @@
         /* Menu Section */
         .menu-modern {
             padding: 5rem 0;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 60%, #ffe5d0 100%);
         }
 
         .menu-tabs {
@@ -778,6 +778,47 @@
         .menu-category.active {
             display: block;
         }
+
+        /* Menu Card Styles */
+        .menu-card {
+            background: linear-gradient(120deg, #fffbe6 80%, #ffe5d0 100%);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(44,62,80,0.08);
+            padding: 2rem 1.5rem;
+            margin-bottom: 2.5rem;
+            transition: box-shadow 0.3s, border-color 0.3s;
+            border: 2px solid #ffd180;
+        }
+        .menu-card:hover {
+            box-shadow: 0 16px 48px rgba(230,126,34,0.18);
+            border-color: #e67e22;
+        }
+        .menu-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #e67e22 60%, #ffd180 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(230,126,34,0.08);
+        }
+        .menu-card ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+        }
+        .menu-card li {
+            font-size: 1.05rem;
+            color: #e67e22;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 232, 200, 0.5);
+            border-radius: 8px;
+            padding: 0.2rem 0.7rem;
+        }
+        .menu-card small {
+            color: #64748b;
+        }
+
 
         .menu-item-modern {
             background: white;
@@ -1528,139 +1569,240 @@
             </div>
             
             <div class="menu-categories" data-aos="fade-up" data-aos-delay="100">
-                <div class="menu-tabs">
-                    <button class="menu-tab active" data-category="specialites">Spécialités Congolaises</button>
-                    <button class="menu-tab" data-category="grillades">Grillades</button>
-                    <button class="menu-tab" data-category="international">International</button>
-                    <button class="menu-tab" data-category="desserts">Desserts</button>
-                </div>
+                                <div class="menu-tabs">
+                                    <button class="menu-tab active" data-category="food">🍽️ Food</button>
+                                    <button class="menu-tab" data-category="desserts">🍰 Desserts</button>
+                                    <button class="menu-tab" data-category="shisha">🧴 Shisha</button>
+                                    <button class="menu-tab" data-category="drinks">🍹 Drinks</button>
+                                    <button class="menu-tab" data-category="soft">🥤 Soft & Energy Drinks</button>
+                                    <button class="menu-tab" data-category="beers">🍺 Beers</button>
+                                </div>
             </div>
             
             <div class="menu-content">
-                <!-- Spécialités Congolaises -->
-                <div class="menu-category active" id="specialites">
-                    <div class="row">
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="menu-item-modern">
-                                <div class="menu-item-image">
-                                    <img src="../../images/about1.jpeg" alt="Pondu" class="img-fluid">
-                                </div>
-                                <div class="menu-item-content">
-                                    <div class="menu-item-header">
-                                        <h4>Pondu aux Crevettes</h4>
-                                        <span class="price">25$</span>
+                <!-- Interactive Menu Categories -->
+                <div class="menu-category active" id="food">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🥗 ENTRÉES FROIDES</h4>
+                                                <ul><li>Salade mixte — 5 $</li><li>Salade niçoise — 7 $</li><li>Salade grecque — 10 $</li><li>Salade italienne — 10 $</li><li>Salade du chef — 10 $</li><li>Salade de fruits — 10 $</li><li>Salade bigarrée — 10 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍢 APÉRITIFS & ENTRÉES</h4>
+                                                <ul><li>Sauce provençale — 2 $</li><li>Sauce au fromage — 5 $</li><li>Sauce au poivre — 5 $</li><li>Sauce champignon — 6 $</li><li>Sauce ratatouille — 7 $</li><li>Potage de légumes — 10 $</li><li>Potage de viande — 10 $</li><li>Potage de poisson — 10 $</li><li>Potage du jour — 10 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍲 SPÉCIALITÉS PROVINCIALES</h4>
+                                                <ul><li>Chikwang — 1 $</li><li>Fufu — 1,5 $</li><li>Amarande — 2 $</li><li>Pondu — 2 $</li><li>Oseille — 2 $</li><li>Gombo — 2 $</li><li>Aubergine africaine — 2 $</li><li>Fumbwa — 5 $ <br><small>(Feuilles forestières mijotées dans une sauce d’arachide)</small></li><li>Chenilles (sur commande) — 15 $ <br><small>(Chenilles séchées sautées avec oignons et tomates)</small></li><li>Poisson salé — 15 $</li><li>Poisson fumé — 15 $ <br><small>(Poisson séché ou fumé, cuit en sauce aux épices)</small></li><li>Milonge — 15 $</li><li>Fretin — 15 $</li><li>Mikebuka — 15 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🥪 SNACKS & PLATS RAPIDES</h4>
+                                                <ul><li>Omelette simple — 3 $</li><li>Omelette garnie — 5 $</li><li>Omelette au fromage — 5 $</li><li>Œuf à la coque — 5 $</li><li>Samoussa (3 pièces) — 4 $</li><li>Sandwich (jambon, fromage) — 5 $</li><li>Omelette à la lyonnaise — 7 $</li><li>Club sandwich — 8 $</li><li>Chawarma — 8 $</li><li>Hamburger au fromage — 10 $</li><li>Hamburger à cheval — 10 $</li><li>Croque-monsieur — 10 $</li><li>Pizza Margherita — 15 $</li><li>Pizza végétarienne — 15 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍽 ACCOMPAGNEMENTS</h4>
+                                                <ul><li>Riz basmati — 3 $</li><li>Banane plantain — 5 $</li><li>Frites — 5 $</li><li>Pommes sautées — 5 $</li><li>Pomme de terre en robe des champs — 5 $</li><li>Pomme nature — 5 $</li><li>Purée de pomme de terre — 5 $</li><li>Spaghetti simple — 5 $</li><li>Riz parfumé — 7 $</li><li>Spaghetti carbonara — 15 $</li><li>Macaroni au fromage — 15 $</li><li>Spaghetti bolognaise — 20 $</li><li>Macaroni à la viande — 20 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🐔 VOLAILLES</h4>
+                                                <ul><li>Gésier de poulet — 10 $</li><li>Quart de poulet — 10 $</li><li>Aile de poulet — 10 $</li><li>Demi-poulet — 15 $</li><li>Brochette de poulet — 18 $</li><li>Poulet entier — 25 $</li><li>Escalope de poulet — 15 $</li><li>Pigeon vert (sur commande) — 20 $</li><li>Demi-poulet mayo — 20 $</li><li>Poulet entier mayo — 30 $</li><li>Poulet estragon — 35 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🥩 VIANDES</h4>
+                                                <ul><li>Steak de bœuf — 20 $</li><li>Viande de bœuf — 20 $</li><li>Brochette de bœuf — 20 $</li><li>T-bone de bœuf — 25 $</li><li>Saucisse de bœuf — 15 $</li><li>Boulettes de bœuf — 15 $</li><li>Côte de porc — 20 $</li><li>Carré de porc — 20 $</li><li>Makoso (pieds de porc) — 15 $</li><li>Mixte grill — 50 $</li><li>Viande de chèvre — 20 $</li><li>Gigot de chèvre — 20 $</li><li>Tripes de chèvre — 10 $</li><li>Mitshopo de chèvre — 10 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🐟 POISSONS</h4>
+                                                <ul><li>Tilapia — 20 $ <br><small>(Grillé ou frit, servi avec citron)</small></li><li>Filet de tilapia — 18 $</li><li>Filet de capitaine — 20 $ <br><small>(Grillé dans une marinade d'ail et citron)</small></li><li>Crevettes — 18 $</li><li>Brochette de crevettes — 20 $</li><li>Sardines (sur commande) — 15 $</li><li>Saumon (sur commande) — 25 $</li><li>Kibonde — 25 $</li></ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="menu-item-description">
-                                        Feuilles de manioc mijotées avec des crevettes fraîches, 
-                                        accompagnées de riz parfumé et d'avocat
-                                    </p>
-                                    <div class="menu-item-badges">
-                                        <span class="badge specialty">Spécialité</span>
-                                        <span class="badge fresh">Frais</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="menu-item-modern">
-                                <div class="menu-item-image">
-                                    <img src="../../images/about2.jpeg" alt="Chikwangue" class="img-fluid">
-                                </div>
-                                <div class="menu-item-content">
-                                    <div class="menu-item-header">
-                                        <h4>Chikwangue au Poisson</h4>
-                                        <span class="price">20$</span>
-                                    </div>
-                                    <p class="menu-item-description">
-                                        Pain de manioc traditionnel accompagné de poisson grillé 
-                                        et sauce aux épices locales
-                                    </p>
-                                    <div class="menu-item-badges">
-                                        <span class="badge traditional">Traditionnel</span>
-                                        <span class="badge popular">Populaire</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="menu-item-modern">
-                                <div class="menu-item-image">
-                                    <img src="../../images/cover.jpeg" alt="Ntaba" class="img-fluid">
-                                </div>
-                                <div class="menu-item-content">
-                                    <div class="menu-item-header">
-                                        <h4>Ntaba na Makemba</h4>
-                                        <span class="price">30$</span>
-                                    </div>
-                                    <p class="menu-item-description">
-                                        Mouton tendre mijoté avec bananes plantains, 
-                                        dans une sauce riche aux aromates congolais
-                                    </p>
-                                    <div class="menu-item-badges">
-                                        <span class="badge premium">Premium</span>
-                                        <span class="badge chef">Chef's Choice</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
-                            <div class="menu-item-modern">
-                                <div class="menu-item-image">
-                                    <img src="../../images/about1.jpeg" alt="Sambaza" class="img-fluid">
-                                </div>
-                                <div class="menu-item-content">
-                                    <div class="menu-item-header">
-                                        <h4>Sambaza Grillées</h4>
-                                        <span class="price">18$</span>
-                                    </div>
-                                    <p class="menu-item-description">
-                                        Petits poissons du lac Tanganyika grillés aux épices, 
-                                        servis avec ugali et légumes verts
-                                    </p>
-                                    <div class="menu-item-badges">
-                                        <span class="badge local">Local</span>
-                                        <span class="badge healthy">Sain</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                
-                <!-- Other categories will be populated with JavaScript -->
-                <div class="menu-category" id="grillades">
-                    <div class="text-center py-5">
-                        <h3>Section Grillades</h3>
-                        <p>Nos délicieuses grillades seront bientôt disponibles</p>
-                    </div>
-                </div>
-                
-                <div class="menu-category" id="international">
-                    <div class="text-center py-5">
-                        <h3>Cuisine Internationale</h3>
-                        <p>Notre sélection internationale sera bientôt disponible</p>
-                    </div>
-                </div>
-                
                 <div class="menu-category" id="desserts">
-                    <div class="text-center py-5">
-                        <h3>Desserts</h3>
-                        <p>Nos desserts exquis seront bientôt disponibles</p>
-                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍰 DESSERTS & HOT DRINKS</h4>
+                                                <ul><li>Crêpe à la vanille (avec glace) — 3 $</li><li>Crêpe au chocolat — 4 $</li><li>Crêpe Tourbillon — 5 $</li><li>Chariot de pâtisseries maison — 5 $</li><li>Thé rouge — 2 $</li><li>Tasse de café — 2 $</li><li>Café au lait — 3 $</li><li>Thé au citron — 3 $</li><li>Thé au lait — 3 $</li><li>Thé au lait (accompagné de pain) — 5 $</li><li>Cappuccino — 5 $</li></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                </div>
+                <div class="menu-category" id="shisha">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🧴 SHISHA <span style="color:#e67e22;font-weight:600;">— 10 $</span></h4>
+                                                <ul>
+                                                    <li>Summer Fruits — 10 $</li>
+                                                    <li>Watermelon — 10 $</li>
+                                                    <li>Blueberry — 10 $</li>
+                                                    <li>Gum — 10 $</li>
+                                                    <li>Icy Peach — 10 $</li>
+                                                    <li>Joker777 — 10 $</li>
+                                                    <li>Blue Mix — 10 $</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                </div>
+                <div class="menu-category" id="drinks">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍸 COCKTAILS (Sans alcool)</h4>
+                                                <ul>
+                                                    <li>Virgin Mojito  - 10 $</li>
+                                                    <li>Virgin Mojito Fraise - 10 $</li>
+                                                    <li>Virgin Pina Colada - 10 $</li>
+                                                    <li>Virgin Sunrise - 10 $</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍸 COCKTAILS (Avec alcool)</h4>
+                                                <ul>
+                                                    <li>Sex on the Beach  — 12 $</li>
+                                                    <li>Mojito  — 12 $</li>
+                                                    <li>Mojito Fraise  — 12 $</li>
+                                                    <li>Pina Colada  — 12 $</li>
+                                                    <li>Arc-en-ciel  — 13 $</li>
+                                                    <li>Tequila Sunrise  — 12 $</li>
+                                                    <li>Long Island — 12 $</li>
+                                                    <li>Margarita  — 12 $</li>
+                                                    <li>Zombie  — 15 $</li>
+                                                    <li>Cosmopolitan  — 13 $</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍹 MILKSHAKES</h4>
+                                                <ul>
+                                                    <li>Vanille — 10 $</li>
+                                                    <li>Fraise — 10 $</li>
+                                                    <li>Chocolat — 10 $</li>
+                                                    <li>Oreo — 10 $</li>
+                                                    <li>Caramel — 10 $</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍷 WINES</h4>
+                                                <ul><li>Eva — 15 $</li><li>Nederburg — 25 $</li><li>Martini — 30 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🥃 LIQUEURS</h4>
+                                                <ul><li>Amarula PF — 15 $</li><li>Amarula GF — 25 $</li><li>Kahlua — 35 $</li><li>Jägermeister — 45 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍾 RUM</h4>
+                                                <ul><li>Captain Morgan — 30 $</li><li>Bacardi — 40 $</li><li>Malibu — 40 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍸 TEQUILA</h4>
+                                                <ul>
+                                                    <li>Olmeca Gold — 45 $</li>
+                                                    <li>Olmeca Silver — 45 $</li>
+                                                    <li>Camino — 45 $</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍸 VODKA</h4>
+                                                <ul><li>Absolut — 30 $</li><li>Smirnoff — 50 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🥃 WHISKY</h4>
+                                                <ul><li>Jameson — 40 $</li><li>Red Label — 50 $</li><li>Jack Daniel’s — 60 $</li><li>Chivas — 80 $</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🔥 SHOTS</h4>
+                                                <ul>
+                                                    <li>Tequila - 5 $</li>
+                                                    <li>Jägermeister - 5 $</li>
+                                                    <li>Absolut - 5 $</li>
+                                                    <li>B52 - 5 $</li>
+                                                    <li>B53 - 5 $</li>
+                                                    <li>Blue Kamikaze - 5 $</li>
+                                                    <li>Medusa - 5 $</li>
+                                                    <li>Red Label - 5 $</li>
+                                                    <li>Black Label - 5 $</li>
+                                                    <li>Jagerbomb & Jack Daniel’s — 6 $</li>
+                                                    <li>Chivas — 10 $</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                </div>
+                <div class="menu-category" id="soft">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🥤 BOISSONS ÉNERGÉTIQUES</h4>
+                                                <ul><li>XXL — 8000 FC</li><li>Red Bull — 10 000 FC</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🥤 SOFT DRINKS & MINERAL WATER</h4>
+                                                <ul><li>Dasani — 2000 FC</li><li>Fanta — 5000 FC</li><li>Ceres — 10 000 FC</li><li>Eau gazeuse — 7000 FC</li><li>Tonic — 5000 FC</li><li>Sprite — 5000 FC</li><li>Coca — 5000 FC</li><li>Djino — 7000 FC</li></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                </div>
+                <div class="menu-category" id="beers">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍺 BEERS</h4>
+                                                <ul><li>Chui — 9500 FC</li><li>33 Export — 10 000 FC</li><li>Simba — 10 000 FC</li><li>Tembo — 12 000 FC</li><li>Castel — 12 000 FC</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍺 IMPORTED BEERS</h4>
+                                                <ul><li>Heineken — 9000 FC</li><li>Castel Lite — 9000 FC</li><li>Hunter’s — 9000 FC</li><li>Black Label — 9000 FC</li><li>Savanna — 9000 FC</li><li>Leffe — 20 000 FC</li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="menu-card">
+                                                <h4>🍶 SMALL FORMATS (Minis)</h4>
+                                                <ul><li>Framboise — 6000 FC</li><li>Class — 6500 FC</li><li>Booster — 9000 FC</li><li>Doppel — 9000 FC</li><li>Chui — 5000 FC</li><li>Guinness — 10 000 FC</li></ul>
+                                            </div>
+                                        </div>
+                                    </div>
                 </div>
             </div>
             
-            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="600">
-                <a href="tel:+243816144449" class="btn-cta btn-primary-modern btn-large">
-                    Commander Maintenant
-                </a>
-                <a href="../contact/contact.html" class="btn-cta btn-outline-modern btn-large ml-3">
-                    Réserver une Table
-                </a>
-            </div>
         </div>
     </section>
 
@@ -1743,7 +1885,6 @@
                 // Navbar scroll effect and back-to-top visibility
                 window.addEventListener('scroll', () => {
                     const scrollY = window.scrollY;
-                    
                     // Navbar scroll effect
                     if (navbar) {
                         if (scrollY > 100) {
@@ -1752,7 +1893,6 @@
                             navbar.classList.remove('scrolled');
                         }
                     }
-                    
                     // Back to top button visibility
                     if (backToTopBtn) {
                         if (scrollY > 300) {
@@ -1773,18 +1913,16 @@
                     });
                 }
 
-                // Menu tab functionality
+                // Interactive menu tab functionality
                 const menuTabs = document.querySelectorAll('.menu-tab');
                 const menuCategories = document.querySelectorAll('.menu-category');
 
                 menuTabs.forEach(tab => {
                     tab.addEventListener('click', () => {
                         const category = tab.getAttribute('data-category');
-                        
                         // Remove active class from all tabs and categories
                         menuTabs.forEach(t => t.classList.remove('active'));
                         menuCategories.forEach(c => c.classList.remove('active'));
-                        
                         // Add active class to clicked tab and corresponding category
                         tab.classList.add('active');
                         const targetCategory = document.getElementById(category);
