@@ -13,10 +13,10 @@
     --quaternary-color: #8b1538;       /* Deep Burgundy - Premium Touch */
     
     /* Text Colors - High Contrast for Accessibility */
-    --text-dark: #0f1419;              /* Deep charcoal for headings - WCAG AA+ */
-    --text-medium: #2d3748;            /* Slate for main content - WCAG AA */
-    --text-light: #4a5568;             /* Medium gray for body text - WCAG AA */
-    --text-muted: #718096;             /* Light gray for subtle text */
+    --text-dark: #111217;              /* Even deeper charcoal for headings - WCAG AA+ */
+    --text-medium: #1a202c;            /* Dark slate for main content - WCAG AA */
+    --text-light: #2d3748;             /* Slate for body text - WCAG AA */
+    --text-muted: #4a5568;             /* Medium gray for subtle text */
     --text-white: #ffffff;             /* Pure white text */
     --text-accent: #c41e3a;            /* Crimson for highlights */
     --text-success: #059669;           /* Green for success states */
@@ -25,11 +25,11 @@
     
     /* Background Colors - Improved Contrast */
     --background-white: #ffffff;       /* Pure white - primary */
-    --background-light: #f7fafc;       /* Off-white for subtle sections */
-    --background-soft: #edf2f7;        /* Light gray for cards */
-    --background-medium: #e2e8f0;      /* Medium gray for dividers */
-    --background-dark: #0f1419;        /* Deep charcoal for dark sections */
-    --background-accent: #fed7d7;      /* Light crimson for highlights */
+    --background-light: #f5f7fa;       /* Slightly darker off-white for subtle sections */
+    --background-soft: #e9ecef;        /* Slightly darker light gray for cards */
+    --background-medium: #d1d5db;      /* Darker medium gray for dividers */
+    --background-dark: #111217;        /* Even deeper charcoal for dark sections */
+    --background-accent: #e57373;      /* Stronger crimson for highlights */
     --background-luxury: #1a202c;      /* Dark slate for premium sections */
     --background-gray: #f1f5f9;        /* Alternative light gray */
     
@@ -41,10 +41,10 @@
     --background-modal: rgba(15, 20, 25, 0.75);
     
     /* Border Colors */
-    --border-light: #e2e8f0;           /* Light gray borders */
-    --border-medium: #cbd5e0;          /* Medium gray borders */
+    --border-light: #d1d5db;           /* Darker light gray borders */
+    --border-medium: #a0aec0;          /* Darker medium gray borders */
     --border-accent: #c41e3a;          /* Crimson accents */
-    --border-dark: #2d3748;            /* Dark borders */
+    --border-dark: #1a202c;            /* Darker borders */
     --border-focus: #3182ce;           /* Blue for focus states */
     
     /* State Colors */
@@ -313,6 +313,7 @@ video {
 *:focus {
     outline: 2px solid var(--border-focus);
     outline-offset: 2px;
+    z-index: 2;
 }
 
 button:focus,
@@ -1967,24 +1968,6 @@ p {
 
 @media (max-width: 767px) {
     .about-modern,
-    .rooms-modern,
-    .services-modern,
-    .rooms-showcase-modern {
-        padding: 4rem 0;
-    }
-    
-    .page-header-modern {
-        height: 50vh;
-    }
-    
-    .page-header-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .page-header-content p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
     
     .rooms-grid {
         grid-template-columns: 1fr;
@@ -6890,5 +6873,6 @@ html {
          . s e r v i c e - c a r d   { 
                  m a x - w i d t h :   4 0 0 p x ; 
          } 
- }  
+ } 
+ 
  

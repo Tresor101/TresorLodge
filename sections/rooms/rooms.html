@@ -1106,6 +1106,7 @@
 </head>
 
 <body>
+<main id="main-content" aria-label="Main Content">
     <!-- Loading Screen -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loader">
@@ -1116,13 +1117,13 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation" aria-label="Main Navigation">
         <div class="container">
-            <a class="navbar-brand" href="../../index.html">
+            <a class="navbar-brand" href="../../index.html" aria-label="TresorLodge Home">
                 Tresor<span class="accent">Lodge</span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -1141,8 +1142,8 @@
                         <a class="nav-link" href="../contact/contact.html">Contact</a>
                     </li>
                 </ul>
-                <a href="tel:+243816144449" class="btn-book ms-3">
-                    <i class="fas fa-phone me-2"></i>Réserver
+                <a href="tel:+243816144449" class="btn-book ms-3" aria-label="Contactez-nous pour une réservation">
+                    <i class="fas fa-phone me-2"></i>Contactez nous pour une réservation
                 </a>
             </div>
         </div>
@@ -1201,9 +1202,9 @@
                 
                 <!-- CTA Button -->
                 <div class="hero-cta" data-aos="fade-up" data-aos-delay="800">
-                    <a href="../contact/contact.html" class="btn-hero-glass">
+                    <a href="tel:+243816144449" class="btn-hero-glass">
                         <i class="fas fa-calendar-alt me-2"></i>
-                        Réserver Maintenant
+                        Contactez nous pour une réservation
                     </a>
                 </div>
             </div>
@@ -1475,7 +1476,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer-modern">
+    <footer class="footer-modern" aria-label="Site Footer">
         <div class="container">
             <div class="footer-content">
                 <div class="row">
@@ -1483,11 +1484,7 @@
                         <div class="footer-section">
                             <h3>TresorLodge</h3>
                             <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
-                            <div class="social-links">
-                                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-                            </div>
+                            
                         </div>
                     </div>
                     
@@ -1633,6 +1630,7 @@
         });
     </script>
 
+    </main>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

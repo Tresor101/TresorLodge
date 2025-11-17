@@ -1,3 +1,11 @@
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+        }
+
+        .btn-outline-secondary.w-100:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #fffbe6 100%);
+            color: #1a1a1a;
+            box-shadow: 0 24px 48px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0,0,0,0.08);
+            border-color: #d4af37;
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -295,7 +303,7 @@
 
         .hero-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 0.75rem;
             margin-bottom: 2rem;
             max-width: 100%;
@@ -326,17 +334,19 @@
         }
 
         .hero-price-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 2rem;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
             margin-top: 2rem;
             display: inline-block;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin-left: auto;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.08);
             position: relative;
             z-index: 10;
+            backdrop-filter: blur(48px) saturate(200%);
+            -webkit-backdrop-filter: blur(48px) saturate(200%);
         }
 
         .price-main {
@@ -471,6 +481,12 @@
             padding: 3rem;
             box-shadow: var(--shadow-soft);
             margin-bottom: 2rem;
+            transition: box-shadow 0.3s, background 0.3s;
+        }
+
+        .content-card.mt-4:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #fffbe6 100%);
+            box-shadow: 0 24px 48px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .content-card h2 {
@@ -751,7 +767,18 @@
                 margin-top: 100vh;
                 position: relative;
                 z-index: 1001;
-                background: white;
+                background: linear-gradient(270deg, #fffbe6, #ffe5e5, #ffd6d6, #ffe5e5, #fffbe6);
+                background-size: 1200% 1200%;
+                animation: animatedContentGradient 18s ease infinite;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+                box-shadow: 0 8px 32px rgba(220,38,38,0.08);
+            }
+
+            @keyframes animatedContentGradient {
+                0% {background-position: 0% 50%;}
+                50% {background-position: 100% 50%;}
+                100% {background-position: 0% 50%;}
             }
 
             .content-section {
@@ -849,50 +876,27 @@
         }
     </style>
 </head>
+
 <body>
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-content {
-                padding: 0 1rem;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-    </style>
-</head>
-<body>
+<main id="main-content" aria-label="Main Content">
     <!-- Modern Navigation -->
     <nav class="navbar-modern" id="mainNav">
         <div class="container">
             <div class="navbar-content">
                 <a href="../../index.html" class="navbar-brand-modern">
-                    Tresor<span class="accent">Lodge</span>
+                        Tresor<span class="accent">Lodge</span>
                 </a>
                 
-                <div class="nav-modern d-none d-lg-flex">
-                    <a href="../../index.html" class="nav-link">Accueil</a>
-                    <a href="rooms.html" class="nav-link">Chambres</a>
-                    <a href="../restaurant/restaurant.html" class="nav-link">Restaurant</a>
-                    <a href="../contact/contact.html" class="nav-link">Contact</a>
-                </div>
+                    <div class="nav-modern d-none d-lg-flex">
+                        <a href="../../index.html" class="nav-link" aria-label="Accueil - Page d'accueil">Accueil</a>
+                        <a href="rooms.html" class="nav-link" aria-label="Chambres - Voir les chambres">Chambres</a>
+                        <a href="../restaurant/restaurant.html" class="nav-link" aria-label="Restaurant - Voir le restaurant">Restaurant</a>
+                        <a href="../contact/contact.html" class="nav-link" aria-label="Contact - Page de contact">Contact</a>
+                    </div>
                 
-                <div class="cta-buttons d-none d-lg-flex">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">
-                        <i class="fas fa-phone mr-2"></i>Appeler
-                    </a>
-                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">
-                        Réserver
-                    </a>
-                </div>
+                    <div class="cta-buttons d-none d-lg-flex">
+                        <a href="tel:+243816144449" class="btn-cta btn-outline-modern" aria-label="Contactez nous pour une réservation par téléphone">Contactez nous pour une réservation</a>
+                    </div>
                 
                 <!-- Mobile Menu Button -->
                 <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
@@ -906,13 +910,13 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-content">
-                <a href="../../index.html" class="mobile-nav-link">Accueil</a>
-                <a href="rooms.html" class="mobile-nav-link">Chambres</a>
-                <a href="../restaurant/restaurant.html" class="mobile-nav-link">Restaurant</a>
-                <a href="../contact/contact.html" class="mobile-nav-link">Contact</a>
+                <a href="../../index.html" class="mobile-nav-link" aria-label="Accueil - Page d'accueil">Accueil</a>
+                <a href="rooms.html" class="mobile-nav-link" aria-label="Chambres - Voir les chambres">Chambres</a>
+                <a href="../restaurant/restaurant.html" class="mobile-nav-link" aria-label="Restaurant - Voir le restaurant">Restaurant</a>
+                <a href="../contact/contact.html" class="mobile-nav-link" aria-label="Contact - Page de contact">Contact</a>
                 <div class="mobile-cta">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern">Appeler</a>
-                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern">Réserver</a>
+                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern" aria-label="Appeler pour une réservation">Appeler</a>
+                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern" aria-label="Réserver via le formulaire de contact">Réserver</a>
                 </div>
             </div>
         </div>
@@ -931,84 +935,43 @@
         <!-- Hero Content -->
         <div class="container">
             <div class="hero-content" data-aos="fade-up">
-                <!-- Breadcrumb -->
-                <div class="hero-breadcrumb">
-                    <a href="../../index.html">Accueil</a> / 
-                    <a href="rooms.html">Chambres</a> / 
-                    <span>Chambre Standard</span>
-                </div>
-                
-                <!-- Hero Title -->
-                <h1 class="hero-title">Chambre Standard</h1>
-                <p class="hero-subtitle">Confort essentiel et excellent rapport qualité-prix au cœur de Lubumbashi</p>
-                
-                <!-- Hero Features Grid -->
-                <div class="hero-features" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-item">
-                        <i class="fas fa-wifi"></i>
-                        <span>WiFi Gratuit</span>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-7 col-md-7 mb-4 mb-lg-0">
+                        <div class="mb-4">
+                            <div class="hero-breadcrumb">
+                                <a href="../../index.html">Accueil</a> / 
+                                <a href="rooms.html">Chambres</a> / 
+                                <span>Chambre Standard</span>
+                            </div>
+                            <h1 class="hero-title" style="white-space:nowrap;">Chambre Standard</h1>
+                            <p class="hero-subtitle">Confort essentiel et excellent rapport qualité-prix au cœur de Lubumbashi</p>
+                        </div>
+                        <div class="hero-features" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-item"><i class="fas fa-wifi"></i><span>WiFi Gratuit</span></div>
+                            <div class="feature-item"><i class="fas fa-car"></i><span>Parking Inclus</span></div>
+                            <div class="feature-item"><i class="fas fa-coffee"></i><span>Petit Déjeuner</span></div>
+                            <div class="feature-item"><i class="fas fa-swimming-pool"></i><span>Accès Piscine</span></div>
+                            <div class="feature-item"><i class="fas fa-tv"></i><span>TV Satellite</span></div>
+                            <div class="feature-item"><i class="fas fa-snowflake"></i><span>Climatisation</span></div>
+                            <div class="feature-item"><i class="fas fa-bell-concierge"></i><span>Service 24h/24</span></div>
+                            <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Coffre-Fort</span></div>
+                            <div class="feature-item"><i class="fas fa-bath"></i><span>Salle de Bain</span></div>
+                            <div class="feature-item"><i class="fas fa-bed"></i><span>Lit Confortable</span></div>
+                            <div class="feature-item"><i class="fas fa-broom"></i><span>Service Ménage</span></div>
+                            <div class="feature-item"><i class="fas fa-concierge-bell"></i><span>Room Service</span></div>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-car"></i>
-                        <span>Parking Inclus</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-coffee"></i>
-                        <span>Petit Déjeuner</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-swimming-pool"></i>
-                        <span>Accès Piscine</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-tv"></i>
-                        <span>TV Satellite</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-snowflake"></i>
-                        <span>Climatisation</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-bell-concierge"></i>
-                        <span>Service 24h/24</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Coffre-Fort</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-bath"></i>
-                        <span>Salle de Bain</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-bed"></i>
-                        <span>Lit Confortable</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-broom"></i>
-                        <span>Service Ménage</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-concierge-bell"></i>
-                        <span>Room Service</span>
-                    </div>
-                </div>
-                
-                <!-- Glassmorphism Price Card -->
-                <div class="hero-price-card" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="price-main">
-                        <span class="amount">60</span>
-                        <span class="currency">$</span>
-                        <span class="period">/ nuit</span>
-                    </div>
-                    <div class="price-badge">Excellent Rapport Qualité-Prix</div>
-                    <div class="hero-cta">
-                        <a href="../contact/contact.html" class="btn btn-primary">
-                            <i class="fas fa-calendar-check"></i> Réserver Maintenant
-                        </a>
-                        <a href="tel:+243816144449" class="btn btn-outline">
-                            <i class="fas fa-phone"></i> +243 816 144 449
-                        </a>
+                    <div class="col-lg-5 col-md-5 d-flex justify-content-center">
+                        <div class="hero-price-card" data-aos="zoom-in" data-aos-delay="600">
+                            <div class="price-main">
+                                <span class="currency" style="font-size:1.3rem; font-weight:600; color:#d4af37; vertical-align:middle; display:inline-block; line-height:1; margin-right:2px;">$</span>
+                                <span class="amount">60</span>
+                                <span class="period">/ night</span>
+                            </div>
+                            <div style="font-size:1.5rem; color:#f7c948; margin-bottom:0.5rem;">&#9733;&#9733;&#9733;</div>
+                            <div style="font-size:1.1rem; font-weight:600; color:#fff; margin-bottom:1.5rem;">Chambre Standard</div>
+                            <a href="tel:+243816144449" class="btn btn-outline-secondary w-100" style="font-weight:600; font-size:1.05rem; border-radius:25px;" aria-label="Contactez nous pour une réservation par téléphone">Contactez nous pour une réservation</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1023,111 +986,70 @@
             <div class="row">
                 <div class="col-lg-8">
                     <!-- Description Card -->
-                    <div class="content-card" data-aos="fade-up">
-                        <h2>Votre Chambre Standard</h2>
-                        <p>
-                            Découvrez notre chambre standard au TresorLodge, conçue pour offrir tout le confort essentiel 
-                            sans compromis sur la qualité. Parfaite pour les voyageurs d'affaires et les touristes 
-                            recherchant un excellent rapport qualité-prix dans un cadre moderne et accueillant à Lubumbashi.
-                        </p>
-                        <p>
-                            Chaque chambre dispose d'une literie de qualité, d'une salle de bain privée moderne, 
-                            de la climatisation et de tous les équipements nécessaires pour un séjour agréable. 
-                            L'accès gratuit au WiFi, au parking et à la piscine est inclus dans votre séjour.
-                        </p>
-                        
-                        <!-- Amenities -->
-                        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary-color);">Services Inclus</h3>
+                    <div class="content-card">
+                        <h2>Description de la Chambre</h2>
+                        <p>Notre chambre supérieure offre un niveau de confort élevé avec des équipements haut de gamme. Parfaite pour les clients exigeants recherchant un excellent rapport qualité-prix, elle dispose d'une vue panoramique et d'aménagements soignés pour un séjour mémorable à Lubumbashi.</p>
+                        <h4 class="mt-4">Caractéristiques Spéciales</h4>
+                        <ul>
+                            <li>Vue panoramique imprenable</li>
+                            <li>Salle de bain deluxe avec finitions haut de gamme</li>
+                            <li>Mobilier design et moderne</li>
+                            <li>Espace de travail confortable</li>
+                            <li>Minibar entièrement équipé</li>
+                        </ul>
+                        <h4 class="mt-4">Équipements Inclus</h4>
                         <div class="amenities-grid">
-                            <div class="amenity-tag">Confort Standard</div>
                             <div class="amenity-tag">WiFi Gratuit</div>
-                            <div class="amenity-tag">Parking Gratuit</div>
-                            <div class="amenity-tag">Petit Déjeuner</div>
-                            <div class="amenity-tag">Accès Piscine</div>
-                            <div class="amenity-tag">TV Satellite</div>
+                            <div class="amenity-tag">Petit-déjeuner Gratuit</div>
+                            <div class="amenity-tag">Minibar</div>
                             <div class="amenity-tag">Climatisation</div>
-                            <div class="amenity-tag">Service de Ménage</div>
-                            <div class="amenity-tag">Coffre-Fort</div>
-                            <div class="amenity-tag">Service 24h/24</div>
+                            <div class="amenity-tag">TV Satellite</div>
+                            <div class="amenity-tag">Parking Gratuit</div>
+                            <div class="amenity-tag">Accès Piscine</div>
+                            <div class="amenity-tag">Vue Panoramique</div>
+                            <div class="amenity-tag">Salle de Bain Deluxe</div>
+                            <div class="amenity-tag">Coffre-fort</div>
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-lg-4">
-                    <!-- Quick Info Card -->
-                    <div class="content-card" data-aos="fade-left">
-                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Informations Rapides</h3>
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-users" style="color: var(--secondary-color); width: 20px;"></i>
-                                <span>Capacité: 1-2 personnes</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-expand-arrows-alt" style="color: var(--secondary-color); width: 20px;"></i>
-                                <span>Superficie: 25m²</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-door-open" style="color: var(--secondary-color); width: 20px;"></i>
-                                <span>Vue: Jardin ou ville</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-clock" style="color: var(--secondary-color); width: 20px;"></i>
-                                <span>Check-in: 14h00</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <i class="fas fa-clock" style="color: var(--secondary-color); width: 20px;"></i>
-                                <span>Check-out: 12h00</span>
-                            </div>
+                    <!-- Price Highlight -->
+                    <div class="hero-price-card" data-aos="zoom-in" data-aos-delay="600" style="background:#dc2626; color:#fff; border: 1px solid #b91c1c;">
+                        <div class="price-main">
+                            <span class="amount" style="color:#fff;">60</span>
+                            <span class="currency" style="color:#fff;">$</span>
+                            <span class="period" style="color:#fff;">/ night</span>
                         </div>
+                        <div class="hero-cta">
+                            <a href="tel:+243816144449" class="btn btn-primary" aria-label="Contactez nous pour une réservation par téléphone">
+                                <i class="fas fa-calendar-check"></i> Contactez nous pour une réservation
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Contact Info in Card -->
+                    <div class="content-card mt-4">
+                        <h4>Besoin d'aide?</h4>
+                        <p>Notre équipe est disponible 24h/24 pour vous aider avec votre réservation.</p>
+                        <a href="tel:+243816144449" class="btn btn-outline-secondary w-100" aria-label="Contactez nous pour une réservation par téléphone">Contactez nous pour une réservation</a>
+                        <p><strong>Email:</strong> tresorlodgerdc@gmail.com</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h3>Réservez Votre Séjour</h3>
-            <p>Profitez de notre excellent rapport qualité-prix et réservez dès maintenant</p>
-            <div class="cta-buttons-section">
-                <a href="../contact/contact.html" class="btn-cta-large">
-                    <i class="fas fa-calendar-alt"></i>
-                    Réserver Maintenant
-                </a>
-                <a href="tel:+243816144449" class="btn-cta-large btn-cta-outline">
-                    <i class="fas fa-phone"></i>
-                    +243 816 144 449
-                </a>
-            </div>
-        </div>
-    </section>
+    
     </div>
 
     <!-- Footer -->
-    <footer class="footer-modern">
+    <footer class="footer-modern" aria-label="Site Footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>TresorLodge</h4>
+                    <h4><span style="color:#fff;">Tresor</span><span style="color:#dc2626;">Lodge</span></h4>
                     <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Navigation</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="../../index.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Accueil</a>
-                        <a href="rooms.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Chambres</a>
-                        <a href="../restaurant/restaurant.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Restaurant</a>
-                        <a href="../contact/contact.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Contact</a>
-                    </div>
-                </div>
                 
                 <div class="footer-section">
                     <h4>Contact</h4>
@@ -1144,18 +1066,6 @@
                         <span>tresorlodgerdc@gmail.com</span>
                     </div>
                     
-                    <!-- Map -->
-                    <div style="margin-top: 1rem; border-radius: 10px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.836524533088!2d27.44454867505468!3d-11.634996288570848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19723b97ea4cc931%3A0xbf1d28417bd8a0f6!2sTRESOR%20LODGE!5e0!3m2!1sen!2smy!4v1721815181935!5m2!1sen!2smy" 
-                            width="100%" 
-                            height="150" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
                 </div>
             </div>
             
@@ -1264,6 +1174,7 @@
             }
         });
     </script>
+</main>
 </body>
 </html>
 

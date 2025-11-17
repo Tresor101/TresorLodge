@@ -19,7 +19,7 @@
     <meta property="og:type" content="website">
     
     <!-- Favicon -->
-    <link rel="icon" href="../../images/about2.png" type="image/x-icon">
+    <!-- About icon removed -->
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -1335,6 +1335,7 @@
 </head>
         
 <body>
+<main id="main-content" aria-label="Main Content">
     <!-- Skip links for accessibility -->
     <a href="#main-content" class="skip-link sr-only sr-only-focusable">Aller au contenu principal</a>
     <a href="#contact-form" class="skip-link sr-only sr-only-focusable">Aller au formulaire de contact</a>
@@ -1538,24 +1539,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer-modern">
+    <footer class="footer-modern" aria-label="Site Footer">
         <div class="container">
             <div class="footer-content">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-4">
                         <div class="footer-section">
                             <h3>TresorLodge</h3>
                             <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
-                            <div class="social-links">
-                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-2 col-md-6">
+                    <div class="col-lg-4 col-md-4">
                         <div class="footer-section">
                             <h4>Navigation</h4>
                             <ul class="footer-links">
@@ -1566,21 +1560,7 @@
                             </ul>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-section">
-                            <h4>Services</h4>
-                            <ul class="footer-links">
-                                <li><a href="#">Réception 24h/24</a></li>
-                                <li><a href="#">Restaurant</a></li>
-                                <li><a href="#">Piscine & Détente</a></li>
-                                <li><a href="#">Transport VIP</a></li>
-                                <li><a href="#">Conciergerie</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-4">
                         <div class="footer-section">
                             <h4>Contact</h4>
                             <div class="contact-info">
@@ -1590,7 +1570,7 @@
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone"></i>
-                                    <span>+243 816 144 449</span>
+                                    <a href="tel:+243816144449" class="btn btn-outline-secondary">Contactez nous pour une réservation</a>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-envelope"></i>
@@ -1936,5 +1916,6 @@
             return re.test(phone);
         }
     </script>
+</main>
 </body>
 </html>
