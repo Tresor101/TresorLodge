@@ -40,9 +40,14 @@
 
         /* Navigation */
         .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.75) !important;
+            backdrop-filter: blur(16px) !important;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+            border-radius: 0 0 22px 22px;
+            margin: 12px auto 0 auto;
+            max-width: 1200px;
+            padding: 0.5rem 2rem;
+            transition: background 0.3s, box-shadow 0.3s;
         }
 
         .navbar-brand {
@@ -50,6 +55,8 @@
             font-size: 2rem;
             font-weight: 700;
             color: var(--primary) !important;
+            letter-spacing: 1px;
+            padding-left: 0.5rem;
         }
 
         .navbar-brand .accent {
@@ -59,12 +66,36 @@
         .nav-link {
             color: var(--text-dark) !important;
             font-weight: 500;
-            margin: 0 0.5rem;
-            transition: color 0.3s ease;
+            margin: 0 0.7rem;
+            padding: 0.5rem 1.1rem;
+            border-radius: 18px;
+            transition: color 0.3s, background 0.3s;
+            position: relative;
         }
 
         .nav-link:hover {
-            color: var(--secondary) !important;
+            color: #fff !important;
+            background: var(--secondary);
+                .nav-link.active, .nav-link[aria-current="page"] {
+                    background: var(--accent);
+                    color: #fff !important;
+                }
+                .navbar .btn-navbar-book {
+                    background: var(--accent);
+                    color: #fff;
+                    border: none;
+                    border-radius: 22px;
+                    padding: 0.6rem 1.5rem;
+                    font-weight: 600;
+                    margin-left: 1.2rem;
+                    box-shadow: 0 2px 8px rgba(243,156,18,0.10);
+                    transition: background 0.2s, transform 0.2s;
+                }
+                .navbar .btn-navbar-book:hover {
+                    background: #e67e22;
+                    color: #fff;
+                    transform: translateY(-2px) scale(1.04);
+                }
         }
 
         .btn-book {
@@ -86,14 +117,82 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
+            min-height: 90vh;
+            background: linear-gradient(120deg, rgba(44,62,80,0.7) 60%, rgba(243,156,18,0.3) 100%), url('images/cover.jpeg') center/cover no-repeat;
             display: flex;
             align-items: center;
-            color: white;
+            justify-content: center;
+            color: #fff;
             text-align: center;
+            position: relative;
+        }
+        .hero-card {
+            background: rgba(255,255,255,0.13);
+            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.7rem;
+            font-weight: 700;
+            margin-bottom: 1.1rem;
+            color: #fff;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(44,62,80,0.18);
+        }
+        .hero-subtitle {
+            font-size: 1.18rem;
+            margin-bottom: 2.1rem;
+            opacity: 0.97;
+            color: #f8f8f8;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-btns .btn-book {
+            font-size: 1.08rem;
+            padding: 0.8rem 2.1rem;
+            border-radius: 30px;
+            background: #F39C12;
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(243,156,18,0.12);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .hero-btns .btn-book:hover {
+            background: #e67e22;
+            transform: translateY(-2px) scale(1.04);
+        }
+        .hero-btns .btn-outline-light {
+            font-size: 1.08rem;
+            padding: 0.8rem 2.1rem;
+            border-radius: 30px;
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+        }
+        .hero-btns .btn-outline-light:hover {
+            background: #fff;
+            color: #2C3E50;
+            border: 2px solid #F39C12;
+        }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 1.7rem; }
+            .hero-card { padding: 1.5rem 0.5rem; }
         }
 
         @keyframes gradientShift {
@@ -290,19 +389,17 @@
 <main id="main-content" aria-label="Main Content">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                Tresor<span class="accent">Lodge</span>
+                <i class="fas fa-hotel me-2" style="color:var(--accent);"></i> Tresor<span class="accent">Lodge</span>
             </a>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sections/rooms/rooms.html">Rooms</a>
@@ -311,38 +408,27 @@
                         <a class="nav-link" href="sections/restaurant/restaurant.html">Restaurant</a>
                     </li>
                     <li class="nav-item">
-                        <!-- About link removed -->
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="sections/contact/contact.html">Contact</a>
                     </li>
                 </ul>
-                <a href="tel:+243816144449" class="btn-book ms-3">
-                    <i class="fas fa-phone me-2"></i>Book Now
-                </a>
+                <!-- Book Now button removed as requested -->
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h1 class="hero-title">Welcome to TresorLodge</h1>
-                    <p class="hero-subtitle">
-                        Experience luxury and comfort in the heart of Lubumbashi. 
-                        Where Congolese hospitality meets world-class service.
-                    </p>
-                    <div class="d-flex gap-3 justify-content-center flex-wrap">
-                        <a href="sections/rooms/rooms.html" class="btn-book">
-                            <i class="fas fa-calendar-alt me-2"></i>Book Your Stay
-                        </a>
-                        <a href="#features" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-arrow-down me-2"></i>Explore
-                        </a>
-                    </div>
-                </div>
+        <div class="container hero-card">
+            <h1 class="hero-title">Welcome to TresorLodge</h1>
+            <p class="hero-subtitle">
+                Discover a sanctuary of luxury and relaxation in Lubumbashi.<br>
+                Unwind by our pool, savor gourmet cuisine, and enjoy true Congolese hospitality.
+            </p>
+            <div class="hero-btns">
+                <!-- Book Your Stay button removed as requested -->
+                <a href="#features" class="btn btn-outline-light">
+                    <i class="fas fa-arrow-down me-2"></i>Explore
+                </a>
             </div>
         </div>
     </section>
@@ -353,7 +439,7 @@
             <h2 class="section-title">Why Choose TresorLodge?</h2>
             
             <div class="row g-4">
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="card-custom text-center">
                         <div class="card-icon">
                             <i class="fas fa-crown"></i>
@@ -363,7 +449,7 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="card-custom text-center">
                         <div class="card-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -373,13 +459,23 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="card-custom text-center">
                         <div class="card-icon">
                             <i class="fas fa-utensils"></i>
                         </div>
                         <h4>Gourmet Dining</h4>
                         <p>Exquisite Congolese and international cuisine by expert chefs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card-custom text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-swimming-pool"></i>
+                        </div>
+                        <h4>Swimming Pool</h4>
+                        <p>Relax and refresh in our beautiful, modern pool—perfect for leisure and family fun.</p>
+                        <p class="mb-0"><strong>Access: $10 USD/adult, $5 USD/kid</strong></p>
                     </div>
                 </div>
             </div>
@@ -467,58 +563,30 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="section cta">
-        <div class="container text-center">
-            <h2>Ready for an Unforgettable Experience?</h2>
-            <p class="lead mb-4">Book your stay at TresorLodge today and discover the finest hospitality in Lubumbashi</p>
-            <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="tel:+243816144449" class="btn btn-light btn-lg">
-                    <i class="fas fa-phone me-2"></i>Contactez nous pour une réservation
-                </a>
-                <a href="mailto:tresorlodgerdc@gmail.com" class="btn btn-outline-light btn-lg">
-                    <i class="fas fa-envelope me-2"></i>Contact Us
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer" aria-label="Site Footer">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 text-center">
                     <h5>TresorLodge</h5>
                     <p>Experience the finest hospitality in Lubumbashi. Where luxury meets authentic Congolese warmth.</p>
                 </div>
-                
-                <div class="col-lg-2">
+                <div class="col-lg-3 text-center">
                     <h5>Quick Links</h5>
                     <div>
                         <a href="index.html" class="d-block mb-2">Home</a>
                         <a href="sections/rooms/rooms.html" class="d-block mb-2">Rooms</a>
                         <a href="sections/restaurant/restaurant.html" class="d-block mb-2">Restaurant</a>
-                        <!-- About link removed -->
                         <a href="sections/contact/contact.html" class="d-block mb-2">Contact</a>
                     </div>
                 </div>
-                
-                <div class="col-lg-3">
+                <div class="col-lg-3 text-center">
                     <h5>Services</h5>
                     <div>
                         <a href="#" class="d-block mb-2">Room Service</a>
                         <a href="#" class="d-block mb-2">Concierge</a>
                         <a href="#" class="d-block mb-2">Business Center</a>
                         <a href="#" class="d-block mb-2">Event Planning</a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3">
-                    <h5>Contact Info</h5>
-                    <div>
-                        <p><i class="fas fa-map-marker-alt me-2"></i>Golf Malela, Lubumbashi</p>
-                        <p><i class="fas fa-phone me-2"></i>+243 816 144 449</p>
-                        <p><i class="fas fa-envelope me-2"></i>tresorlodgerdc@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -597,4 +665,52 @@
         });
     </script>
 </body>
+    <!-- Floating Social Buttons -->
+    <div class="floating-social-buttons">
+        <a href="https://wa.me/243816144449" class="float-btn whatsapp" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/tresorlodgerdc?igsh=MTIybnl0dzdhMDNtYw==" class="float-btn instagram" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1BiCJkG8wb/?mibextid=wwXIfr" class="float-btn facebook" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="mailto:info@tresorlodge.com" class="float-btn email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    <style>
+        .floating-social-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.7rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #2C3E50;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.12) translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+        }
+        .float-btn.whatsapp { background: #25D366; }
+        .float-btn.instagram { background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB); }
+        .float-btn.facebook { background: #1877f3; }
+        .float-btn.email { background: #F39C12; }
+    </style>
 </html>
