@@ -1,6 +1,133 @@
+
+/* Floating Social Buttons Styles (moved from rooms.html) */
+.floating-social-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+.float-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.7rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #2C3E50;
+    text-decoration: none;
+}
+.float-btn:hover {
+    transform: scale(1.12) translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+}
+.float-btn.whatsapp { background: #25D366; }
+.float-btn.instagram { background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB); }
+.float-btn.facebook { background: #1877f3; }
+.float-btn.email { background: #F39C12; }
 /* Rooms Section Specific Styles */
-/* Import shared variables */
-@import url('../shared/css/styles.css');
+
+/* Standalone CSS Variables for Rooms Section */
+:root {
+    /* Brand Colors */
+    --primary-color: #0f1419;
+    --secondary-color: #c41e3a;
+    --accent-color: #2d3748;
+    --tertiary-color: #ffffff;
+    --quaternary-color: #8b1538;
+    /* Text Colors */
+    --text-dark: #111217;
+    --text-medium: #1a202c;
+    --text-light: #2d3748;
+    --text-muted: #4a5568;
+    --text-white: #ffffff;
+    --text-accent: #c41e3a;
+    --text-success: #059669;
+    --text-warning: #d97706;
+    --text-error: #dc2626;
+    /* Background Colors */
+    --background-white: #ffffff;
+    --background-light: #f5f7fa;
+    --background-soft: #e9ecef;
+    --background-medium: #d1d5db;
+    --background-dark: #111217;
+    --background-accent: #e57373;
+    --background-luxury: #1a202c;
+    --background-gray: #f1f5f9;
+    /* Card & Component Backgrounds */
+    --background-card: #ffffff;
+    --background-card-hover: #f7fafc;
+    --background-card-active: #edf2f7;
+    --background-overlay: rgba(15, 20, 25, 0.85);
+    --background-modal: rgba(15, 20, 25, 0.75);
+    /* Border Colors */
+    --border-light: #d1d5db;
+    --border-medium: #a0aec0;
+    --border-accent: #c41e3a;
+    --border-dark: #1a202c;
+    --border-focus: #3182ce;
+    /* State Colors */
+    --color-success: #059669;
+    --color-warning: #d97706;
+    --color-error: #dc2626;
+    --color-info: #0369a1;
+    /* Background State Colors */
+    --bg-success: #d1fae5;
+    --bg-warning: #fed7aa;
+    --bg-error: #fee2e2;
+    --bg-info: #dbeafe;
+    /* Shadows */
+    --shadow-xs: 0 1px 3px rgba(15, 20, 25, 0.05);
+    --shadow-sm: 0 2px 8px rgba(15, 20, 25, 0.08);
+    --shadow-md: 0 4px 15px rgba(15, 20, 25, 0.12);
+    --shadow-lg: 0 8px 25px rgba(15, 20, 25, 0.15);
+    --shadow-xl: 0 15px 35px rgba(15, 20, 25, 0.18);
+    --shadow-2xl: 0 25px 50px rgba(15, 20, 25, 0.25);
+    --shadow-accent: 0 4px 20px rgba(196, 30, 58, 0.25);
+    --shadow-luxury: 0 10px 50px rgba(15, 20, 25, 0.2);
+    /* Effects & Transitions */
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+    --border-radius-full: 9999px;
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #c41e3a 0%, #8b1538 100%);
+    --gradient-dark: linear-gradient(135deg, #0f1419 0%, #2d3748 100%);
+    --gradient-light: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    --gradient-accent: linear-gradient(135deg, #fed7d7 0%, #ffffff 100%);
+    --gradient-luxury: linear-gradient(135deg, #1a202c 0%, #0f1419 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(15, 20, 25, 0.9) 0%, rgba(45, 55, 72, 0.8) 100%);
+    --gradient-card: linear-gradient(135deg, #ffffff 0%, #f7fafc 50%, #ffffff 100%);
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    /* Typography Scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+}
 
 /* Room-specific enhancements */
 .room-hero {
@@ -26,9 +153,22 @@
 
 .room-media {
     position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
+}
+
+/* --- Migrated from rooms.html <style> block --- */
+:root {
+    --primary: #2C3E50;
+    --secondary: #E74C3C;
+    --accent: #F39C12;
+    --text-dark: #2C3E50;
+    --text-light: #7F8C8D;
+    --white: #FFFFFF;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --premium-gradient: linear-gradient(135deg, #d4af37, #ffd700);
+    --superior-gradient: linear-gradient(135deg, #c0392b, #e74c3c);
+    --standard-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+    --accent-gold: #d4af37;
 }
 
 .room-video {
@@ -157,6 +297,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
 }
+/* removed stray closing brace */
 
 @media (max-width: 768px) {
     .form-row {
