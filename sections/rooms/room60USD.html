@@ -1,15 +1,8 @@
-            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
-        }
-
-        .btn-outline-secondary.w-100:hover {
-            background: linear-gradient(135deg, #d4af37 0%, #fffbe6 100%);
-            color: #1a1a1a;
-            box-shadow: 0 24px 48px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0,0,0,0.08);
-            border-color: #d4af37;
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
+        <link rel="stylesheet" href="../shared/css/contact-navbar.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chambre Standard 60$ - TresorLodge | Confort et Élégance</title>
     
@@ -19,43 +12,32 @@
     <meta name="author" content="TresorLodge">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Chambre Standard 60$ - TresorLodge">
-    <meta property="og:description" content="Chambre standard confortable avec tous les équipements modernes au cœur de Lubumbashi">
-    <meta property="og:image" content="../../images/about1.jpeg">
-    <meta property="og:url" content="https://tresorlodge.com/sections/rooms/room60USD.html">
+    <meta property="og:title" content="Chambre Supérieure - TresorLodge">
+    <meta property="og:description" content="Chambre supérieure avec vue panoramique et équipements haut de gamme">
+    <meta property="og:image" content="../../images/about2.jpeg">
+    <meta property="og:url" content="https://tresorlodge.com/room60USD.html">
     
     <!-- Favicon -->
     <link rel="icon" href="../../images/about2.png" type="image/x-icon">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    
-    <!-- Custom CSS -->
     <style>
         :root {
-            --primary-color: #1a1a1a;
-            --secondary-color: #dc2626;
-            --accent-gold: #d4af37;
-            --text-light: #ffffff;
-            --text-dark: #1a1a1a;
-            --background-light: #f8fafc;
-            --background-dark: #1e293b;
-            --gradient-primary: linear-gradient(135deg, #dc2626, #b91c1c);
-            --gradient-secondary: linear-gradient(135deg, #d4af37, #b8860b);
-            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.15);
-            --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.2);
-            --border-radius: 20px;
+            --primary: #2C3E50;
+            --secondary: #E74C3C;
+            --accent: #F39C12;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --white: #FFFFFF;
+            --cream: #FDF6E3;
         }
 
         * {
@@ -67,163 +49,57 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        /* Modern Navigation */
-        .navbar-modern {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        .navbar-modern.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(25px);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .navbar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar-brand-modern {
+        .navbar-brand {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
             font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            color: var(--primary) !important;
         }
 
-        .navbar-brand-modern .accent {
-            color: var(--secondary-color);
+        .navbar-brand .accent {
+            color: var(--secondary);
         }
 
-        .nav-modern {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-modern .nav-link {
-            color: var(--text-dark);
-            text-decoration: none;
+        .nav-link {
+            color: var(--text-dark) !important;
             font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
         }
 
-        .nav-modern .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary-color);
-            transition: width 0.3s ease;
+        .nav-link:hover {
+            color: var(--secondary) !important;
         }
 
-        .nav-modern .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .btn-cta {
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .btn-outline-modern {
-            color: var(--text-dark);
-            border-color: var(--text-dark);
-        }
-
-        .btn-outline-modern:hover {
-            background: var(--text-dark);
-            color: var(--text-light);
-        }
-
-        .btn-primary-modern {
-            background: var(--gradient-primary);
-            color: var(--text-light);
-        }
-
-        .btn-primary-modern:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            background: none;
+        .btn-book {
+            background: var(--secondary);
+            color: white;
+            padding: 0.7rem 1.5rem;
             border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-btn span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-dark);
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu {
-            position: fixed;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 2rem;
-            transform: translateY(-100%);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .mobile-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .mobile-nav-link {
-            display: block;
-            color: var(--text-dark);
+            border-radius: 50px;
+            font-weight: 600;
             text-decoration: none;
-            padding: 1rem 0;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-        /* Hero Section with Video Background */
-        .hero-section {
+        .btn-book:hover {
+            background: #C0392B;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Room Hero Section */
+        .room-hero {
             height: 70vh;
             display: flex;
             align-items: center;
@@ -249,7 +125,7 @@
             100% { background-position: 0% 50%; }
         }
         
-        .hero-section::before {
+        .room-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -267,31 +143,16 @@
             z-index: -1;
         }
 
-        .hero-content {
-            text-align: center;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .hero-breadcrumb {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .hero-breadcrumb a {
-            color: var(--accent-gold);
-            text-decoration: none;
+        .room-hero .container {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-size: 4rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .hero-subtitle {
@@ -303,7 +164,7 @@
 
         .hero-features {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 0.75rem;
             margin-bottom: 2rem;
             max-width: 100%;
@@ -334,396 +195,196 @@
         }
 
         .hero-price-card {
-            background: rgba(255,255,255,0.18);
-            border: 1px solid rgba(255,255,255,0.35);
-            border-radius: 24px;
-            padding: 2.5rem 2rem;
-            margin-top: 2rem;
-            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
             text-align: center;
-            margin-left: auto;
-            box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             position: relative;
-            z-index: 10;
-            backdrop-filter: blur(48px) saturate(200%);
-            -webkit-backdrop-filter: blur(48px) saturate(200%);
+            z-index: 3;
         }
 
         .price-main {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
             margin-bottom: 1rem;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
         .amount {
             font-size: 3.5rem;
-            font-weight: 800;
-            font-family: 'Cormorant Garamond', serif;
-            color: #fff;
-        }
-
-        .currency {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--accent-gold);
+            font-weight: 700;
+            margin: 0 0.2rem;
         }
 
         .period {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-left: 0.5rem;
+            opacity: 0.8;
         }
 
-        .price-badge {
-            background: var(--gradient-secondary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 15px;
-            font-weight: 600;
-            font-size: 0.9rem;
+        .rating {
             margin-bottom: 1.5rem;
-            display: inline-block;
+        }
+
+        .stars {
+            font-size: 1.5rem;
+            color: #f39c12;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         .hero-cta {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
-        .hero-cta .btn {
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary-color);
-            border: 2px solid white;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-gold);
-            border-color: var(--accent-gold);
-            color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-outline {
+        .btn-outline-light {
             background: transparent;
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.5);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Room Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            text-align: center;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 500;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.8);
+            color: white;
+            text-decoration: none;
         }
 
-        .feature-card i {
-            font-size: 2rem;
-            color: var(--accent-gold);
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-
-        .feature-card h5 {
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
         }
 
-        .feature-card p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin: 0;
+        .breadcrumb a:hover {
+            color: white;
+        }
+        
+        .room-main {
+            background: var(--cream);
+            padding: 4rem 0;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Content Section */
-        .content-section {
-            padding: 6rem 0;
-            background: var(--background-light);
-        }
-
-        .content-card {
+        .card-custom {
             background: white;
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-soft);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: auto;
+            border: none;
             margin-bottom: 2rem;
-            transition: box-shadow 0.3s, background 0.3s;
         }
 
-        .content-card.mt-4:hover {
-            background: linear-gradient(135deg, #d4af37 0%, #fffbe6 100%);
-            box-shadow: 0 24px 48px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0,0,0,0.08);
+        .card-custom:hover {
+            transform: translateY(-5px);
         }
 
-        .content-card h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .content-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #64748b;
-            margin-bottom: 1.5rem;
-        }
-
-        .amenities-grid {
+        .room-features {
+            list-style: none;
+            padding: 0;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
-            margin-top: 2rem;
+            margin: 1.5rem 0;
         }
 
-        .amenity-tag {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            text-align: center;
+        .room-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--cream);
+            border-radius: 10px;
             font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            color: var(--text-dark);
         }
 
-        .amenity-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-soft);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: var(--gradient-primary);
+        .room-features li::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
             color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .cta-section h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-buttons-section {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-cta-large {
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-cta-large:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-medium);
-            color: var(--primary-color);
-        }
-
-        .btn-cta-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-cta-outline:hover {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        /* Footer */
-        .footer-modern {
-            background: var(--primary-color);
-            color: white;
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .footer-section p {
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            opacity: 0.8;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .price-highlight {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
             color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1rem;
+            padding: 1.5rem;
+            border-radius: 15px;
             text-align: center;
-            opacity: 0.6;
+            margin-bottom: 2rem;
         }
 
-        /* Responsive Design */
+        .price-highlight h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive fixes */
         @media (max-width: 992px) {
-            .nav-modern,
-            .cta-buttons {
-                display: none;
+            .hero-price-card {
+                margin-top: 2rem;
+                padding: 1.5rem;
+                position: relative;
+                width: 100%;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .hero-section {
-                height: 60vh;
+            .room-hero {
+                height: auto;
+                min-height: 70vh;
                 padding: 2rem 0;
             }
 
-            .hero-title {
-                font-size: clamp(2.5rem, 7vw, 3.5rem);
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
             .hero-features {
-                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-                gap: 0.6rem;
-            }
-
-            .feature-item {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.85rem;
-            }
-
-            .hero-price-card {
-                padding: 1.5rem;
-                margin-top: 1.5rem;
-            }
-
-            .amount {
-                font-size: 3rem;
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 0.5rem;
+                margin-bottom: 2rem;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-section {
-                height: auto;
-                min-height: 100vh;
-                padding: 100px 1rem 2rem;
-                margin-top: 0;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 1000;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                padding: 0;
-            }
-
-            .hero-features {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .feature-item {
-                padding: 0.4rem 0.7rem;
-                font-size: 0.8rem;
-                border-radius: 20px;
-            }
-
             .hero-title {
-                font-size: clamp(2rem, 8vw, 2.8rem);
-                margin-bottom: 1rem;
+                font-size: 2.5rem;
             }
 
             .hero-subtitle {
@@ -731,362 +392,351 @@
                 margin-bottom: 1.5rem;
             }
 
+            .hero-features {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .feature-item {
+                font-size: 0.8rem;
+                padding: 0.5rem 0.7rem;
+                justify-content: center;
+            }
+
             .hero-price-card {
+                margin-top: 2rem;
+                padding: 1.5rem;
                 width: 100%;
-                max-width: 320px;
-                padding: 1.5rem 1rem;
-                margin-top: 1rem;
+                max-width: 350px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .amount {
                 font-size: 2.5rem;
             }
 
+            .hero-cta .btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+            
+            .room-features {
+                grid-template-columns: 1fr;
+            }
+
+            .room-main {
+                padding: 2rem 0;
+            }
+
+            .room-hero {
+                height: auto;
+                min-height: 60vh;
+                margin-top: 60px;
+                padding: 2rem 0;
+            }
+
+            .hero-video {
+                height: 120%;
+            }
+
+            .room-hero .row {
+                flex-direction: column;
+            }
+
+            .room-hero .col-lg-8,
+            .room-hero .col-lg-4 {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-features {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+                justify-items: center;
+            }
+
+            .feature-item {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.5rem;
+                justify-content: center;
+                width: 100%;
+                max-width: 140px;
+            }
+
+            .feature-item i {
+                font-size: 0.9rem;
+            }
+
+            .hero-price-card {
+                margin-top: 1.5rem;
+                padding: 1.25rem;
+                width: 100%;
+                max-width: 280px;
+                margin-left: auto;
+                margin-right: auto;
+                position: static;
+                transform: none;
+            }
+
+            .price-main {
+                margin-bottom: 0.75rem;
+            }
+
+            .amount {
+                font-size: 2rem;
+            }
+
             .currency {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
 
             .period {
                 font-size: 1rem;
             }
 
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.8rem;
-            }
-
             .hero-cta .btn {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem;
                 width: 100%;
-                max-width: 200px;
-                justify-content: center;
             }
 
-            /* Content after hero */
-            .content-wrapper {
-                margin-top: 100vh;
-                position: relative;
-                z-index: 1001;
-                background: linear-gradient(270deg, #fffbe6, #ffe5e5, #ffd6d6, #ffe5e5, #fffbe6);
-                background-size: 1200% 1200%;
-                animation: animatedContentGradient 18s ease infinite;
-                padding-top: 3rem;
-                padding-bottom: 3rem;
-                box-shadow: 0 8px 32px rgba(220,38,38,0.08);
+            .room-hero {
+                min-height: 100vh;
+                padding: 1.5rem 0;
+                display: flex;
+                align-items: stretch;
             }
 
-            @keyframes animatedContentGradient {
-                0% {background-position: 0% 50%;}
-                50% {background-position: 100% 50%;}
-                100% {background-position: 0% 50%;}
-            }
-
-            .content-section {
-                padding: 3rem 0;
-            }
-
-            .content-card {
-                padding: 2rem;
-            }
-
-            .content-card h2 {
-                font-size: 2rem;
-            }
-
-            .amenities-grid {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-section {
-                padding: 80px 0.5rem 2rem;
-            }
-
-            .hero-features {
-                grid-template-columns: 1fr;
-                gap: 0.4rem;
-            }
-
-            .feature-item {
-                font-size: 0.75rem;
-                padding: 0.4rem 0.6rem;
-            }
-
-            .hero-title {
-                font-size: clamp(1.8rem, 10vw, 2.2rem);
-            }
-
-            .hero-price-card {
-                padding: 1rem;
-            }
-
-            .amount {
-                font-size: 2rem;
-            }
-
-            .content-card {
-                padding: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .amenities-grid {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-
-            .cta-buttons-section {
+            .room-hero .container {
+                display: flex;
                 flex-direction: column;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .room-hero .row {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: calc(100vh - 3rem);
+            }
+
+            .hero-video {
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -2;
+            }
+
+            .room-hero .col-lg-8 {
+                text-align: center;
+                margin-bottom: 1.5rem;
+                order: 1;
+            }
+
+            .room-hero .col-lg-4 {
+                order: 2;
+                display: flex;
+                justify-content: center;
                 align-items: center;
             }
 
-            .btn-cta-large {
-                width: 100%;
-                max-width: 250px;
+            .breadcrumb {
                 justify-content: center;
+                margin-bottom: 1rem;
+            }
+
+            .room-main {
+                margin-top: 0;
+                position: relative;
+                z-index: 10;
             }
         }
 
         @media (max-width: 480px) {
             .hero-features {
                 grid-template-columns: 1fr;
+                gap: 0.5rem;
+                max-width: 200px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .feature-item {
                 font-size: 0.7rem;
-                padding: 0.3rem 0.5rem;
+                padding: 0.4rem 0.6rem;
+                max-width: 180px;
+                margin: 0 auto;
+            }
+
+            .hero-price-card {
+                max-width: 250px;
+                padding: 1rem;
             }
 
             .hero-title {
-                font-size: clamp(1.6rem, 12vw, 2rem);
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
             }
 
             .amount {
                 font-size: 1.8rem;
             }
+        }
 
-            .currency {
-                font-size: 1.2rem;
-            }
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .col-lg-4, .col-lg-8 {
+            padding-left: 15px;
+            padding-right: 15px;
         }
     </style>
 </head>
-
 <body>
-<main id="main-content" aria-label="Main Content">
-    <!-- Modern Navigation -->
-    <nav class="navbar-modern" id="mainNav">
-        <div class="container">
-            <div class="navbar-content">
-                <a href="../../index.html" class="navbar-brand-modern">
-                        Tresor<span class="accent">Lodge</span>
-                </a>
-                
-                    <div class="nav-modern d-none d-lg-flex">
-                        <a href="../../index.html" class="nav-link" aria-label="Accueil - Page d'accueil">Accueil</a>
-                        <a href="rooms.html" class="nav-link" aria-label="Chambres - Voir les chambres">Chambres</a>
-                        <a href="../restaurant/restaurant.html" class="nav-link" aria-label="Restaurant - Voir le restaurant">Restaurant</a>
-                        <a href="../contact/contact.html" class="nav-link" aria-label="Contact - Page de contact">Contact</a>
-                    </div>
-                
-                    <div class="cta-buttons d-none d-lg-flex">
-                        <a href="tel:+243816144449" class="btn-cta btn-outline-modern" aria-label="Contactez nous pour une réservation par téléphone">Contactez nous pour une réservation</a>
-                    </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-content">
-                <a href="../../index.html" class="mobile-nav-link" aria-label="Accueil - Page d'accueil">Accueil</a>
-                <a href="rooms.html" class="mobile-nav-link" aria-label="Chambres - Voir les chambres">Chambres</a>
-                <a href="../restaurant/restaurant.html" class="mobile-nav-link" aria-label="Restaurant - Voir le restaurant">Restaurant</a>
-                <a href="../contact/contact.html" class="mobile-nav-link" aria-label="Contact - Page de contact">Contact</a>
-                <div class="mobile-cta">
-                    <a href="tel:+243816144449" class="btn-cta btn-outline-modern" aria-label="Appeler pour une réservation">Appeler</a>
-                    <a href="../contact/contact.html" class="btn-cta btn-primary-modern" aria-label="Réserver via le formulaire de contact">Réserver</a>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../../index.html">
+                <i class="fas fa-hotel me-2" style="color:var(--accent);"></i> Tresor<span class="accent">Lodge</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../restaurant/restaurant.html">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact/contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section with Video Background -->
-    <section class="hero-section">
-        <!-- Background Video -->
+<main id="main-content" aria-label="Main Content">
+    <!-- Hero Section with Video and Overlay -->
+    <section class="room-hero position-relative">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="videos/rooms3.mp4" type="video/mp4">
         </video>
-        
-        <!-- Overlay -->
-        <div class="hero-overlay"></div>
-        
-        <!-- Hero Content -->
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-7 col-md-7 mb-4 mb-lg-0">
-                        <div class="mb-4">
-                            <div class="hero-breadcrumb">
-                                <a href="../../index.html">Accueil</a> / 
-                                <a href="rooms.html">Chambres</a> / 
-                                <span>Chambre Standard</span>
-                            </div>
-                            <h1 class="hero-title" style="white-space:nowrap;">Chambre Standard</h1>
-                            <p class="hero-subtitle">Confort essentiel et excellent rapport qualité-prix au cœur de Lubumbashi</p>
-                        </div>
-                        <div class="hero-features" data-aos="fade-up" data-aos-delay="300">
-                            <div class="feature-item"><i class="fas fa-wifi"></i><span>WiFi Gratuit</span></div>
-                            <div class="feature-item"><i class="fas fa-car"></i><span>Parking Inclus</span></div>
-                            <div class="feature-item"><i class="fas fa-coffee"></i><span>Petit Déjeuner</span></div>
-                            <div class="feature-item"><i class="fas fa-swimming-pool"></i><span>Accès Piscine</span></div>
-                            <div class="feature-item"><i class="fas fa-tv"></i><span>TV Satellite</span></div>
-                            <div class="feature-item"><i class="fas fa-snowflake"></i><span>Climatisation</span></div>
-                            <div class="feature-item"><i class="fas fa-bell-concierge"></i><span>Service 24h/24</span></div>
-                            <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Coffre-Fort</span></div>
-                            <div class="feature-item"><i class="fas fa-bath"></i><span>Salle de Bain</span></div>
-                            <div class="feature-item"><i class="fas fa-bed"></i><span>Lit Confortable</span></div>
-                            <div class="feature-item"><i class="fas fa-broom"></i><span>Service Ménage</span></div>
-                            <div class="feature-item"><i class="fas fa-concierge-bell"></i><span>Room Service</span></div>
-                        </div>
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background:rgba(30,30,40,0.55);z-index:1;"></div>
+        <div class="container position-relative" style="z-index:2;">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-white">
+                    <h1 class="display-3 fw-bold mb-3">Chambre Standard</h1>
+                    <p class="lead mb-4">Confort moderne, équipements essentiels, et un excellent rapport qualité-prix à Lubumbashi.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <div class="feature-item"><i class="fas fa-wifi"></i> WiFi Gratuit</div>
+                        <div class="feature-item"><i class="fas fa-coffee"></i> Petit-déjeuner</div>
+                        <div class="feature-item"><i class="fas fa-snowflake"></i> Climatisation</div>
+                        <div class="feature-item"><i class="fas fa-tv"></i> TV Satellite</div>
+                        <div class="feature-item"><i class="fas fa-car"></i> Parking</div>
+                        <div class="feature-item"><i class="fas fa-swimming-pool"></i> Piscine</div>
+                        <div class="feature-item"><i class="fas fa-lock"></i> Coffre-fort</div>
                     </div>
-                    <div class="col-lg-5 col-md-5 d-flex justify-content-center">
-                        <div class="hero-price-card" data-aos="zoom-in" data-aos-delay="600">
-                            <div class="price-main">
-                                <span class="currency" style="font-size:1.3rem; font-weight:600; color:#d4af37; vertical-align:middle; display:inline-block; line-height:1; margin-right:2px;">$</span>
-                                <span class="amount">60</span>
-                                <span class="period">/ night</span>
-                            </div>
-                            <div style="font-size:1.5rem; color:#f7c948; margin-bottom:0.5rem;">&#9733;&#9733;&#9733;</div>
-                            <div style="font-size:1.1rem; font-weight:600; color:#fff; margin-bottom:1.5rem;">Chambre Standard</div>
-                            <a href="tel:+243816144449" class="btn btn-outline-secondary w-100" style="font-weight:600; font-size:1.05rem; border-radius:25px;" aria-label="Contactez nous pour une réservation par téléphone">Contactez nous pour une réservation</a>
-                        </div>
+                </div>
+                <div class="col-lg-5 d-flex flex-column align-items-center align-items-lg-end">
+                    <div class="bg-white bg-opacity-75 rounded-4 shadow p-4 mb-3 text-center" style="min-width:220px;">
+                        <div class="fs-1 fw-bold text-dark mb-2">$60 <span class="fs-5 fw-normal text-secondary">/ nuit</span></div>
+                        <div class="mb-2 text-warning" style="font-size:1.3rem;">★★★</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Content Wrapper for Mobile Layout -->
-    <div class="content-wrapper">
-        <!-- Content Section -->
-        <section class="content-section">
+    <!-- Image Gallery -->
+    <section class="py-4 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Description Card -->
-                    <div class="content-card">
-                        <h2>Description de la Chambre</h2>
-                        <p>Notre chambre supérieure offre un niveau de confort élevé avec des équipements haut de gamme. Parfaite pour les clients exigeants recherchant un excellent rapport qualité-prix, elle dispose d'une vue panoramique et d'aménagements soignés pour un séjour mémorable à Lubumbashi.</p>
-                        <h4 class="mt-4">Caractéristiques Spéciales</h4>
-                        <ul>
-                            <li>Vue panoramique imprenable</li>
-                            <li>Salle de bain deluxe avec finitions haut de gamme</li>
-                            <li>Mobilier design et moderne</li>
-                            <li>Espace de travail confortable</li>
-                            <li>Minibar entièrement équipé</li>
-                        </ul>
-                        <h4 class="mt-4">Équipements Inclus</h4>
-                        <div class="amenities-grid">
-                            <div class="amenity-tag">WiFi Gratuit</div>
-                            <div class="amenity-tag">Petit-déjeuner Gratuit</div>
-                            <div class="amenity-tag">Minibar</div>
-                            <div class="amenity-tag">Climatisation</div>
-                            <div class="amenity-tag">TV Satellite</div>
-                            <div class="amenity-tag">Parking Gratuit</div>
-                            <div class="amenity-tag">Accès Piscine</div>
-                            <div class="amenity-tag">Vue Panoramique</div>
-                            <div class="amenity-tag">Salle de Bain Deluxe</div>
-                            <div class="amenity-tag">Coffre-fort</div>
-                        </div>
-                    </div>
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <img src="../../images/about2.jpeg" alt="Chambre Standard - Vue 1" class="img-fluid rounded-3 shadow-sm" loading="lazy">
                 </div>
-                <div class="col-lg-4">
-                    <!-- Price Highlight -->
-                    <div class="hero-price-card" data-aos="zoom-in" data-aos-delay="600" style="background:#dc2626; color:#fff; border: 1px solid #b91c1c;">
-                        <div class="price-main">
-                            <span class="amount" style="color:#fff;">60</span>
-                            <span class="currency" style="color:#fff;">$</span>
-                            <span class="period" style="color:#fff;">/ night</span>
-                        </div>
-                        <div class="hero-cta">
-                            <a href="tel:+243816144449" class="btn btn-primary" aria-label="Contactez nous pour une réservation par téléphone">
-                                <i class="fas fa-calendar-check"></i> Contactez nous pour une réservation
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Contact Info in Card -->
-                    <div class="content-card mt-4">
-                        <h4>Besoin d'aide?</h4>
-                        <p>Notre équipe est disponible 24h/24 pour vous aider avec votre réservation.</p>
-                        <a href="tel:+243816144449" class="btn btn-outline-secondary w-100" aria-label="Contactez nous pour une réservation par téléphone">Contactez nous pour une réservation</a>
-                        <p><strong>Email:</strong> tresorlodgerdc@gmail.com</p>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <img src="../../images/cover.jpeg" alt="Chambre Standard - Vue 2" class="img-fluid rounded-3 shadow-sm" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <img src="../../images/about1.jpeg" alt="Chambre Standard - Vue 3" class="img-fluid rounded-3 shadow-sm" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content: Description & Booking -->
+    <section class="py-5 room-main bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-xl-8">
+                    <h2 class="fw-bold mb-3">Description de la Chambre</h2>
+                    <p>Notre chambre standard offre un espace confortable et fonctionnel, idéal pour les voyageurs d'affaires ou de loisirs. Profitez d'un séjour paisible avec tous les équipements essentiels pour votre bien-être.</p>
+                    <hr class="my-4">
+                    <h4 class="mt-4">Caractéristiques</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Lit double confortable</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Salle de bain privative</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Bureau de travail</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Minibar</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Service de chambre</li>
+                    </ul>
+                    <h4>Équipements Inclus</h4>
+                    <div class="row g-2">
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-wifi me-1"></i> WiFi</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-coffee me-1"></i> Petit-déjeuner</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-snowflake me-1"></i> Climatisation</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-tv me-1"></i> TV</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-car me-1"></i> Parking</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-swimming-pool me-1"></i> Piscine</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-lock me-1"></i> Coffre-fort</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer-modern" aria-label="Site Footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4><span style="color:#fff;">Tresor</span><span style="color:#dc2626;">Lodge</span></h4>
-                    <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
-                </div>
-                
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>586 Avenue du Plateau, Golf Malela, Lubumbashi</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+243 816 144 449</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>tresorlodgerdc@gmail.com</span>
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> TresorLodge. Tous droits réservés.</p>
-            </div>
+    <!-- Minimal Footer -->
+    <footer class="bg-dark text-white py-4 mt-5" aria-label="Site Footer">
+        <div class="container text-center">
+            <h4 class="mb-2">Tresor<span style="color: var(--secondary);">Lodge</span></h4>
+            <p class="mb-1">Votre destination de luxe à Lubumbashi.</p>
+            <p class="mb-0 small">&copy; 2025 TresorLodge. Tous droits réservés.</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</main>
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-
         // Set current year
         document.addEventListener('DOMContentLoaded', function() {
             const yearElement = document.getElementById('currentYear');
@@ -1094,88 +744,54 @@
                 yearElement.textContent = new Date().getFullYear();
             }
         });
-
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('active');
-                    mobileMenuBtn.classList.toggle('active');
-                });
-
-                // Close mobile menu when clicking on a link
-                const mobileLinks = mobileMenu.querySelectorAll('a');
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.remove('active');
-                        mobileMenuBtn.classList.remove('active');
-                    });
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-                        mobileMenu.classList.remove('active');
-                        mobileMenuBtn.classList.remove('active');
-                    }
-                });
-            }
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('mainNav');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Enhanced interactions
-        document.addEventListener('DOMContentLoaded', function() {
-            // Feature cards hover effects
-            const featureCards = document.querySelectorAll('.feature-card');
-            featureCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Amenity tags click effects
-            const amenityTags = document.querySelectorAll('.amenity-tag');
-            amenityTags.forEach(tag => {
-                tag.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 150);
-                });
-            });
-
-            // Price card animation on scroll
-            const priceCard = document.querySelector('.hero-price-card');
-            if (priceCard) {
-                window.addEventListener('scroll', function() {
-                    const scrolled = window.pageYOffset;
-                    const parallax = scrolled * 0.1;
-                    
-                    if (window.innerWidth > 768) {
-                        priceCard.style.transform = `translateY(${parallax}px)`;
-                    }
-                });
-            }
-        });
     </script>
-</main>
 </body>
+    <!-- Floating Social Buttons -->
+    <div class="floating-social-buttons">
+        <a href="https://wa.me/243816144449" class="float-btn whatsapp" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/tresorlodgerdc?igsh=MTIybnl0dzdhMDNtYw==" class="float-btn instagram" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1BiCJkG8wb/?mibextid=wwXIfr" class="float-btn facebook" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="mailto:info@tresorlodge.com" class="float-btn email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    <style>
+        .floating-social-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.7rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #2C3E50;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.12) translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+        }
+        .float-btn.whatsapp { background: #25D366; }
+        .float-btn.instagram { background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB); }
+        .float-btn.facebook { background: #1877f3; }
+        .float-btn.email { background: #F39C12; }
+    </style>
 </html>
-
-

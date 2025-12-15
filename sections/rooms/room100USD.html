@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+        <link rel="stylesheet" href="../shared/css/contact-navbar.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suite de Luxe 100$ - TresorLodge | Chambre Premium avec Balcon Privé</title>
+    <title>Chambre Standard 100$ - TresorLodge | Confort et Élégance</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Découvrez notre Suite de Luxe à 100$ par nuit au TresorLodge Lubumbashi. Balcon privé, climatisation, service personnalisé et finitions haut de gamme dans notre chambre premium 3★.">
-    <meta name="keywords" content="suite luxe Lubumbashi, chambre premium TresorLodge, balcon privé, climatisation, 100 dollars">
+    <meta name="description" content="Découvrez notre chambre standard à 60$ par nuit au TresorLodge. Confort moderne, équipements de qualité et services inclus dans le quartier Golf Malela.">
+    <meta name="keywords" content="chambre standard TresorLodge, hôtel 60 dollars Lubumbashi, Golf Malela, chambre économique Congo">
     <meta name="author" content="TresorLodge">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Suite de Luxe - TresorLodge">
-    <meta property="og:description" content="Suite premium avec balcon privé et climatisation">
-    <meta property="og:image" content="../../images/cover.jpeg">
-    <meta property="og:url" content="https://tresorlodge.com/room100USD.html">
+    <meta property="og:title" content="Chambre Supérieure - TresorLodge">
+    <meta property="og:description" content="Chambre supérieure avec vue panoramique et équipements haut de gamme">
+    <meta property="og:image" content="../../images/about2.jpeg">
+    <meta property="og:url" content="https://tresorlodge.com/room60USD.html">
     
     <!-- Favicon -->
-    <!-- About icon removed -->
+    <link rel="icon" href="../../images/about2.png" type="image/x-icon">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
@@ -28,7 +29,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    
     <style>
         :root {
             --primary: #2C3E50;
@@ -105,7 +105,7 @@
             align-items: center;
             color: white;
             position: relative;
-            margin-top: 76px; /* Account for fixed navbar */
+            margin-top: 76px;
             overflow: hidden;
         }
 
@@ -269,36 +269,6 @@
             text-decoration: none;
         }
 
-        /* Sections */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        /* Cards */
-        .card-custom {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            height: auto;
-            border: none;
-            margin-bottom: 2rem;
-        }
-
-        .card-custom:hover {
-            transform: translateY(-5px);
-        }
-
         .breadcrumb {
             display: flex;
             align-items: center;
@@ -322,31 +292,20 @@
             position: relative;
             z-index: 1;
         }
-        
-        .room-card {
+
+        .card-custom {
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 2rem;
-            width: 100%;
-        }
-
-        .room-video-container {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .room-video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .room-content {
             padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: auto;
+            border: none;
+            margin-bottom: 2rem;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
         }
 
         .room-features {
@@ -396,41 +355,6 @@
         .price-highlight h3 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-        }
-
-        .booking-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid #e9ecef;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
         }
 
         /* Responsive fixes */
@@ -514,10 +438,9 @@
             }
 
             .hero-video {
-                height: 120%; /* Ensure video covers the section even with padding */
+                height: 120%;
             }
 
-            /* Stack columns vertically on tablets */
             .room-hero .row {
                 flex-direction: column;
             }
@@ -623,7 +546,6 @@
                 z-index: -2;
             }
 
-            /* Center content on mobile */
             .room-hero .col-lg-8 {
                 text-align: center;
                 margin-bottom: 1.5rem;
@@ -642,7 +564,6 @@
                 margin-bottom: 1rem;
             }
 
-            /* Ensure no overlap */
             .room-main {
                 margin-top: 0;
                 position: relative;
@@ -650,7 +571,6 @@
             }
         }
 
-        /* Extra small phones */
         @media (max-width: 480px) {
             .hero-features {
                 grid-template-columns: 1fr;
@@ -685,21 +605,6 @@
             }
         }
 
-        /* Fallback for browsers that don't support video */
-        @supports not (object-fit: cover) {
-            .room-hero {
-                background: linear-gradient(45deg, 
-                    rgba(44, 62, 80, 0.9), 
-                    rgba(231, 76, 60, 0.8)
-                );
-            }
-            
-            .hero-video {
-                display: none;
-            }
-        }
-
-        /* Fix for Bootstrap grid */
         .row {
             margin-left: 0;
             margin-right: 0;
@@ -709,427 +614,135 @@
             padding-left: 15px;
             padding-right: 15px;
         }
-        
-        .room-video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .video-play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(26, 26, 26, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .video-play-overlay:hover {
-            background: rgba(26, 26, 26, 0.7);
-        }
-        
-        .play-button {
-            width: 80px;
-            height: 80px;
-            background: var(--secondary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .play-button:hover {
-            transform: scale(1.1);
-            background: var(--quaternary-color);
-        }
-        
-        .room-info-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
-            margin-bottom: 2rem;
-        }
-        
-        .room-description {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
-        }
-        
-        .room-price-section {
-            background: linear-gradient(135deg, var(--secondary-color), var(--quaternary-color));
-            color: white;
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .amenity-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--background-soft);
-            border-radius: 12px;
-            transition: var(--transition);
-            border: 1px solid var(--border-light);
-        }
-        
-        .amenity-item:hover {
-            background: var(--background-accent);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-soft);
-        }
-        
-        .amenity-item.premium {
-            background: linear-gradient(135deg, #fee2e2, #ffffff);
-            border-color: var(--secondary-color);
-        }
-        
-        .amenity-item.luxury {
-            background: linear-gradient(135deg, #fef3c7, #ffffff);
-            border-color: #d97706;
-        }
-        
-        .amenity-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--secondary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-        }
-        
-        .luxury .amenity-icon {
-            background: #d97706;
-        }
-        
-        .booking-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-large);
-            position: sticky;
-            top: 2rem;
-        }
-        
-        .booking-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .form-input {
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
-        }
-        
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .breadcrumb a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .breadcrumb a:hover {
-            color: white;
-        }
-        
-        .breadcrumb span {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        @media (max-width: 1024px) {
-            .room-content-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .room-hero {
-                height: 50vh;
-            }
-            
-            .amenities-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .room-hero {
-                height: 40vh;
-            }
-            
-            .room-media-section,
-            .room-info-card,
-            .room-description,
-            .booking-card {
-                padding: 1.5rem;
-            }
-            
-            .room-main {
-                margin-top: -4rem;
-                padding: 1rem 0 2rem;
-            }
-        }
     </style>
-    <link rel="stylesheet" href="css/rooms.css">
 </head>
 <body>
-<main id="main-content" aria-label="Main Content">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
             <a class="navbar-brand" href="../../index.html">
-                Tresor<span class="accent">Lodge</span>
+                <i class="fas fa-hotel me-2" style="color:var(--accent);"></i> Tresor<span class="accent">Lodge</span>
             </a>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.html">Accueil</a>
+                        <a class="nav-link" href="../../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="rooms.html">Chambres</a>
+                        <a class="nav-link" href="rooms.html">Rooms</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../restaurant.html">Restaurant</a>
+                        <a class="nav-link" href="../restaurant/restaurant.html">Restaurant</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-book" href="../../contact.html">Réserver</a>
+                        <a class="nav-link" href="../contact/contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Room Hero Section -->
-    <section class="room-hero">
-        <!-- Background Video -->
+<main id="main-content" aria-label="Main Content">
+    <!-- Hero Section with Video and Overlay -->
+    <section class="room-hero position-relative">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="videos/rooms1.mp4" type="video/mp4">
         </video>
-        
-        <div class="container">
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background:rgba(30,30,40,0.55);z-index:1;"></div>
+        <div class="container position-relative" style="z-index:2;">
             <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <div class="breadcrumb">
-                        <a href="../../index.html">Accueil</a>
-                        <span>/</span>
-                        <a href="rooms.html">Chambres</a>
-                        <span>/</span>
-                        <span>Suite de Luxe</span>
-                    </div>
-                    <h1 class="hero-title">Suite de Luxe</h1>
-                    <p class="hero-subtitle">Expérience premium avec balcon privé et services haut de gamme dans le cœur de Lubumbashi</p>
-                    
-                    <div class="hero-features">
-                        <div class="feature-item">
-                            <i class="fas fa-wifi"></i>
-                            <span>WiFi Gratuit</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-coffee"></i>
-                            <span>Petit-déjeuner Gratuit</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-wine-bottle"></i>
-                            <span>Minibar</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-concierge-bell"></i>
-                            <span>Room Service</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-home"></i>
-                            <span>Balcon Privé</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-snowflake"></i>
-                            <span>Climatisation</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-tv"></i>
-                            <span>TV Satellite</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-car"></i>
-                            <span>Parking Gratuit</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-swimming-pool"></i>
-                            <span>Accès Piscine</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-tshirt"></i>
-                            <span>Service de Blanchisserie</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-lock"></i>
-                            <span>Coffre-fort</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-mountain"></i>
-                            <span>Vue Panoramique</span>
-                        </div>
+                <div class="col-lg-7 text-white">
+                    <h1 class="display-3 fw-bold mb-3">Chambre Standard</h1>
+                    <p class="lead mb-4">Confort moderne, équipements essentiels, et un excellent rapport qualité-prix à Lubumbashi.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <div class="feature-item"><i class="fas fa-wifi"></i> WiFi Gratuit</div>
+                        <div class="feature-item"><i class="fas fa-coffee"></i> Petit-déjeuner Gratuit</div>
+                        <div class="feature-item"><i class="fas fa-glass-martini-alt"></i> Minibar</div>
+                        <div class="feature-item"><i class="fas fa-bell"></i> Room Service</div>
+                        <div class="feature-item"><i class="fas fa-umbrella-beach"></i> Balcon Privé</div>
+                        <div class="feature-item"><i class="fas fa-snowflake"></i> Climatisation</div>
+                        <div class="feature-item"><i class="fas fa-tv"></i> TV Satellite</div>
+                        <div class="feature-item"><i class="fas fa-car"></i> Parking Gratuit</div>
+                        <div class="feature-item"><i class="fas fa-swimming-pool"></i> Accès Piscine</div>
+                        <div class="feature-item"><i class="fas fa-soap"></i> Service de Blanchisserie</div>
+                        <div class="feature-item"><i class="fas fa-lock"></i> Coffre-fort</div>
+                        <div class="feature-item"><i class="fas fa-mountain"></i> Vue Panoramique</div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4">
-                    <div class="hero-price-card">
-                        <div class="price-main">
-                            <span class="currency">$</span>
-                            <span class="amount">100</span>
-                            <span class="period">/ nuit</span>
-                        </div>
-                        <div class="rating">
-                            <span class="stars">★★★</span>
-                            <span class="rating-text">Suite Premium</span>
-                        </div>
-                        <div class="hero-cta">
-                            <a href="tel:+243816144449" class="btn btn-book btn-lg">Contactez nous pour une réservation</a>
-                        </div>
+                <div class="col-lg-5 d-flex flex-column align-items-center align-items-lg-end">
+                    <div class="bg-white bg-opacity-75 rounded-4 shadow p-4 mb-3 text-center" style="min-width:220px;">
+                        <div class="fs-1 fw-bold text-dark mb-2">$100 <span class="fs-5 fw-normal text-secondary">/ nuit</span></div>
+                        <div class="mb-2 text-warning" style="font-size:1.3rem;">★★★</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Room Main Content -->
-    <section class="room-main">
+    <!-- Image Gallery -->
+    <section class="py-4 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Description Card -->
-                    <div class="card-custom">
-                        <h3>Description de la Suite</h3>
-                        <p>Détendez-vous dans votre sanctuaire privé après une journée d'exploration de Lubumbashi. Le mobilier somptueux et la décoration apaisante créent une atmosphère de sérénité absolue. Profitez de votre balcon privé avec vue sur nos jardins luxuriants, et savourez le service en chambre 24h/24 qui répond à tous vos besoins avec discrétion et professionnalisme.</p>
-                        
-                        <h4 class="mt-4">Caractéristiques Spéciales</h4>
-                        <ul>
-                            <li>Balcon privé avec vue panoramique</li>
-                            <li>Salon séparé avec canapé élégant</li>
-                            <li>Salle de bain spacieuse avec baignoire</li>
-                            <li>Finitions haut de gamme</li>
-                            <li>Service personnalisé 24h/24</li>
-                        </ul>
-
-                        <h4 class="mt-4">Équipements Inclus</h4>
-                        <ul class="room-features">
-                            <li>WiFi Gratuit</li>
-                            <li>Petit-déjeuner Gratuit</li>
-                            <li>Minibar</li>
-                            <li>Room Service</li>
-                            <li>Balcon Privé</li>
-                            <li>Climatisation</li>
-                            <li>TV Satellite</li>
-                            <li>Parking Gratuit</li>
-                            <li>Accès Piscine</li>
-                            <li>Service de Blanchisserie</li>
-                            <li>Coffre-fort</li>
-                            <li>Vue Panoramique</li>
-                        </ul>
-                    </div>
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <img src="../../images/about2.jpeg" alt="Chambre Standard - Vue 1" class="img-fluid rounded-3 shadow-sm" loading="lazy">
                 </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <img src="../../images/cover.jpeg" alt="Chambre Standard - Vue 2" class="img-fluid rounded-3 shadow-sm" loading="lazy">
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <img src="../../images/about1.jpeg" alt="Chambre Standard - Vue 3" class="img-fluid rounded-3 shadow-sm" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="col-lg-4">
-                    <!-- Price Highlight -->
-                    <div class="price-highlight">
-                        <h3>$100</h3>
-                        <p>par nuit</p>
-                        <p class="mb-0">★★★ Suite Premium</p>
-                    </div>
-
-                    <!-- Contact Info -->
-                    <div class="card-custom">
-                        <h5>Besoin d'aide?</h5>
-                        <p>Notre équipe est disponible 24h/24 pour vous aider avec votre réservation.</p>
-                        <a href="tel:+243816144449" class="btn btn-outline-secondary w-100">Contactez nous pour une réservation</a>
-                        <p><strong>Email:</strong> tresorlodgerdc@gmail.com</p>
+    <!-- Main Content: Description & Booking -->
+    <section class="py-5 room-main bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-xl-8">
+                    <h2 class="fw-bold mb-3">Description de la Suite</h2>
+                    <p>Détendez-vous dans votre sanctuaire privé après une journée d'exploration de Lubumbashi. Le mobilier somptueux et la décoration apaisante créent une atmosphère de sérénité absolue. Profitez de votre balcon privé avec vue sur nos jardins luxuriants, et savourez le service en chambre 24h/24 qui répond à tous vos besoins avec discrétion et professionnalisme.</p>
+                    <hr class="my-4">
+                    <h4 class="mt-4">Caractéristiques Spéciales</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Balcon privé avec vue panoramique</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Salon séparé avec canapé élégant</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Salle de bain spacieuse avec baignoire</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Finitions haut de gamme</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Service personnalisé 24h/24</li>
+                    </ul>
+                    <h4>Équipements Inclus</h4>
+                    <div class="row g-2">
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-wifi me-1"></i> WiFi Gratuit</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-coffee me-1"></i> Petit-déjeuner Gratuit</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-glass-martini-alt me-1"></i> Minibar</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-bell me-1"></i> Room Service</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-umbrella-beach me-1"></i> Balcon Privé</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-snowflake me-1"></i> Climatisation</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-tv me-1"></i> TV Satellite</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-car me-1"></i> Parking Gratuit</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-swimming-pool me-1"></i> Accès Piscine</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-soap me-1"></i> Service de Blanchisserie</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-lock me-1"></i> Coffre-fort</span></div>
+                        <div class="col-6 col-md-4"><span class="badge bg-light text-dark w-100 py-2"><i class="fas fa-mountain me-1"></i> Vue Panoramique</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5" aria-label="Site Footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="mb-3">Tresor<span style="color: var(--secondary);">Lodge</span></h3>
-                    <p>Votre destination de luxe au cœur de Lubumbashi. Découvrez l'hospitalité congolaise dans un cadre moderne et élégant.</p>
-                </div>
-                
-                <div class="col-lg-6">
-                    <h4 class="mb-3">Contact</h4>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>586 Avenue du Plateau, Golf Malela, Lubumbashi</p>
-                    <p><i class="fas fa-phone me-2"></i><a href="tel:+243816144449" class="text-white">+243 816 144 449</a></p>
-                    <p><i class="fas fa-envelope me-2"></i><a href="mailto:tresorlodgerdc@gmail.com" class="text-white">tresorlodgerdc@gmail.com</a></p>
-                </div>
-            </div>
-            
-            <hr class="my-4">
-            
-            <div class="row align-items-center">
-                <div class="col-12 text-center">
-                    <p class="mb-0">&copy; 2025 TresorLodge. Tous droits réservés.</p>
-                </div>
-            </div>
+
+    <!-- Minimal Footer -->
+    <footer class="bg-dark text-white py-4 mt-5" aria-label="Site Footer">
+        <div class="container text-center">
+            <h4 class="mb-2">Tresor<span style="color: var(--secondary);">Lodge</span></h4>
+            <p class="mb-1">Votre destination de luxe à Lubumbashi.</p>
+            <p class="mb-0 small">&copy; 2025 TresorLodge. Tous droits réservés.</p>
         </div>
     </footer>
-
-    </main>
+</main>
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -1143,5 +756,52 @@
         });
     </script>
 </body>
+    <!-- Floating Social Buttons -->
+    <div class="floating-social-buttons">
+        <a href="https://wa.me/243816144449" class="float-btn whatsapp" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/tresorlodgerdc?igsh=MTIybnl0dzdhMDNtYw==" class="float-btn instagram" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/1BiCJkG8wb/?mibextid=wwXIfr" class="float-btn facebook" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="mailto:info@tresorlodge.com" class="float-btn email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    <style>
+        .floating-social-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.7rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #2C3E50;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.12) translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+        }
+        .float-btn.whatsapp { background: #25D366; }
+        .float-btn.instagram { background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB); }
+        .float-btn.facebook { background: #1877f3; }
+        .float-btn.email { background: #F39C12; }
+    </style>
 </html>
-
