@@ -1,0 +1,102 @@
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.footer {
+    margin-top: auto !important;
+}
+body {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #e0eafc, #cfdef3, #f9e7e7, #fbc2eb, #a1c4fd, #c2e9fb);
+    background-size: 300% 300%;
+    animation: animatedBG 12s ease-in-out infinite;
+}
+@keyframes animatedBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* Contact page navbar and floating buttons styles (from index.html) */
+:root {
+    --primary: #2C3E50;
+    --secondary: #E74C3C;
+    --accent: #F39C12;
+    --text-dark: #2C3E50;
+    --text-light: #7F8C8D;
+    --white: #FFFFFF;
+    --cream: #FDF6E3;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; line-height: 1.6; overflow-x: hidden; }
+.navbar {
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+    border-radius: 0 0 22px 22px;
+    margin: 12px auto 0 auto;
+    max-width: 1200px;
+    padding: 0.5rem 2rem;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.navbar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary) !important;
+    letter-spacing: 1px;
+    padding-left: 0.5rem;
+}
+.navbar-brand .accent { color: var(--secondary); }
+.nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 500;
+    margin: 0 0.7rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 18px;
+    transition: color 0.3s, background 0.3s;
+    position: relative;
+}
+.nav-link:hover {
+    color: #fff !important;
+    background: var(--secondary);
+}
+.nav-link.active, .nav-link[aria-current="page"] {
+    background: var(--accent);
+    color: #fff !important;
+}
+.floating-social-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+.float-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.7rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #2C3E50;
+    text-decoration: none;
+}
+.float-btn:hover {
+    transform: scale(1.12) translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+}
+.float-btn.whatsapp { background: #25D366; }
+.float-btn.instagram { background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB); }
+.float-btn.facebook { background: #1877f3; }
+.float-btn.email { background: #F39C12; }
